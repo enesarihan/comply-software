@@ -23,18 +23,18 @@ const translations = {
     },
     hero: {
       title: [
-        "Responsive",
+        "Responsive Design",
         "Best Price",
         "SEO Optimization",
         "Vision",
         "Cutting-edge technologhy",
         "Modern Design",
       ],
-      mainTitle: `We're building with ❤️ `,
+      mainTitle: `We're building 🎯  `,
       subtitle:
         "Streamline your compliance processes with cutting-edge software solutions designed for modern businesses",
       getStarted: "Get Started",
-      learnMore: "Learn More",
+      learnMore: "Let Us Call You",
     },
     about: {
       title: "About Comply Software",
@@ -61,41 +61,51 @@ const translations = {
     pricing: {
       title: "Choose Your Plan",
       subtitle:
-        "Select the perfect compliance solution for your business needs",
-      mostPopular: "🔥 Sale",
+        "Select the most suitable software solution for your business needs",
+      mostPopular: "🔥 Best Seller",
       getStarted: "Get Started",
       contactSales: "Contact Sales",
       plans: {
         basic: {
           name: "Basic",
-          description: "Perfect for small businesses",
+          description:
+            "A perfect starting point for individual users and simple projects.",
           features: [
-            "Up to 5 users",
-            "Basic compliance templates",
-            "Email support",
-            "Monthly reports",
+            "Single-page modern website",
+            "Fully responsive design for all devices",
+            "Detailed contact form",
+            "Fast delivery time",
           ],
         },
         professional: {
           name: "Professional",
-          description: "Ideal for growing companies",
+          description:
+            "A powerful and comprehensive solution for small and medium-sized businesses.",
           features: [
-            "Up to 50 users",
-            "Advanced compliance suite",
-            "Priority support",
-            "Real-time analytics",
-            "API access",
+            "Multi-page dynamic website structure",
+            "Advanced SEO optimization",
+            "Modern responsive design",
+            "Priority technical support",
+            "1 year of free hosting and domain",
+            "1 year of technical support service",
+            "Strategic structure to increase customer potential",
+            "Form and data collection infrastructure",
           ],
         },
         elite: {
           name: "Elite",
-          description: "For enterprise organizations",
+          description:
+            "A complete package tailored for corporate companies and large-scale projects.",
           features: [
-            "Unlimited users",
-            "Custom compliance workflows",
-            "24/7 dedicated support",
-            "Advanced integrations",
-            "White-label options",
+            "All features from the Professional plan",
+            "Advanced Admin Panel (content management)",
+            "Payment integration with Stripe",
+            "Fully-featured e-commerce infrastructure",
+            "2 years of free hosting and domain",
+            "2 years of priority technical support",
+            "Scalable architecture and integrations",
+            "Customizable user interface",
+            "Advanced security features",
           ],
         },
       },
@@ -147,18 +157,18 @@ const translations = {
     },
     hero: {
       title: [
-        "Responsive",
-        "Ücret",
-        "SEO Optimazsyonu",
+        "Responsive Tasarım",
+        "Ücret Fırsatları",
+        "SEO Optimizasyonu",
         "Vizyon",
         "Son Teknolojiler",
         "Modern Tasarım",
       ],
-      mainTitle: "Sizin için ❤️ en iyi ",
+      mainTitle: "Sizin için en iyi 🎯 ",
       subtitle:
         "Modern işletmeler için tasarlanmış son teknoloji yazılım çözümleriyle uyumluluk süreçlerinizi kolaylaştırın",
       getStarted: "Başlayın",
-      learnMore: "Daha Fazla Bilgi",
+      learnMore: "Sizi Arayılım",
     },
     about: {
       title: "Comply Software Hakkında",
@@ -184,41 +194,51 @@ const translations = {
     },
     pricing: {
       title: "Planınızı Seçin",
-      subtitle: "İş ihtiyaçlarınız için mükemmel uyumluluk çözümünü seçin",
-      mostPopular: "🔥 Fırsat",
+      subtitle: "İş ihtiyaçlarınıza en uygun yazılım çözümünü seçin",
+      mostPopular: "🔥 Çok Satan",
       getStarted: "Başlayın",
-      contactSales: "Satış İletişim",
+      contactSales: "Satış ile İletişime Geçin",
       plans: {
         basic: {
           name: "Temel",
-          description: "Küçük işletmeler için mükemmel",
+          description:
+            "Bireysel kullanıcılar ve basit projeler için mükemmel başlangıç noktası.",
           features: [
-            "5 kullanıcıya kadar",
-            "Temel uyumluluk şablonları",
-            "E-posta desteği",
-            "Aylık raporlar",
+            "Tek sayfalık modern web sitesi",
+            "Mobil ve tüm cihazlarla uyumlu tasarım (Full Responsive)",
+            "Detaylı iletişim formu",
+            "Hızlı teslim süresi",
           ],
         },
         professional: {
           name: "Profesyonel",
-          description: "Büyüyen şirketler için ideal",
+          description:
+            "Küçük ve orta ölçekli işletmeler için güçlü ve kapsamlı bir çözüm.",
           features: [
-            "50 kullanıcıya kadar",
-            "Gelişmiş uyumluluk paketi",
-            "Öncelikli destek",
-            "Gerçek zamanlı analitik",
-            "API erişimi",
+            "Çok sayfalı dinamik site yapısı",
+            "Gelişmiş SEO optimizasyonu",
+            "Mobil uyumlu (responsive) modern tasarım",
+            "Öncelikli teknik destek",
+            "1 Yıl ücretsiz hosting ve alan adı (domain)",
+            "1 Yıl teknik destek hizmeti",
+            "Müşteri potansiyeli artırmaya yönelik stratejik yapı",
+            "Form ve veri toplama altyapısı",
           ],
         },
         elite: {
           name: "Elite",
-          description: "Kurumsal organizasyonlar için",
+          description:
+            "Kurumsal firmalar ve büyük ölçekli projeler için eksiksiz çözüm paketi.",
           features: [
-            "Sınırsız kullanıcı",
-            "Özel uyumluluk iş akışları",
-            "7/24 özel destek",
-            "Gelişmiş entegrasyonlar",
-            "Beyaz etiket seçenekleri",
+            "Profesyonel plandaki tüm özellikler",
+            "Güçlü Admin Paneli (İçerik yönetimi)",
+            "Stripe entegrasyonu ile ödeme altyapısı",
+            "Tam özellikli e-ticaret altyapısı",
+            "2 Yıl ücretsiz hosting + alan adı",
+            "2 Yıl öncelikli teknik destek",
+            "Ölçeklenebilir yapı ve entegrasyonlar",
+            "Özelleştirilebilir kullanıcı arayüzü",
+            "Gelişmiş güvenlik önlemleri",
           ],
         },
       },
@@ -266,7 +286,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>("tr");
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language") as Language;

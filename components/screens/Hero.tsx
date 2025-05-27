@@ -37,7 +37,7 @@ export default function HeroSection() {
               variants={staggerContainer}
             >
               <motion.h1
-                className="text-2xl md:text-5xl font-bold bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent"
+                className="text-2xl md:text-5xl font-bold bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text"
                 variants={fadeInUp}
               >
                 <span>{t.hero.mainTitle}</span>
@@ -61,14 +61,7 @@ export default function HeroSection() {
                 variants={fadeInUp}
               >
                 <Button size="lg" className="text-lg px-8 py-6">
-                  {t.hero.getStarted} <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-lg px-8 py-6"
-                >
-                  {t.hero.learnMore}
+                  {t.hero.learnMore} <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </motion.div>
             </motion.div>

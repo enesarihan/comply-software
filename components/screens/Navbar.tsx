@@ -9,6 +9,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { ThemeToggle } from "./Theme-toggle";
 import Logo from "../Logo";
 import PromotionalBanner from "../blocks/banner";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,9 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-4">
               <LanguageToggle />
               <ThemeToggle />
-              <Button>{t.nav.getStarted}</Button>
+              <Button asChild>
+                <Link href={"#contact"}>{t.nav.getStarted}</Link>
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
