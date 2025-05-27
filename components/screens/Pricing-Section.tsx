@@ -1,0 +1,240 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+// Assuming useLanguage and t are correctly defined and imported for localization
+import { useLanguage } from "@/contexts/language-context"; // Uncomment if needed
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 1.2 }, // Animasyon süresi 0.6 saniyeden 1.2 saniyeye çıkarıldı
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export default function PricingSection() {
+  const { t } = useLanguage();
+
+  return (
+    <section id="pricing" className="py-20 px-4 font-sans">
+      {/* Custom CSS for the animated border */}
+      <style jsx>{`
+        .animated-border-wrapper {
+          position: relative;
+          border-radius: 0.75rem; /* Matches Tailwind's rounded-xl */
+          padding: 2px; /* This creates the border thickness */
+          overflow: hidden;
+          height: 100%; /* Ensure wrapper takes full height */
+          display: flex; /* Use flex to center the inner card if needed */
+          justify-content: center;
+          align-items: center;
+          background: transparent; /* Ensure background is transparent */
+          box-shadow:
+            0 4px 6px -1px rgb(0 0 0 / 0.1),
+            0 2px 4px -2px rgb(0 0 0 / 0.1); /* Subtle shadow for depth */
+        }
+
+        .animated-border-wrapper::before {
+          content: "";
+          position: absolute;
+          top: -100%;
+          left: -100%;
+          width: 300%;
+          height: 300%;
+          /* Default conic gradient for rainbow effect (Professional plan) */
+          background: conic-gradient(
+            from 0deg at 50% 50%,
+            #ef4444,
+            /* red-500 */ #f97316,
+            /* orange-500 */ #f59e0b,
+            /* amber-500 */ #eab308,
+            /* yellow-500 */ #84cc16,
+            /* lime-500 */ #22c55e,
+            /* green-500 */ #10b981,
+            /* emerald-500 */ #06b6d4,
+            /* cyan-500 */ #0ea5e9,
+            /* sky-500 */ #3b82f6,
+            /* blue-500 */ #6366f1,
+            /* indigo-500 */ #8b5cf6,
+            /* violet-500 */ #a855f7,
+            /* purple-500 */ #d946ef,
+            /* fuchsia-500 */ #ec4899,
+            /* pink-500 */ #f43f5e,
+            /* rose-500 */ #ef4444 /* red-500 to complete the loop */
+          );
+          animation: rotateBorder 4s linear infinite; /* Animation duration and type */
+          z-index: -1; /* Place behind the actual card content */
+        }
+
+        /* Specific gradient for Basic Plan */
+        .animated-border-wrapper-basic::before {
+          background: conic-gradient(
+            from 0deg at 50% 50%,
+            #3b82f6,
+            /* blue-500 */ #22d3ee,
+            /* cyan-400 */ #10b981,
+            /* emerald-500 */ #84cc16,
+            /* lime-500 */ #3b82f6 /* blue-500 to complete the loop */
+          );
+        }
+
+        /* Specific gradient for Elite Plan */
+        .animated-border-wrapper-elite::before {
+          background: conic-gradient(
+            from 0deg at 50% 50%,
+            #ef4444,
+            /* red-500 */ #f97316,
+            /* orange-500 */ #eab308,
+            /* yellow-500 */ #f43f5e,
+            /* rose-500 */ #ef4444 /* red-500 to complete the loop */
+          );
+        }
+
+        .animated-border-wrapper-featured {
+          /* Adjustments for the featured card's scale */
+          transform: scale(
+            1
+          ); /* Reset scale here, it's applied to the parent motion.div */
+        }
+
+        /* Keyframe animation for rotating the border */
+        @keyframes rotateBorder {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
+
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+          className="text-center mb-16"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            {t.pricing.title}
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            {t.pricing.subtitle}
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="grid md:grid-cols-3 gap-8"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {/* Basic Plan */}
+          <motion.div variants={fadeInUp} className="h-full">
+            <div className="animated-border-wrapper animated-border-wrapper-featured animated-border-wrapper-basic">
+              <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
+                <CardHeader className="text-center pb-8">
+                  <CardTitle className="text-2xl font-bold">
+                    {t.pricing.plans.basic.name}
+                  </CardTitle>
+                  <CardDescription className="text-lg">
+                    {t.pricing.plans.basic.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-3">
+                    {t.pricing.plans.basic.features.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <CheckCircle className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Button className="w-full">{t.pricing.getStarted}</Button>
+                </CardContent>
+              </Card>
+            </div>
+          </motion.div>
+
+          {/* Professional Plan - Featured */}
+          <motion.div variants={fadeInUp} className="h-full scale-105">
+            <div className="animated-border-wrapper animated-border-wrapper-featured">
+              <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
+                <div className="absolute top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 text-white dark:text-black px-4 py-2 z-32 rounded-full text-sm font-semibold">
+                    {t.pricing.mostPopular}
+                  </span>
+                </div>
+                <CardHeader className="text-center pb-8 pt-8">
+                  <CardTitle className="text-2xl font-bold">
+                    {t.pricing.plans.professional.name}
+                  </CardTitle>
+                  <CardDescription className="text-lg">
+                    {t.pricing.plans.professional.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-3">
+                    {t.pricing.plans.professional.features.map(
+                      (feature, index) => (
+                        <div key={index} className="flex items-center gap-3">
+                          <CheckCircle className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                          <span>{feature}</span>
+                        </div>
+                      )
+                    )}
+                  </div>
+                  <Button className="w-full">{t.pricing.getStarted}</Button>
+                </CardContent>
+              </Card>
+            </div>
+          </motion.div>
+
+          {/* Elite Plan */}
+          <motion.div variants={fadeInUp} className="h-full">
+            <div className="animated-border-wrapper animated-border-wrapper-featured animated-border-wrapper-elite">
+              <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
+                <CardHeader className="text-center pb-8">
+                  <CardTitle className="text-2xl font-bold">
+                    {t.pricing.plans.elite.name}
+                  </CardTitle>
+                  <CardDescription className="text-lg">
+                    {t.pricing.plans.elite.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-3">
+                    {t.pricing.plans.elite.features.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <CheckCircle className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Button className="w-full">{t.pricing.contactSales}</Button>
+                </CardContent>
+              </Card>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
