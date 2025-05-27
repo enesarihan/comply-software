@@ -108,15 +108,15 @@ const translations = {
         title: "Contact Information",
         email: {
           label: "Email",
-          value: "hello@complysoftware.com",
+          value: "complysoftware@gmail.com",
         },
         phone: {
           label: "Phone",
-          value: "+1 (555) 123-4567",
+          value: "+90 (537) 728-5464",
         },
         address: {
           label: "Address",
-          value: "123 Business Ave, Suite 100\nSan Francisco, CA 94105",
+          value: "Izmir/Turkey",
         },
       },
       form: {
@@ -231,15 +231,15 @@ const translations = {
         title: "İletişim Bilgileri",
         email: {
           label: "E-posta",
-          value: "hello@complysoftware.com",
+          value: "complysoftware@gmail.com",
         },
         phone: {
           label: "Telefon",
-          value: "+1 (555) 123-4567",
+          value: "+90 (537) 728-5464",
         },
         address: {
           label: "Adres",
-          value: "123 Business Ave, Suite 100\nSan Francisco, CA 94105",
+          value: "İzmir,Türkiye",
         },
       },
       form: {

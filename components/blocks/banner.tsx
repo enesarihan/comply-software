@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/contexts/language-context";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 const fadeInDown = {
   initial: { opacity: 0, y: -20 },
@@ -21,6 +22,7 @@ const shimmer = {
 };
 
 export default function PromotionalBanner() {
+  const { theme } = useTheme();
   const { t } = useLanguage();
   return (
     <motion.div
@@ -30,7 +32,14 @@ export default function PromotionalBanner() {
       variants={fadeInDown}
     >
       {/* Main gradient banner */}
-      <div className="relative bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 py-1 px-3">
+      <div
+        suppressHydrationWarning
+        className={`relative py-1 px-3 ${
+          theme === "dark"
+            ? "bg-gradient-to-r from-green-800 via-green-600 to-lime-500"
+            : "bg-gradient-to-r from-cyan-200 via-blue-500 to-blue-700"
+        }`}
+      >
         {/* Animated shimmer effect */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
