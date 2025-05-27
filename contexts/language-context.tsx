@@ -21,7 +21,15 @@ const translations = {
       getStarted: "Get Started",
     },
     hero: {
-      title: "Comply Software",
+      title: [
+        "Responsive",
+        "Best Price",
+        "SEO Optimization",
+        "Vision",
+        "Cutting-edge technologhy",
+        "Modern Design",
+      ],
+      mainTitle: `We're building with ❤️ `,
       subtitle:
         "Streamline your compliance processes with cutting-edge software solutions designed for modern businesses",
       getStarted: "Get Started",
@@ -53,7 +61,7 @@ const translations = {
       title: "Choose Your Plan",
       subtitle:
         "Select the perfect compliance solution for your business needs",
-      mostPopular: "Most Popular",
+      mostPopular: "🔥 Sale",
       getStarted: "Get Started",
       contactSales: "Contact Sales",
       plans: {
@@ -136,7 +144,15 @@ const translations = {
       getStarted: "Başlayın",
     },
     hero: {
-      title: "Comply Software",
+      title: [
+        "Responsive",
+        "Ücret",
+        "SEO Optimazsyonu",
+        "Vizyon",
+        "Son Teknolojiler",
+        "Modern Tasarım",
+      ],
+      mainTitle: "Sizin için ❤️ en iyi ",
       subtitle:
         "Modern işletmeler için tasarlanmış son teknoloji yazılım çözümleriyle uyumluluk süreçlerinizi kolaylaştırın",
       getStarted: "Başlayın",
@@ -167,7 +183,7 @@ const translations = {
     pricing: {
       title: "Planınızı Seçin",
       subtitle: "İş ihtiyaçlarınız için mükemmel uyumluluk çözümünü seçin",
-      mostPopular: "En Popüler",
+      mostPopular: "🔥 Süper Fırsat",
       getStarted: "Başlayın",
       contactSales: "Satış İletişim",
       plans: {

@@ -44,8 +44,7 @@ export default function PricingSection() {
           justify-content: center;
           align-items: center;
           background: transparent; /* Ensure background is transparent */
-          box-shadow:
-            0 4px 6px -1px rgb(0 0 0 / 0.1),
+          box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
             0 2px 4px -2px rgb(0 0 0 / 0.1); /* Subtle shadow for depth */
         }
 
@@ -177,7 +176,7 @@ export default function PricingSection() {
           <motion.div variants={fadeInUp} className="h-full scale-105">
             <div className="animated-border-wrapper animated-border-wrapper-featured">
               <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
-                <div className="absolute top-3 left-1/2 transform -translate-x-1/2">
+                <div className="absolute top-3 left-19  transform -translate-x-1/2">
                   <span className="bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 text-white dark:text-black px-4 py-2 z-32 rounded-full text-sm font-semibold">
                     {t.pricing.mostPopular}
                   </span>
