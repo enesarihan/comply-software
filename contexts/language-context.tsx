@@ -145,6 +145,31 @@ const translations = {
     footer: {
       copyright: "© 2024 Comply Software. All rights reserved.",
     },
+    technologies: {
+      title: "Technologies We Use",
+      subtitle: "Modern and reliable solutions",
+      description:
+        "We utilize the following powerful technologies in our projects.",
+      more: "More coming soon...",
+      next: "A full-featured framework built on React",
+      react: "A powerful library for building user interfaces",
+      tailwind: "Utility-first CSS framework for fast UI development",
+      stripe: "Secure and flexible payment infrastructure",
+      supabase: "Open source Firebase alternative",
+      firebase: "Realtime backend and hosting platform",
+      details: {
+        next: "Next.js offers excellent SEO and performance with SSR and static site generation.",
+        react:
+          "React’s component architecture enables scalable and maintainable apps.",
+        tailwind:
+          "Tailwind CSS is perfect for building responsive and customizable UIs.",
+        stripe:
+          "Stripe simplifies global payments with robust and secure APIs.",
+        supabase: "Supabase handles database, auth, and storage effortlessly.",
+        firebase:
+          "Firebase delivers a full backend suite from hosting to push notifications.",
+      },
+    },
   },
   tr: {
     nav: {
@@ -277,6 +302,31 @@ const translations = {
     },
     footer: {
       copyright: "© 2024 Comply Software. Tüm hakları saklıdır.",
+    },
+    technologies: {
+      title: "Kullandığımız Teknolojiler",
+      subtitle: "Modern ve güvenilir çözümler",
+      description: "Projelerimizde aşağıdaki güçlü teknolojileri kullanıyoruz.",
+      more: "Daha fazlası yakında...",
+      next: "React tabanlı tam özellikli framework",
+      react: "Kullanıcı arayüzleri için güçlü bir kütüphane",
+      tailwind: "Hızlı UI geliştirme için utility-first CSS",
+      stripe: "Güvenli ve esnek ödeme altyapısı",
+      supabase: "Açık kaynaklı Firebase alternatifi",
+      firebase: "Gerçek zamanlı backend ve barındırma",
+      details: {
+        next: "Next.js, SSR ve statik site üretimi ile mükemmel SEO ve performans sunar.",
+        react:
+          "React bileşen yapısı ile sürdürülebilir ve ölçeklenebilir projeler oluşturur.",
+        tailwind:
+          "Tailwind CSS, esnek ve özelleştirilebilir UI'lar inşa etmek için idealdir.",
+        stripe:
+          "Stripe, dünya genelinde ödeme almanızı kolaylaştırır ve güvenli hale getirir.",
+        supabase:
+          "Supabase ile veritabanı, auth ve storage işlemleri zahmetsizce halledilir.",
+        firebase:
+          "Firebase, push bildirimden hosting’e kadar eksiksiz bir çözüm sunar.",
+      },
     },
   },
 };

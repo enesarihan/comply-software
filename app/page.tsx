@@ -6,6 +6,7 @@ import Footer from "@/components/screens/Footer";
 import HeroSection from "@/components/screens/Hero";
 import Navbar from "@/components/screens/Navbar";
 import PricingSection from "@/components/screens/Pricing-Section";
+import TechnologiesSection from "@/components/screens/Technologies";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <TechnologiesSection />
       <PricingSection />
       <ContactSection />
       <Footer />
