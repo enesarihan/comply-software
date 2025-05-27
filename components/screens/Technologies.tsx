@@ -168,41 +168,6 @@ const TechnologiesSection = () => {
             );
           })}
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <motion.div
-            className="inline-flex items-center space-x-3 bg-muted border-border rounded-full px-8 py-4 hover:bg-accent transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            <span className="text-sm font-medium text-foreground">
-              {t.technologies.more}
-            </span>
-            <motion.div
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-5 h-5 rounded-full bg-primary flex items-center justify-center"
-            >
-              <motion.span
-                className="text-primary-foreground text-xs font-bold"
-                animate={{ opacity: [1, 0.5, 1] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                →
-              </motion.span>
-            </motion.div>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
