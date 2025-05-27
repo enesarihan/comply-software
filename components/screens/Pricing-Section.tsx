@@ -156,6 +156,12 @@ export default function PricingSection() {
                   <CardDescription className="text-lg">
                     {t.pricing.plans.basic.description}
                   </CardDescription>
+                  <div className="mt-6">
+                    <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                      18.999 TL
+                    </div>
+                    <p className="text-neutral-700">+ Domain and Host</p>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="space-y-3">
@@ -176,7 +182,7 @@ export default function PricingSection() {
           <motion.div variants={fadeInUp} className="h-full scale-105">
             <div className="animated-border-wrapper animated-border-wrapper-featured">
               <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
-                <div className="absolute top-3 left-19  transform -translate-x-1/2">
+                <div className="absolute top-3 left-12  transform -translate-x-1/2">
                   <span className="bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 text-white dark:text-black px-4 py-2 z-32 rounded-full text-sm font-semibold">
                     {t.pricing.mostPopular}
                   </span>
@@ -188,6 +194,19 @@ export default function PricingSection() {
                   <CardDescription className="text-lg">
                     {t.pricing.plans.professional.description}
                   </CardDescription>
+                  <div className="mt-6">
+                    <div className="flex flex-col items-center justify-center gap-3">
+                      <div className="text-2xl font-semibold text-muted-foreground line-through">
+                        41.099 TL
+                      </div>
+                      <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
+                        29.999 TL
+                      </div>
+                    </div>
+                    <div className="inline-block mt-2 px-3 py-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-semibold rounded-full">
+                      37% OFF
+                    </div>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="space-y-3">
@@ -217,6 +236,19 @@ export default function PricingSection() {
                   <CardDescription className="text-lg">
                     {t.pricing.plans.elite.description}
                   </CardDescription>
+                  <div className="mt-6">
+                    <div className="flex flex-col items-center justify-center gap-3">
+                      <div className="text-2xl font-semibold text-muted-foreground line-through">
+                        218.500 TL
+                      </div>
+                      <div className="text-4xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+                        190.000 TL
+                      </div>
+                    </div>
+                    <div className="inline-block mt-2 px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-semibold rounded-full">
+                      15% OFF
+                    </div>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="space-y-3">

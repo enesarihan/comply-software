@@ -19,6 +19,7 @@ const translations = {
       pricing: "Pricing",
       contact: "Contact",
       getStarted: "Get Started",
+      banner: "Huge discounts for a limited time! 🔥🔥",
     },
     hero: {
       title: [
@@ -137,11 +138,12 @@ const translations = {
   },
   tr: {
     nav: {
-      home: "Ana Sayfa",
-      about: "Hakkımızda",
-      pricing: "Fiyatlandırma",
+      home: "Ana sayfa",
+      about: "Hakkında",
+      pricing: "Ücretler",
       contact: "İletişim",
       getStarted: "Başlayın",
+      banner: "Kısa süreliğine dev indirimler! 🔥🔥",
     },
     hero: {
       title: [
@@ -183,7 +185,7 @@ const translations = {
     pricing: {
       title: "Planınızı Seçin",
       subtitle: "İş ihtiyaçlarınız için mükemmel uyumluluk çözümünü seçin",
-      mostPopular: "🔥 Süper Fırsat",
+      mostPopular: "🔥 Fırsat",
       getStarted: "Başlayın",
       contactSales: "Satış İletişim",
       plans: {
