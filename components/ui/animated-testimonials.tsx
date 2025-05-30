@@ -5,12 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/language-context";
+import Link from "next/link";
 
 type Testimonial = {
   quote: string;
   name: string;
   designation: string;
   src: string;
+  url: string;
 };
 
 export const AnimatedTestimonials = ({
@@ -47,6 +50,8 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
 
+  const { t } = useLanguage();
+
   return (
     <div
       className={cn(
@@ -54,6 +59,9 @@ export const AnimatedTestimonials = ({
         className
       )}
     >
+      <div className="flex flex-col -mt-12 mb-12 text-center">
+        <h1 className="font-bold text-4xl">{t.hero.screenTitle}</h1>
+      </div>
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
         <div>
           <div className="relative h-80 w-full">
@@ -61,7 +69,7 @@ export const AnimatedTestimonials = ({
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   suppressHydrationWarning
-                  key={testimonial.src}
+                  key={testimonial.url}
                   initial={{
                     opacity: 0,
                     scale: 0.9,
@@ -90,14 +98,16 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <Image
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={500}
-                    height={500}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center"
-                  />
+                  <Link href={testimonial.url} target="_blank">
+                    <Image
+                      src={testimonial.src}
+                      alt={testimonial.name}
+                      width={500}
+                      height={500}
+                      draggable={false}
+                      className="h-full w-full rounded-3xl object-contain object-center"
+                    />
+                  </Link>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -155,7 +165,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="flex gap-4 pt-12 md:pt-0 mt-2">
             <button
               onClick={handlePrev}
               className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"

@@ -36,6 +36,7 @@ const translations = {
         "Streamline your compliance processes with cutting-edge software solutions designed for modern businesses",
       getStarted: "Get Started",
       learnMore: "Let Us Call You",
+      screenTitle: "Our Masterpieces!",
     },
     about: {
       title: "About Comply Software",
@@ -196,6 +197,7 @@ const translations = {
         "Modern işletmeler için tasarlanmış son teknoloji yazılım çözümleriyle uyumluluk süreçlerinizi kolaylaştırın",
       getStarted: "Başlayın",
       learnMore: "Sizi Arayılım",
+      screenTitle: "Eserler!",
     },
     about: {
       title: "Comply Software Hakkında",
