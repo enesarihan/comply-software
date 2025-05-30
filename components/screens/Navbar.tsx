@@ -9,7 +9,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { ThemeToggle } from "./Theme-toggle";
 import Logo from "../Logo";
 import PromotionalBanner from "../blocks/banner";
-import Link from "next/link";
+import { GetStartedButton } from "../ui/get-started-button";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +20,7 @@ export default function Navbar() {
     { name: t.nav.about, href: "#about" },
     { name: t.nav.pricing, href: "#pricing" },
     { name: t.nav.contact, href: "#contact" },
+    { name: t.nav.faq, href: "#faq" },
   ];
 
   return (
@@ -62,9 +63,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-4">
               <LanguageToggle />
               <ThemeToggle />
-              <Button asChild>
-                <Link href={"#contact"}>{t.nav.getStarted}</Link>
-              </Button>
+              <GetStartedButton />
             </div>
 
             {/* Mobile Menu Button */}

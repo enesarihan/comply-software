@@ -119,7 +119,7 @@ export default function FaqSection() {
   const content = faqData[language];
 
   return (
-    <section className="max-w-3xl mx-auto px-4 py-12">
+    <section id="faq" className="max-w-3xl mx-auto px-4 py-12">
       <motion.h2
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}

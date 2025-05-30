@@ -1,13 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { useLanguage } from "@/contexts/language-context";
 import { Typewriter } from "../ui/typewriter";
 import { AnimatedTestimonialsDemo } from "../blocks/hero-reviews";
-import Link from "next/link";
+
+import { GetStartedButton } from "../ui/get-started-button";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -61,11 +60,7 @@ export default function HeroSection() {
                 className="flex flex-col sm:flex-row gap-4 justify-center"
                 variants={fadeInUp}
               >
-                <Button size="lg" className="text-lg px-8 py-6" asChild>
-                  <Link href={"#contact"}>
-                    {t.hero.learnMore} <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
+                <GetStartedButton />
               </motion.div>
             </motion.div>
           }

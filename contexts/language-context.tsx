@@ -18,7 +18,8 @@ const translations = {
       about: "About",
       pricing: "Pricing",
       contact: "Contact",
-      getStarted: "Get Started",
+      faq: "FAQ",
+      getStarted: "Let Us Call You!",
       banner: "Huge discounts for a limited time! 🔥🔥",
     },
     hero: {
@@ -126,7 +127,7 @@ const translations = {
         },
         address: {
           label: "Address",
-          value: "Izmir/Turkey",
+          value: "Izmir,Turkey",
         },
       },
       form: {
@@ -135,7 +136,7 @@ const translations = {
         firstName: "First Name",
         lastName: "Last Name",
         email: "Email",
-        company: "Company",
+        company: "Company (optional)",
         companyPlaceholder: "Your Company",
         message: "Message",
         messagePlaceholder: "Tell us about your compliance needs...",
@@ -177,7 +178,8 @@ const translations = {
       about: "Hakkında",
       pricing: "Ücretler",
       contact: "İletişim",
-      getStarted: "Başlayın",
+      faq: "SSS",
+      getStarted: "Sizi Arayalım!",
       banner: "Kısa süreliğine dev indirimler! 🔥🔥",
     },
     hero: {
@@ -293,7 +295,7 @@ const translations = {
         firstName: "Ad",
         lastName: "Soyad",
         email: "E-posta",
-        company: "Şirket",
+        company: "Şirket (isteğe bağlı)",
         companyPlaceholder: "Şirketiniz",
         message: "Mesaj",
         messagePlaceholder: "Uyumluluk ihtiyaçlarınız hakkında bize anlatın...",
