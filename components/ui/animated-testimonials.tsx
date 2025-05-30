@@ -60,7 +60,10 @@ export const AnimatedTestimonials = ({
       )}
     >
       <div className="flex flex-col -mt-12 mb-12 text-center">
-        <h1 className="font-bold text-4xl">{t.hero.screenTitle}</h1>
+        <h1 className="font-bold text-4xl mb-2">{t.hero.screenTitle}</h1>
+        <h2 className="text-md font-bold text-neutral-500 dark:text-neutral-700">
+          {t.hero.screenSubTitle}
+        </h2>
       </div>
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
         <div>

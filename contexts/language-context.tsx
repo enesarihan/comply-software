@@ -37,6 +37,7 @@ const translations = {
       getStarted: "Get Started",
       learnMore: "Let Us Call You",
       screenTitle: "Our Masterpieces!",
+      screenSubTitle: "(You can click to the image and go to project.)",
     },
     about: {
       title: "About Comply Software",
@@ -198,6 +199,7 @@ const translations = {
       getStarted: "Başlayın",
       learnMore: "Sizi Arayılım",
       screenTitle: "Eserler!",
+      screenSubTitle: "(Resime tıklayıp projeye gidebilirsiniz.)",
     },
     about: {
       title: "Comply Software Hakkında",
