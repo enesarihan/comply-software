@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { DotIcon, Star, Zap, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 // Assuming useLanguage and t are correctly defined and imported for localization
 import { useLanguage } from "@/contexts/language-context"; // Uncomment if needed
+import { Badge } from "../ui/badge";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -122,7 +123,7 @@ export default function PricingSection() {
         }
       `}</style>
 
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <motion.div
           className="text-center mb-16"
           initial="initial"
@@ -150,6 +151,9 @@ export default function PricingSection() {
             <div className="animated-border-wrapper animated-border-wrapper-featured animated-border-wrapper-basic">
               <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
                 <CardHeader className="text-center pb-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 mb-4 mx-auto shadow-lg">
+                    <Star className="w-8 h-8 text-white" />
+                  </div>
                   <CardTitle className="text-2xl font-bold">
                     {t.pricing.plans.basic.name}
                   </CardTitle>
@@ -167,7 +171,7 @@ export default function PricingSection() {
                   <div className="space-y-3">
                     {t.pricing.plans.basic.features.map((feature, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                        <DotIcon className="min-h-7 min-w-7 text-green-500 dark:text-green-500" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -183,11 +187,14 @@ export default function PricingSection() {
             <div className="animated-border-wrapper animated-border-wrapper-featured">
               <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
                 <div className="absolute top-3 left-12  transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 text-white dark:text-black px-4 py-2 z-32 rounded-full text-sm font-semibold">
+                  <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 text-sm font-semibold shadow-lg">
                     {t.pricing.mostPopular}
-                  </span>
+                  </Badge>
                 </div>
                 <CardHeader className="text-center pb-8 pt-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 mb-4 mx-auto shadow-lg">
+                    <Zap className="w-8 h-8 text-white" />
+                  </div>
                   <CardTitle className="text-2xl font-bold">
                     {t.pricing.plans.professional.name}
                   </CardTitle>
@@ -213,7 +220,7 @@ export default function PricingSection() {
                     {t.pricing.plans.professional.features.map(
                       (feature, index) => (
                         <div key={index} className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                          <DotIcon className="min-h-5 min-w-5 text-gray-600 dark:text-gray-400" />
                           <span>{feature}</span>
                         </div>
                       )
@@ -230,6 +237,9 @@ export default function PricingSection() {
             <div className="animated-border-wrapper animated-border-wrapper-featured animated-border-wrapper-elite">
               <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
                 <CardHeader className="text-center pb-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 mb-4 mx-auto shadow-lg">
+                    <Crown className="w-8 h-8 text-white" />
+                  </div>
                   <CardTitle className="text-2xl font-bold">
                     {t.pricing.plans.elite.name}
                   </CardTitle>
@@ -254,7 +264,7 @@ export default function PricingSection() {
                   <div className="space-y-3">
                     {t.pricing.plans.elite.features.map((feature, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                        <DotIcon className="min-h-5 min-w-5 text-gray-600 dark:text-gray-400" />
                         <span>{feature}</span>
                       </div>
                     ))}

@@ -2,6 +2,7 @@
 
 import AboutSection from "@/components/screens/About";
 import ContactSection from "@/components/screens/Contact";
+import Faq from "@/components/screens/Faq";
 import Footer from "@/components/screens/Footer";
 import HeroSection from "@/components/screens/Hero";
 import Navbar from "@/components/screens/Navbar";
@@ -17,6 +18,7 @@ export default function HomePage() {
       <TechnologiesSection />
       <PricingSection />
       <ContactSection />
+      <Faq />
       <Footer />
     </div>
   );
