@@ -10,6 +10,7 @@ import { ThemeToggle } from "./Theme-toggle";
 import Logo from "../Logo";
 import PromotionalBanner from "../blocks/banner";
 import { GetStartedButton } from "../ui/get-started-button";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,13 @@ export default function Navbar() {
     { name: t.nav.contact, href: "#contact" },
     { name: t.nav.faq, href: "#faq" },
   ];
+
+  const router = useRouter();
+
+  const handleMobileClick = () => {
+    setIsOpen(!isOpen);
+    router.push("#contact");
+  };
 
   return (
     <>
@@ -105,7 +113,9 @@ export default function Navbar() {
                   </a>
                 ))}
                 <div className="pt-4 border-t">
-                  <Button className="w-full">{t.nav.getStarted}</Button>
+                  <Button className="w-full" onClick={handleMobileClick}>
+                    {t.nav.getStarted}
+                  </Button>
                 </div>
               </div>
             </motion.div>

@@ -171,7 +171,7 @@ export default function PricingSection() {
                   <div className="space-y-3">
                     {t.pricing.plans.basic.features.map((feature, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <DotIcon className="min-h-7 min-w-7 text-green-500 dark:text-green-500" />
+                        <DotIcon className="min-h-7 min-w-7 text-green-500" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -220,7 +220,7 @@ export default function PricingSection() {
                     {t.pricing.plans.professional.features.map(
                       (feature, index) => (
                         <div key={index} className="flex items-center gap-3">
-                          <DotIcon className="min-h-5 min-w-5 text-gray-600 dark:text-gray-400" />
+                          <DotIcon className="min-h-7 min-w-7 text-green-500" />
                           <span>{feature}</span>
                         </div>
                       )
@@ -264,7 +264,7 @@ export default function PricingSection() {
                   <div className="space-y-3">
                     {t.pricing.plans.elite.features.map((feature, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <DotIcon className="min-h-5 min-w-5 text-gray-600 dark:text-gray-400" />
+                        <DotIcon className="min-h-7 min-w-7 text-green-500 " />
                         <span>{feature}</span>
                       </div>
                     ))}
