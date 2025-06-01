@@ -37,6 +37,14 @@ const testimonialData = {
     },
     {
       quote:
+        "Kullanıcıların içerik paylaşabileceği bir sosyal medya platformu.Profil yönetimi fonksiyonları barındırır.",
+      name: "sosyalmedya.pro",
+      designation: "Social Media App",
+      url: "https://social-media-project-six.vercel.app",
+      src: "/sosyalmedia-link.png",
+    },
+    {
+      quote:
         "Bu web sitesi, Game Center, bir çocuk eğlence merkezi için canlı ve çekici bir çevrimiçi varlık sunmaktadır. Çocukların çeşitli aktivitelerin tadını çıkarırken çekilen belirgin görüntüleri ile renkli ve davetkar bir tasarıma sahiptir.",
       name: "Oyun Merkezi Web Sitesi",
       designation: "Oyun Merkezi",
@@ -76,6 +84,14 @@ const testimonialData = {
       designation: "Dentist",
       url: "https://dentist-website-seven.vercel.app",
       src: "/dentist-link.png",
+    },
+    {
+      quote:
+        "A social media platform where users can share content. It includes profile management functionalities.",
+      name: "sosyalmedya.pro",
+      designation: "Social Media App",
+      url: "https://social-media-project-six.vercel.app",
+      src: "/sosyalmedia-link.png",
     },
     {
       quote:
