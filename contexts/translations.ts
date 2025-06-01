@@ -17,7 +17,7 @@ export const translations = {
         "Best Price",
         "SEO Optimization",
         "Vision",
-        "Cutting-edge technologhy",
+        "Cutting-edge technology",
         "Modern Design",
       ],
       mainTitle: `We're building 🎯  `,

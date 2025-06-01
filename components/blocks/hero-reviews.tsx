@@ -108,7 +108,7 @@ function AnimatedTestimonialsDemo() {
   const { language } = useLanguage();
   const testimonialsShow = testimonialData[language];
 
-  return <AnimatedTestimonials testimonials={testimonialsShow} />;
+  return <AnimatedTestimonials testimonials={testimonialsShow} autoplay />;
 }
 
 export { AnimatedTestimonialsDemo };

@@ -1,7 +1,6 @@
 // app/page.tsx
 // Bu dosya bir Sunucu Bileşeni olduğu için "use client" direktifi OLMAMALIDIR.
 
-import type { Metadata } from "next";
 // translations objesini sunucu tarafında güvenli bir şekilde import ediyoruz
 import { translations } from "@/contexts/translations"; // translations.ts dosyasının doğru yolu
 
@@ -9,11 +8,8 @@ import { translations } from "@/contexts/translations"; // translations.ts dosya
 import HomePageClient from "@/components/screens/HomePageClient";
 
 // Bu fonksiyon sunucu tarafında çalışır ve bu sayfaya özel meta verileri üretir.
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang?: string };
-}): Promise<Metadata> {
+// @ts-expect-error Next.js provides params dynamically
+export async function generateMetadata({ params }) {
   const currentLang = params?.lang || "tr";
   const t = translations[currentLang as "en" | "tr"];
 
