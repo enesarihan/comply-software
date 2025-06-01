@@ -8,12 +8,13 @@ interface FormData {
   email: string;
   company?: string;
   message: string;
+  phone: string;
 }
 
 export async function POST(req: Request) {
   try {
     const body: FormData = await req.json();
-    const { firstName, lastName, email, company, message } = body;
+    const { firstName, lastName, email, company, message, phone } = body;
 
     if (
       !process.env.EMAIL_USER ||
@@ -46,6 +47,7 @@ export async function POST(req: Request) {
         <p><strong>Ad:</strong> ${firstName}</p>
         <p><strong>Soyad:</strong> ${lastName}</p>
         <p><strong>E-posta:</strong> ${email}</p>
+        <p><strong>İletişim Numarası:</strong> ${phone}</p>
         <p><strong>Şirket:</strong> ${company || "Belirtilmemiş"}</p>
         <p><strong>Mesaj:</strong><br/> ${message.replace(/\n/g, "<br>")}</p>
       `,

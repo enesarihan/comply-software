@@ -31,6 +31,7 @@ interface FormData {
   email: string;
   company?: string;
   message: string;
+  phone: string;
 }
 
 export default function ContactSection() {
@@ -41,6 +42,7 @@ export default function ContactSection() {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     company: "",
     message: "",
   });
@@ -76,6 +78,7 @@ export default function ContactSection() {
           email: "",
           company: "",
           message: "",
+          phone: "",
         });
       } else {
         toast.error(data.message || "Mesaj gönderilirken bir hata oluştu.");
@@ -205,6 +208,17 @@ export default function ContactSection() {
                       type="email"
                       placeholder="john@company.com"
                       value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">{t.contact.form.phone}</Label>
+                    <Input
+                      id="phone"
+                      type="number"
+                      placeholder="+90 (537) 728 54 64"
+                      value={formData.phone}
                       onChange={handleChange}
                       required
                     />
