@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = translations[defaultLang];
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_DEFAULT_URL || "https://www.complysoftware.com";
+    process.env.NEXT_PUBLIC_DEFAULT_URL || "https://www.complysoftware.net/";
   const ogImageUrl =
     process.env.NEXT_PUBLIC_OG_IMAGE_URL || `${baseUrl}/og-image.jpg`;
   const twitterImageUrl =

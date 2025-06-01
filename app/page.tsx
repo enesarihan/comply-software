@@ -18,14 +18,14 @@ export async function generateMetadata({
   const t = translations[currentLang as "en" | "tr"];
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_DEFAULT_URL || "https://www.complysoftware.com";
+    process.env.NEXT_PUBLIC_DEFAULT_URL || "https://www.complysoftware.net";
   const ogImageUrl =
     process.env.NEXT_PUBLIC_OG_IMAGE_URL || `${baseUrl}/og-image.jpg`;
 
   return {
     title: `${t.hero.mainTitle} ${t.hero.title[0]} | Comply Software`,
     description: t.hero.subtitle,
-    keywords: `uyumluluk yazılımı, yazılım çözümleri, kurumsal yazılım, ${t.technologies.react}, ${t.technologies.next}, SEO optimizasyonu, ${t.pricing.plans.professional.name}, ${t.pricing.plans.elite.name}, ${t.nav.home}, ${t.about.title}, ${t.pricing.title}, ${t.contact.title}, ${t.hero.mainTitle}, ${t.hero.subtitle}`,
+    keywords: `uyumluluk yazılımı, yazılım çözümleri, kurumsal yazılım, ${t.technologies.react}, ${t.technologies.next}, SEO optimizasyonu, ${t.pricing.plans.professional.name}, ${t.pricing.plans.elite.name}, ${t.nav.home}, ${t.about.title}, ${t.pricing.title}, ${t.contact.title}, ${t.hero.mainTitle}, ${t.hero.subtitle},Enes SARIHAN,Aypars Çelik`,
     openGraph: {
       title: `${t.hero.mainTitle} ${t.hero.title[0]} | Comply Software`,
       description: t.hero.subtitle,
