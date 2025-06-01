@@ -177,7 +177,7 @@ export const translations = {
     hero: {
       title: [
         "Responsive Tasarım",
-        "Ücret Fırsatları",
+        "Ücret ",
         "SEO Optimizasyonu",
         "Vizyon",
         "Son Teknolojiler",

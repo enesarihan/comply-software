@@ -3,10 +3,5 @@
 User-agent: *
 Allow: /
 
-# Tarayıcıların sitenizin tüm bölümlerini taramasına izin verir.
-# Eğer bazı sayfaların taranmasını istemiyorsan, "Disallow" kullanabilirsin:
-# Disallow: /admin/
-# Disallow: /private-pages/
 
-Sitemap: https://www.complysoftware.com/sitemap.xml
-# Yukarıdaki URL'i kendi alan adın ve sitemap dosyanın doğru yolu ile değiştir.
+Sitemap: https://www.complysoftware.net/sitemap.xml
