@@ -1,25 +1,58 @@
-"use client";
+// app/page.tsx
+// Bu dosya bir Sunucu Bileşeni olduğu için "use client" direktifi OLMAMALIDIR.
 
-import AboutSection from "@/components/screens/About";
-import ContactSection from "@/components/screens/Contact";
-import Faq from "@/components/screens/Faq";
-import Footer from "@/components/screens/Footer";
-import HeroSection from "@/components/screens/Hero";
-import Navbar from "@/components/screens/Navbar";
-import PricingSection from "@/components/screens/Pricing-Section";
-import TechnologiesSection from "@/components/screens/Technologies";
+import type { Metadata } from "next";
+// translations objesini sunucu tarafında güvenli bir şekilde import ediyoruz
+import { translations } from "@/contexts/translations"; // translations.ts dosyasının doğru yolu
+
+// Ana sayfa içeriğini barındıran istemci bileşenini import ediyoruz
+import HomePageClient from "@/components/screens/HomePageClient";
+
+// Bu fonksiyon sunucu tarafında çalışır ve bu sayfaya özel meta verileri üretir.
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang?: string };
+}): Promise<Metadata> {
+  const currentLang = params?.lang || "tr";
+  const t = translations[currentLang as "en" | "tr"];
+
+  const baseUrl =
+    process.env.NEXT_PUBLIC_DEFAULT_URL || "https://www.complysoftware.com";
+  const ogImageUrl =
+    process.env.NEXT_PUBLIC_OG_IMAGE_URL || `${baseUrl}/og-image.jpg`;
+
+  return {
+    title: `${t.hero.mainTitle} ${t.hero.title[0]} | Comply Software`,
+    description: t.hero.subtitle,
+    keywords: `uyumluluk yazılımı, yazılım çözümleri, kurumsal yazılım, ${t.technologies.react}, ${t.technologies.next}, SEO optimizasyonu, ${t.pricing.plans.professional.name}, ${t.pricing.plans.elite.name}, ${t.nav.home}, ${t.about.title}, ${t.pricing.title}, ${t.contact.title}, ${t.hero.mainTitle}, ${t.hero.subtitle}`,
+    openGraph: {
+      title: `${t.hero.mainTitle} ${t.hero.title[0]} | Comply Software`,
+      description: t.hero.subtitle,
+      url: baseUrl,
+      siteName: "Comply Software",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${t.hero.mainTitle} ${t.hero.title[0]}`,
+        },
+      ],
+      locale: currentLang === "tr" ? "tr_TR" : "en_US",
+      type: "website",
+    },
+    alternates: {
+      canonical: baseUrl,
+      languages: {
+        "en-US": `${baseUrl}/en`,
+        "tr-TR": `${baseUrl}/tr`,
+        "x-default": `${baseUrl}/tr`,
+      },
+    },
+  };
+}
 
 export default function HomePage() {
-  return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <TechnologiesSection />
-      <PricingSection />
-      <ContactSection />
-      <Faq />
-      <Footer />
-    </div>
-  );
+  return <HomePageClient />;
 }
