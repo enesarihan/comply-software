@@ -1,3 +1,5 @@
+// contexts/translations.ts (GÜNCELLENMİŞ VERSİYON)
+
 export type Language = "en" | "tr";
 
 export const translations = {
@@ -7,12 +9,13 @@ export const translations = {
       about: "About",
       pricing: "Pricing",
       contact: "Contact",
-      faq: "FAQ",
+      faq: "FAQ", // Bu artık sadece bir başlık veya genel kelime
       getStarted: "Let Us Call You!",
       banner: "Huge discounts for a limited time! 🔥🔥",
     },
     hero: {
       title: [
+        "Software Solutions",
         "Responsive Design",
         "Best Price",
         "SEO Optimization",
@@ -163,6 +166,37 @@ export const translations = {
           "Firebase delivers a full backend suite from hosting to push notifications.",
       },
     },
+    // GÜNCELLENEN FAQ BÖLÜMÜ
+    faq: {
+      title: "Frequently Asked Questions",
+      questions: [
+        {
+          question: "How long does it take to build a website?",
+          answer:
+            "The duration varies based on the project's complexity. A basic single-page website can be ready in 1-2 weeks, while larger, more complex projects might take 4-8 weeks or more. We provide a detailed timeline after understanding your needs.",
+        },
+        {
+          question: "Do you offer post-launch support?",
+          answer:
+            "Yes, we offer various support packages, including technical assistance, updates, and maintenance. Our Professional and Elite plans include 1-2 years of free technical support.",
+        },
+        {
+          question: "Can I manage the content of my website myself?",
+          answer:
+            "Absolutely! Our Elite plan includes a powerful Admin Panel that allows you to easily manage and update your website's content without any coding knowledge.",
+        },
+        {
+          question: "Is my website mobile-friendly?",
+          answer:
+            "All websites we develop are designed with a fully responsive approach, ensuring they look and function perfectly on desktops, tablets, and mobile phones.",
+        },
+        {
+          question: "What is the cost of a website?",
+          answer:
+            "Website costs vary depending on features, design, and complexity. We offer transparent pricing with Basic, Professional, and Elite plans. Please review our 'Pricing' section for detailed information or contact us for a custom quote.",
+        },
+      ],
+    },
   },
   tr: {
     nav: {
@@ -170,12 +204,13 @@ export const translations = {
       about: "Hakkında",
       pricing: "Ücretler",
       contact: "İletişim",
-      faq: "SSS",
+      faq: "SSS", // Bu artık sadece bir başlık veya genel kelime
       getStarted: "Sizi Arayalım!",
       banner: "Kısa süreliğine dev indirimler! 🔥🔥",
     },
     hero: {
       title: [
+        "Yazılım Çözümleri",
         "Responsive Tasarım",
         "Ücret ",
         "SEO Optimizasyonu",
@@ -187,7 +222,7 @@ export const translations = {
       subtitle:
         "Modern işletmeler için tasarlanmış son teknoloji yazılım çözümleriyle uyumluluk süreçlerinizi kolaylaştırın",
       getStarted: "Başlayın",
-      learnMore: "Sizi Arayılım",
+      learnMore: "Sizi Arayalım",
       screenTitle: "Eserler!",
       screenSubTitle: "(Resime tıklayıp projeye gidebilirsiniz.)",
     },
@@ -324,6 +359,38 @@ export const translations = {
         firebase:
           "Firebase, push bildirimden hosting’e kadar eksiksiz bir çözüm sunar.",
       },
+    },
+    // GÜNCELLENEN FAQ BÖLÜMÜ
+    faq: {
+      title: "Sıkça Sorulan Sorular",
+      questions: [
+        {
+          question: "Web sitesi yapımı ne kadar sürer?",
+          answer:
+            "Süre, projenin karmaşıklığına göre değişir. Temel tek sayfalık bir web sitesi 1-2 haftada hazır olabilirken, daha büyük ve karmaşık projeler 4-8 hafta veya daha uzun sürebilir. İhtiyaçlarınızı anladıktan sonra detaylı bir zaman çizelgesi sunarız.",
+        },
+        {
+          question:
+            "Web sitesi yayına alındıktan sonra destek sağlıyor musunuz?",
+          answer:
+            "Evet, teknik yardım, güncellemeler ve bakım dahil olmak üzere çeşitli destek paketleri sunuyoruz. Profesyonel ve Elite planlarımız 1-2 yıl ücretsiz teknik destek içerir.",
+        },
+        {
+          question: "Web sitemin içeriğini kendim yönetebilir miyim?",
+          answer:
+            "Kesinlikle! Elite planımız, web sitenizin içeriğini hiçbir kodlama bilgisine ihtiyaç duymadan kolayca yönetmenizi ve güncellemenizi sağlayan güçlü bir Yönetici Paneli içerir.",
+        },
+        {
+          question: "Web sitem mobil uyumlu mu?",
+          answer:
+            "Geliştirdiğimiz tüm web siteleri tamamen duyarlı bir yaklaşımla tasarlanır ve masaüstü, tablet ve cep telefonlarında mükemmel görünmesini ve işlevselliğini sağlar.",
+        },
+        {
+          question: "Bir web sitesinin maliyeti nedir?",
+          answer:
+            "Web sitesi maliyetleri özelliklere, tasarıma ve karmaşıklığa göre değişir. Temel, Profesyonel ve Elite planlarımızla şeffaf fiyatlandırma sunuyoruz. Detaylı bilgi için lütfen 'Ücretler' bölümümüzü inceleyin veya özel bir teklif için bizimle iletişime geçin.",
+        },
+      ],
     },
   },
 };

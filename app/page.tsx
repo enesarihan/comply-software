@@ -1,13 +1,7 @@
-// app/page.tsx
-// Bu dosya bir Sunucu Bileşeni olduğu için "use client" direktifi OLMAMALIDIR.
+import { translations } from "@/contexts/translations";
 
-// translations objesini sunucu tarafında güvenli bir şekilde import ediyoruz
-import { translations } from "@/contexts/translations"; // translations.ts dosyasının doğru yolu
-
-// Ana sayfa içeriğini barındıran istemci bileşenini import ediyoruz
 import HomePageClient from "@/components/screens/HomePageClient";
 
-// Bu fonksiyon sunucu tarafında çalışır ve bu sayfaya özel meta verileri üretir.
 // @ts-expect-error Next.js provides params dynamically
 export async function generateMetadata({ params }) {
   const currentLang = params?.lang || "tr";
@@ -18,13 +12,34 @@ export async function generateMetadata({ params }) {
   const ogImageUrl =
     process.env.NEXT_PUBLIC_OG_IMAGE_URL || `${baseUrl}/og-image.jpg`;
 
+  const twitterImageUrl =
+    process.env.NEXT_PUBLIC_TWITTER_IMAGE_URL || `${baseUrl}/twitter-image.jpg`;
+
   return {
-    title: `${t.hero.mainTitle} ${t.hero.title[0]} | Comply Software`,
-    description: t.hero.subtitle,
-    keywords: `uyumluluk yazılımı, yazılım çözümleri, kurumsal yazılım, ${t.technologies.react}, ${t.technologies.next}, SEO optimizasyonu, ${t.pricing.plans.professional.name}, ${t.pricing.plans.elite.name}, ${t.nav.home}, ${t.about.title}, ${t.pricing.title}, ${t.contact.title}, ${t.hero.mainTitle}, ${t.hero.subtitle},Enes SARIHAN,Aypars Çelik`,
+    title: `Comply Software | ${t.hero.mainTitle} ${t.hero.title[0]} | Modern Web Sitesi Çözümleri`,
+
+    description: `${t.hero.subtitle} Modern, responsive ve SEO dostu web siteleri tasarlıyor, işletmelerin dijital varlığını güçlendiriyoruz. Kurumsal kimliğinize özel çözümlerimizle hemen tanışın!`,
+
+    keywords: `
+      modern web sitesi, kurumsal web tasarım, responsive web sitesi, SEO uyumlu site,
+      web geliştirme, dijital çözüm, özel yazılım, e-ticaret sitesi,
+      admin panelli web sitesi, kullanıcı dostu arayüz, profesyonel web tasarım,
+      ${t.technologies.react}, ${t.technologies.next}, ${t.technologies.tailwind},
+      ${t.pricing.plans.professional.name}, ${t.pricing.plans.elite.name},
+      uyumluluk yazılımı, yazılım çözümleri, kurumsal yazılım,
+      ${t.nav.home}, ${t.about.title}, ${t.pricing.title}, ${t.contact.title},
+      ${t.hero.mainTitle}, ${t.hero.subtitle},
+      web sitesi yapımı, uygun fiyatlı web sitesi, güvenli ödeme sistemleri,
+      yaratıcı web tasarım, kullanıcı deneyimi, UX/UI, hızlı web sitesi
+    `,
+
+    authors: [{ name: "Comply Software Team" }],
+    creator: "Comply Software",
+    publisher: "Comply Software",
+
     openGraph: {
-      title: `${t.hero.mainTitle} ${t.hero.title[0]} | Comply Software`,
-      description: t.hero.subtitle,
+      title: `Comply Software | ${t.hero.mainTitle} ${t.hero.title[0]} | Modern Web Sitesi Çözümleri`,
+      description: `${t.hero.subtitle} Modern, responsive ve SEO dostu web siteleri tasarlıyor, işletmelerin dijital varlığını güçlendiriyoruz. Kurumsal kimliğinize özel çözümlerimizle hemen tanışın!`,
       url: baseUrl,
       siteName: "Comply Software",
       images: [
@@ -32,19 +47,19 @@ export async function generateMetadata({ params }) {
           url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: `${t.hero.mainTitle} ${t.hero.title[0]}`,
+          alt: `Comply Software | ${t.hero.mainTitle} ${t.hero.title[0]} | Modern Web Siteleri`,
         },
       ],
       locale: currentLang === "tr" ? "tr_TR" : "en_US",
       type: "website",
     },
-    alternates: {
-      canonical: baseUrl,
-      languages: {
-        "en-US": `${baseUrl}/en`,
-        "tr-TR": `${baseUrl}/tr`,
-        "x-default": `${baseUrl}/tr`,
-      },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `Comply Software | ${t.hero.mainTitle} ${t.hero.title[0]} | Modern Web Sitesi Çözümleri`,
+      description: `${t.hero.subtitle} Modern, responsive ve SEO dostu web siteleri tasarlıyor, işletmelerin dijital varlığını güçlendiriyoruz. Kurumsal kimliğinize özel çözümlerimizle hemen tanışın!`,
+      creator: "@ComplySoftware",
+      images: [twitterImageUrl],
     },
   };
 }
