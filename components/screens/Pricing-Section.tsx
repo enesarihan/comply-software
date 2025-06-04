@@ -13,6 +13,7 @@ import {
 // Assuming useLanguage and t are correctly defined and imported for localization
 import { useLanguage } from "@/contexts/language-context"; // Uncomment if needed
 import { Badge } from "../ui/badge";
+import { useRouter } from "next/navigation";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -30,7 +31,11 @@ const staggerContainer = {
 
 export default function PricingSection() {
   const { t } = useLanguage();
+  const router = useRouter();
 
+  const onClickRedirect = () => {
+    router.push("#contact");
+  };
   return (
     <section id="pricing" className="py-20 px-4 font-sans">
       {/* Custom CSS for the animated border */}
@@ -176,7 +181,9 @@ export default function PricingSection() {
                       </div>
                     ))}
                   </div>
-                  <Button className="w-full">{t.pricing.getStarted}</Button>
+                  <Button className="w-full" onClick={onClickRedirect}>
+                    {t.pricing.contactSales}
+                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -226,7 +233,9 @@ export default function PricingSection() {
                       )
                     )}
                   </div>
-                  <Button className="w-full">{t.pricing.getStarted}</Button>
+                  <Button className="w-full" onClick={onClickRedirect}>
+                    {t.pricing.contactSales}
+                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -269,7 +278,9 @@ export default function PricingSection() {
                       </div>
                     ))}
                   </div>
-                  <Button className="w-full">{t.pricing.contactSales}</Button>
+                  <Button className="w-full" onClick={onClickRedirect}>
+                    {t.pricing.contactSales}
+                  </Button>
                 </CardContent>
               </Card>
             </div>

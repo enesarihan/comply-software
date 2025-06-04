@@ -9,7 +9,7 @@ export const translations = {
       about: "About",
       pricing: "Pricing",
       contact: "Contact",
-      faq: "FAQ", // Bu artık sadece bir başlık veya genel kelime
+      faq: "FAQ",
       getStarted: "Let Us Call You!",
       banner: "Huge discounts for a limited time! 🔥🔥",
     },
@@ -117,7 +117,7 @@ export const translations = {
         },
         phone: {
           label: "Phone",
-          value: "+90 (537) 728-5464",
+          value: "+90 (552) 584-5941",
         },
         address: {
           label: "Address",
@@ -311,7 +311,7 @@ export const translations = {
         },
         phone: {
           label: "Telefon",
-          value: "+90 (537) 728-5464",
+          value: "+90 (552) 584-5941",
         },
         address: {
           label: "Adres",
