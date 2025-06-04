@@ -18,6 +18,8 @@ import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
+import { BsLinkedin } from "react-icons/bs";
+import { IconSocial } from "@tabler/icons-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -156,6 +158,16 @@ export default function ContactSection() {
                     <p className="text-muted-foreground">
                       {t.contact.info.address.value}
                     </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <IconSocial className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+                  <div>
+                    <Link
+                      href={"https://www.linkedin.com/company/comply-software"}
+                    >
+                      <BsLinkedin className="h-8 w-8 text-gray-700 dark:text-gray-300" />
+                    </Link>
                   </div>
                 </div>
               </div>

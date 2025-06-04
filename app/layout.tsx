@@ -116,7 +116,7 @@ export default function RootLayout({
     sameAs: [
       // Sosyal medya linkleriniz varsa buraya ekleyin.
       "https://twitter.com/ComplySoftware", // Örnek Twitter linki
-      "https://linkedin.com/company/ComplySoftware", // Örnek LinkedIn linki
+      "https://www.linkedin.com/company/comply-software", // Örnek LinkedIn linki
       // "https://facebook.com/ComplySoftware",
       // "https://instagram.com/ComplySoftware",
     ],

@@ -8,6 +8,7 @@ import HeroSection from "@/components/screens/Hero";
 import Navbar from "@/components/screens/Navbar";
 import PricingSection from "@/components/screens/Pricing-Section";
 import TechnologiesSection from "@/components/screens/Technologies";
+import WhatsAppLink from "../blocks/whatsapp";
 
 export default function HomePageClient() {
   return (
@@ -20,6 +21,9 @@ export default function HomePageClient() {
       <ContactSection />
       <Faq />
       <Footer />
+      <div className="fixed bottom-4 right-4 z-50">
+        <WhatsAppLink phoneNumber="905525845941" />
+      </div>
     </div>
   );
 }
