@@ -29,6 +29,14 @@ const testimonialData = {
     },
     {
       quote:
+        "lawyer-prototype.vercel.app, modern bir hukuk bürosu veya avukatın hizmetlerini ve iletişim bilgilerini sergilemek üzere tasarlanmış bir web sitesi prototipidir. Site, avukatın uzmanlık alanlarını (boşanma, ceza, miras hukuku vb.), blog yazılarını ve randevu alma imkanı sunan bir iletişim formunu içeriyor. Kullanıcı dostu bir arayüze ve mobil uyumluluğa sahip olduğu görülüyor.",
+      name: "Avukat Prototipi",
+      designation: "Avukat Websitesi",
+      url: "https://lawyer-prototype.vercel.app/",
+      src: "/lawyer-link.png",
+    },
+    {
+      quote:
         "Bu web sitesi, modern ve kullanıcı dostu bir tasarıma sahip, Türkiye'deki bir diş kliniğini tanıtmaktadır. Temiz düzeni ve sezgisel navigasyonu, ziyaretçilerin genel ve kozmetik diş hekimliğinden özel tedavilere kadar sunulan diş hizmetleri yelpazesini kolayca keşfetmelerini sağlar.",
       name: "Diş Hekimi Web Sitesi",
       designation: "Diş Hekimi",
@@ -76,6 +84,14 @@ const testimonialData = {
       designation: "House Rental Platform",
       url: "https://property-quest-psi.vercel.app",
       src: "/propertyquest-link.png",
+    },
+    {
+      quote:
+        "The website lawyer-prototype.vercel.app is a modern web prototype designed to showcase the services and contact information of a law firm or an individual lawyer. It highlights the lawyer's areas of expertise, such as divorce, criminal, and inheritance law, alongside a blog and a dedicated contact form for appointment booking. The site appears to feature a user-friendly interface and mobile responsiveness.",
+      name: "Lawyer Prototype",
+      designation: "Lawyer Website",
+      url: "https://lawyer-prototype.vercel.app/",
+      src: "/lawyer-link.png",
     },
     {
       quote:
