@@ -139,7 +139,11 @@ export const translations = {
       },
     },
     footer: {
-      copyright: "© 2024 Comply Software. All rights reserved.",
+      copyright: "© 2025 Comply Software. All Rights Reserved.",
+      quickLinks: "Quick Links",
+      contactUs: "Contact Us",
+      email: "Email",
+      phone: "Phone",
     },
     technologies: {
       title: "Technologies We Use",
@@ -333,7 +337,11 @@ export const translations = {
       },
     },
     footer: {
-      copyright: "© 2024 Comply Software. Tüm hakları saklıdır.",
+      copyright: "© 2025 Comply Software. Tüm Hakları Saklıdır.",
+      quickLinks: "Hızlı Linkler",
+      contactUs: "Bize Ulaşın",
+      email: "E-posta",
+      phone: "Telefon",
     },
     technologies: {
       title: "Kullandığımız Teknolojiler",

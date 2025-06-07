@@ -211,10 +211,10 @@ export default function PricingSection() {
                   <div className="mt-6">
                     <div className="flex flex-col items-center justify-center gap-3">
                       <div className="text-2xl font-semibold text-muted-foreground line-through">
-                        41.099 TL
+                        43.899 TL
                       </div>
                       <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-                        29.999 TL
+                        31.999 TL
                       </div>
                     </div>
                     <div className="inline-block mt-2 px-3 py-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-semibold rounded-full">

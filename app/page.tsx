@@ -30,7 +30,8 @@ export async function generateMetadata({ params }) {
       ${t.nav.home}, ${t.about.title}, ${t.pricing.title}, ${t.contact.title},
       ${t.hero.mainTitle}, ${t.hero.subtitle},
       web sitesi yapımı, uygun fiyatlı web sitesi, güvenli ödeme sistemleri,
-      yaratıcı web tasarım, kullanıcı deneyimi, UX/UI, hızlı web sitesi
+      yaratıcı web tasarım, kullanıcı deneyimi, UX/UI, hızlı web sitesi,izmir,Izmir Yazılım,
+      Comply,izmir yazılım şirketleri,web sitesi satın al,
     `,
 
     authors: [{ name: "Comply Software Team" }],

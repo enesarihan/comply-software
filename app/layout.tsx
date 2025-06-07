@@ -38,7 +38,8 @@ export async function generateMetadata(): Promise<Metadata> {
       uyumluluk yazılımı, yazılım çözümleri, kurumsal yazılım,
       ${t.nav.home}, ${t.about.title}, ${t.pricing.title}, ${t.contact.title},
       ${t.hero.mainTitle}, ${t.hero.subtitle},
-      web sitesi yapımı, uygun fiyatlı web sitesi, güvenli ödeme sistemleri
+      web sitesi yapımı, uygun fiyatlı web sitesi, güvenli ödeme sistemleri,izmir,Izmir Yazılım,
+      Comply,izmir yazılım şirketleri,web sitesi satın al,
     `,
 
     authors: [{ name: "Comply Software Team" }],

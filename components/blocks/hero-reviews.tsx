@@ -45,6 +45,14 @@ const testimonialData = {
     },
     {
       quote:
+        "Vet-Reserve web siteniz, modern ve kullanıcı odaklı bir yaklaşımla tasarlanmış. Temiz ve düzenli yerleşimi, ziyaretçilerin aradıkları özelliklere kolayca ulaşmasını sağlıyor. Renk paleti ve görsel öğeler, evcil hayvan sahiplerine güven veren sıcak ve profesyonel bir atmosfer yaratıyor. Genel olarak, sitenin fonksiyonellik ve estetiği dengeleyerek pozitif bir kullanıcı deneyimi sunmayı hedeflediği anlaşılıyor.",
+      name: "Veteriner Web Sitesi",
+      designation: "Veteriner",
+      url: "https://vet-reserve-website.vercel.app/",
+      src: "/vet-link.png",
+    },
+    {
+      quote:
         "Kullanıcıların içerik paylaşabileceği bir sosyal medya platformu.Profil yönetimi fonksiyonları barındırır.",
       name: "sosyalmedya.pro",
       designation: "Social Media App",
@@ -100,6 +108,14 @@ const testimonialData = {
       designation: "Dentist",
       url: "https://dentist-website-seven.vercel.app",
       src: "/dentist-link.png",
+    },
+    {
+      quote:
+        "Your Vet-Reserve website appears to be designed with a modern, user-centric approach. Its clean and organized layout ensures visitors can easily find the features they're looking for. The color palette and visual elements create a warm and professional atmosphere, instilling trust in pet owners. Overall, the site seems to aim for a positive user experience by balancing functionality with aesthetics.",
+      name: "Vet Web Site",
+      designation: "Vet",
+      url: "https://vet-reserve-website.vercel.app/",
+      src: "/vet-link.png",
     },
     {
       quote:
