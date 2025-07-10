@@ -5,12 +5,20 @@ const baseUrl =
   process.env.NEXT_PUBLIC_DEFAULT_URL || "https://www.complysoftware.net";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // ...existing code...
+  // Add main blog page
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "daily", // Günlük olarak değişir
       priority: 1, // En yüksek öncelik
+    },
+    {
+      url: `${baseUrl}/blog`, // Blog ana sayfası
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/#about`, // Hakkımızda bölümü
