@@ -25,7 +25,7 @@ export const translations = {
       ],
       mainTitle: `We're building 🎯  `,
       subtitle:
-        "Streamline your compliance processes with cutting-edge software solutions designed for modern businesses",
+        "Streamline your compliance processes with cutting-edge software solutions designed for modern businesses.",
       getStarted: "Get Started",
       learnMore: "Let Us Call You",
       screenTitle: "Our Masterpieces!",
@@ -34,29 +34,59 @@ export const translations = {
     about: {
       title: "About Comply Software",
       subtitle:
-        "We're dedicated to revolutionizing compliance management through innovative technology and user-centric design",
+        "We're dedicated to revolutionizing compliance management through innovative technology and user-centric design.",
       features: {
         secure: {
           title: "Secure & Reliable",
           description:
-            "Enterprise-grade security with 99.9% uptime guarantee to keep your compliance data safe and accessible",
+            "Enterprise-grade security with 99.9% uptime guarantee to keep your compliance data safe and accessible.",
         },
         expert: {
           title: "Expert Team",
           description:
-            "Our team of compliance experts and software engineers work together to deliver exceptional solutions",
+            "Our team of compliance experts and software engineers work together to deliver exceptional solutions.",
         },
         innovation: {
           title: "Innovation First",
           description:
-            "Cutting-edge technology and continuous innovation to stay ahead of compliance requirements",
+            "Cutting-edge technology and continuous innovation to stay ahead of compliance requirements.",
+        },
+        seo: {
+          title: "SEO Optimization",
+          description:
+            "Boost your online visibility and attract more customers with advanced SEO strategies built into every website.",
+        },
+        performance: {
+          title: "Lightning Fast Performance",
+          description:
+            "Enjoy blazing fast load times and smooth user experience, optimized for all devices and search engines.",
+        },
+        support: {
+          title: "24/7 Support",
+          description:
+            "Get round-the-clock technical support and guidance whenever you need it, so your business never stops.",
+        },
+        customization: {
+          title: "Customizable Solutions",
+          description:
+            "Tailor your website to your unique business needs with flexible and scalable design options.",
+        },
+        mobile: {
+          title: "Mobile Friendly",
+          description:
+            "Your website will look and work perfectly on all devices, ensuring a seamless experience for every visitor.",
+        },
+        analytics: {
+          title: "Analytics & Insights",
+          description:
+            "Track your website's performance and user behavior with integrated analytics for data-driven business growth.",
         },
       },
     },
     pricing: {
       title: "Choose Your Plan",
       subtitle:
-        "Select the most suitable software solution for your business needs",
+        "Select the most suitable software solution for your business needs.",
       mostPopular: "🔥 Best Seller",
       getStarted: "Get Started",
       contactSales: "Contact Sales",
@@ -108,7 +138,7 @@ export const translations = {
     contact: {
       title: "Get In Touch",
       subtitle:
-        "Ready to transform your compliance processes? Let's discuss how we can help your business",
+        "Ready to transform your compliance processes? Let's discuss how we can help your business.",
       info: {
         title: "Contact Information",
         email: {
@@ -121,12 +151,12 @@ export const translations = {
         },
         address: {
           label: "Address",
-          value: "Izmir,Turkey",
+          value: "Izmir, Turkey",
         },
       },
       form: {
         title: "Send us a message",
-        subtitle: "We'll get back to you within 24 hours",
+        subtitle: "We'll get back to you within 24 hours.",
         firstName: "First Name",
         lastName: "Last Name",
         email: "Email",
@@ -136,6 +166,22 @@ export const translations = {
         message: "Message",
         messagePlaceholder: "Tell us about your compliance needs...",
         send: "Send Message",
+        success: "Your message has been sent successfully!",
+        errors: {
+          formInvalid: "Please fix the errors in the form.",
+          firstNameRequired: "First name is required.",
+          firstNameMinLength: "First name must be at least 2 characters.",
+          lastNameRequired: "Last name is required.",
+          lastNameMinLength: "Last name must be at least 2 characters.",
+          emailRequired: "Email is required.",
+          emailInvalid: "Please enter a valid email address.",
+          phoneRequired: "Phone number is required.",
+          phoneInvalid: "Please enter a valid phone number.",
+          messageRequired: "Message is required.",
+          messageMinLength: "Message must be at least 10 characters.",
+          submitError: "An error occurred while sending the message.",
+          networkError: "Network error. Please try again.",
+        },
       },
     },
     footer: {
@@ -160,7 +206,7 @@ export const translations = {
       details: {
         next: "Next.js offers excellent SEO and performance with SSR and static site generation.",
         react:
-          "React’s component architecture enables scalable and maintainable apps.",
+          "React's component architecture enables scalable and maintainable apps.",
         tailwind:
           "Tailwind CSS is perfect for building responsive and customizable UIs.",
         stripe:
@@ -208,7 +254,7 @@ export const translations = {
       about: "Hakkında",
       pricing: "Ücretler",
       contact: "İletişim",
-      faq: "SSS", // Bu artık sadece bir başlık veya genel kelime
+      faq: "SSS",
       getStarted: "Sizi Arayalım!",
       banner: "Kısa süreliğine dev indirimler! 🔥🔥",
     },
@@ -216,7 +262,7 @@ export const translations = {
       title: [
         "Yazılım Çözümleri",
         "Responsive Tasarım",
-        "Ücret ",
+        "En İyi Fiyat",
         "SEO Optimizasyonu",
         "Vizyon",
         "Son Teknolojiler",
@@ -224,37 +270,67 @@ export const translations = {
       ],
       mainTitle: "Sizin için en iyi 🎯 ",
       subtitle:
-        "Modern işletmeler için tasarlanmış son teknoloji yazılım çözümleriyle uyumluluk süreçlerinizi kolaylaştırın",
+        "Modern işletmeler için tasarlanmış son teknoloji yazılım çözümleriyle uyumluluk süreçlerinizi kolaylaştırın.",
       getStarted: "Başlayın",
       learnMore: "Sizi Arayalım",
-      screenTitle: "Eserler!",
-      screenSubTitle: "(Resime tıklayıp projeye gidebilirsiniz.)",
+      screenTitle: "Eserlerimiz!",
+      screenSubTitle: "(Resme tıklayıp projeye gidebilirsiniz.)",
     },
     about: {
       title: "Comply Software Hakkında",
       subtitle:
-        "Yenilikçi teknoloji ve kullanıcı odaklı tasarım ile uyumluluk yönetiminde devrim yaratmaya kendimizi adadık",
+        "Yenilikçi teknoloji ve kullanıcı odaklı tasarım ile uyumluluk yönetiminde devrim yaratmaya kendimizi adadık.",
       features: {
         secure: {
           title: "Güvenli ve Güvenilir",
           description:
-            "Uyumluluk verilerinizi güvenli ve erişilebilir tutmak için %99.9 çalışma süresi garantisi ile kurumsal düzeyde güvenlik",
+            "Uyumluluk verilerinizi güvenli ve erişilebilir tutmak için %99.9 çalışma süresi garantisi ile kurumsal düzeyde güvenlik.",
         },
         expert: {
           title: "Uzman Ekip",
           description:
-            "Uyumluluk uzmanları ve yazılım mühendislerinden oluşan ekibimiz olağanüstü çözümler sunmak için birlikte çalışır",
+            "Uyumluluk uzmanları ve yazılım mühendislerinden oluşan ekibimiz olağanüstü çözümler sunmak için birlikte çalışır.",
         },
         innovation: {
           title: "Önce İnovasyon",
           description:
-            "Uyumluluk gereksinimlerinin önünde kalmak için son teknoloji ve sürekli inovasyon",
+            "Uyumluluk gereksinimlerinin önünde kalmak için son teknoloji ve sürekli inovasyon.",
+        },
+        seo: {
+          title: "SEO Optimizasyonu",
+          description:
+            "Her web sitesine entegre gelişmiş SEO stratejileriyle dijital görünürlüğünüzü artırın, daha fazla müşteri çekin.",
+        },
+        performance: {
+          title: "Yıldırım Hızında Performans",
+          description:
+            "Tüm cihazlar ve arama motorları için optimize edilmiş, ışık hızında yüklenen ve akıcı kullanıcı deneyimi sunan siteler.",
+        },
+        support: {
+          title: "7/24 Destek",
+          description:
+            "İşiniz hiç durmasın diye ihtiyaç duyduğunuz her an teknik destek ve rehberlik yanınızda.",
+        },
+        customization: {
+          title: "Özelleştirilebilir Çözümler",
+          description:
+            "İşletmenizin özel ihtiyaçlarına göre esnek ve ölçeklenebilir web tasarım seçenekleriyle fark yaratın.",
+        },
+        mobile: {
+          title: "Mobil Uyumlu",
+          description:
+            "Web siteniz tüm cihazlarda kusursuz görünecek ve çalışacak, her ziyaretçiye sorunsuz bir deneyim sunacak.",
+        },
+        analytics: {
+          title: "Analitik & İçgörü",
+          description:
+            "Entegre analizlerle web sitenizin performansını ve kullanıcı davranışlarını takip edin, veriye dayalı büyüyün.",
         },
       },
     },
     pricing: {
       title: "Planınızı Seçin",
-      subtitle: "İş ihtiyaçlarınıza en uygun yazılım çözümünü seçin",
+      subtitle: "İş ihtiyaçlarınıza en uygun yazılım çözümünü seçin.",
       mostPopular: "🔥 Çok Satan",
       getStarted: "Başlayın",
       contactSales: "Satış ile İletişime Geçin",
@@ -306,7 +382,7 @@ export const translations = {
     contact: {
       title: "İletişime Geçin",
       subtitle:
-        "Uyumluluk süreçlerinizi dönüştürmeye hazır mısınız? İşinize nasıl yardımcı olabileceğimizi konuşalım",
+        "Uyumluluk süreçlerinizi dönüştürmeye hazır mısınız? İşinize nasıl yardımcı olabileceğimizi konuşalım.",
       info: {
         title: "İletişim Bilgileri",
         email: {
@@ -319,12 +395,12 @@ export const translations = {
         },
         address: {
           label: "Adres",
-          value: "İzmir,Türkiye",
+          value: "İzmir, Türkiye",
         },
       },
       form: {
         title: "Bize mesaj gönderin",
-        subtitle: "24 saat içinde size geri döneceğiz",
+        subtitle: "24 saat içinde size geri döneceğiz.",
         firstName: "Ad",
         lastName: "Soyad",
         email: "E-posta",
@@ -334,6 +410,22 @@ export const translations = {
         message: "Mesaj",
         messagePlaceholder: "Uyumluluk ihtiyaçlarınız hakkında bize anlatın...",
         send: "Mesaj Gönder",
+        success: "Mesajınız başarıyla gönderildi!",
+        errors: {
+          formInvalid: "Lütfen formdaki hataları düzeltin.",
+          firstNameRequired: "Ad alanı zorunludur.",
+          firstNameMinLength: "Ad en az 2 karakter olmalıdır.",
+          lastNameRequired: "Soyad alanı zorunludur.",
+          lastNameMinLength: "Soyad en az 2 karakter olmalıdır.",
+          emailRequired: "E-posta alanı zorunludur.",
+          emailInvalid: "Lütfen geçerli bir e-posta adresi girin.",
+          phoneRequired: "Telefon numarası zorunludur.",
+          phoneInvalid: "Lütfen geçerli bir telefon numarası girin.",
+          messageRequired: "Mesaj alanı zorunludur.",
+          messageMinLength: "Mesaj en az 10 karakter olmalıdır.",
+          submitError: "Mesaj gönderilirken bir hata oluştu.",
+          networkError: "Ağ hatası. Lütfen tekrar deneyin.",
+        },
       },
     },
     footer: {
@@ -365,7 +457,7 @@ export const translations = {
         supabase:
           "Supabase ile veritabanı, auth ve storage işlemleri zahmetsizce halledilir.",
         firebase:
-          "Firebase, push bildirimden hosting’e kadar eksiksiz bir çözüm sunar.",
+          "Firebase, push bildirimden hosting'e kadar eksiksiz bir çözüm sunar.",
       },
     },
     // GÜNCELLENEN FAQ BÖLÜMÜ

@@ -56,10 +56,6 @@ const faqData = {
       answer:
         "Evet. Dilerseniz sizin için bakım planları sunuyoruz ya da içerik yönetim paneliyle kendiniz kolayca güncelleme yapabilirsiniz.",
     },
-    {
-      question: "Ödeme nasıl gerçekleşiyor?",
-      answer: "Sözleşme sonrası Banka havalesi ile ödeme alıyoruz.",
-    },
   ],
   en: [
     {
@@ -106,10 +102,6 @@ const faqData = {
       question: "Can I update my website later?",
       answer:
         "Yes. You can either use the admin panel to make updates or we can provide maintenance packages.",
-    },
-    {
-      question: "How do I pay?",
-      answer: "After the contract, we accept payments via bank transfer.",
     },
   ],
 };
