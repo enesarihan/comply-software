@@ -167,7 +167,7 @@ export default function PricingSection() {
                   </CardDescription>
                   <div className="mt-4 md:mt-6">
                     <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                      18.999 TL
+                      {t.pricing.plans.basic.price}
                     </div>
                     <p className="text-neutral-700 text-sm md:text-base">
                       + Domain and Host
@@ -241,7 +241,7 @@ export default function PricingSection() {
                         43.899 TL
                       </div>
                       <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-                        31.999 TL
+                        {t.pricing.plans.professional.price}
                       </div>
                     </div>
                     <div className="inline-block mt-2 px-2 md:px-3 py-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-semibold rounded-full">
@@ -315,7 +315,7 @@ export default function PricingSection() {
                         218.500 TL
                       </div>
                       <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
-                        190.000 TL
+                        {t.pricing.plans.elite.price}
                       </div>
                     </div>
                     <div className="inline-block mt-2 px-2 md:px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-semibold rounded-full">

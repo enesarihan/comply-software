@@ -95,6 +95,7 @@ export const translations = {
           name: "Basic",
           description:
             "A perfect starting point for individual users and simple projects.",
+          price: "18.999 TL",
           features: [
             "Single-page modern website",
             "Fully responsive design for all devices",
@@ -106,6 +107,7 @@ export const translations = {
           name: "Professional",
           description:
             "A powerful and comprehensive solution for small and medium-sized businesses.",
+          price: "31.999 TL",
           features: [
             "Multi-page dynamic website structure",
             "Advanced SEO optimization",
@@ -121,6 +123,7 @@ export const translations = {
           name: "Elite",
           description:
             "A complete package tailored for corporate companies and large-scale projects.",
+          price: "189.999 TL",
           features: [
             "All features from the Professional plan",
             "Advanced Admin Panel (content management)",
@@ -247,6 +250,27 @@ export const translations = {
         },
       ],
     },
+    chat: {
+      botName: "Comply Bot",
+      welcome: "Hello! I'm Comply Bot. How can I help you?",
+      inputPlaceholder: "Type your question...",
+      send: "Send",
+      contactCta: "Open the contact form for more information",
+    },
+    founders: {
+      founder1: {
+        name: "Enes",
+        surname: "SARIHAN",
+        title: "Co-Founder",
+        description: "Co-Founder of Comply Software",
+      },
+      founder2: {
+        name: "Orhan Aypars",
+        surname: "ÇELİK",
+        title: "Co-Founder",
+        description: "Co-Founder of Comply Software",
+      },
+    },
   },
   tr: {
     nav: {
@@ -339,6 +363,7 @@ export const translations = {
           name: "Temel",
           description:
             "Bireysel kullanıcılar ve basit projeler için mükemmel başlangıç noktası.",
+          price: "18.999 TL",
           features: [
             "Tek sayfalık modern web sitesi",
             "Mobil ve tüm cihazlarla uyumlu tasarım (Full Responsive)",
@@ -350,6 +375,7 @@ export const translations = {
           name: "Profesyonel",
           description:
             "Küçük ve orta ölçekli işletmeler için güçlü ve kapsamlı bir çözüm.",
+          price: "31.999 TL",
           features: [
             "Çok sayfalı dinamik site yapısı",
             "Gelişmiş SEO optimizasyonu",
@@ -365,6 +391,7 @@ export const translations = {
           name: "Elite",
           description:
             "Kurumsal firmalar ve büyük ölçekli projeler için eksiksiz çözüm paketi.",
+          price: "189.999 TL",
           features: [
             "Profesyonel plandaki tüm özellikler",
             "Güçlü Admin Paneli (İçerik yönetimi)",
@@ -491,6 +518,27 @@ export const translations = {
             "Web sitesi maliyetleri özelliklere, tasarıma ve karmaşıklığa göre değişir. Temel, Profesyonel ve Elite planlarımızla şeffaf fiyatlandırma sunuyoruz. Detaylı bilgi için lütfen 'Ücretler' bölümümüzü inceleyin veya özel bir teklif için bizimle iletişime geçin.",
         },
       ],
+    },
+    chat: {
+      botName: "Comply Bot",
+      welcome: "Merhaba! Ben Comply Bot. Size nasıl yardımcı olabilirim?",
+      inputPlaceholder: "Sorunuzu yazın...",
+      send: "Gönder",
+      contactCta: "Daha fazla bilgi almak için iletişim formunu aç",
+    },
+    founders: {
+      founder1: {
+        name: "Enes",
+        surname: "SARIHAN",
+        title: "Co-Founder",
+        description: "Co-Founder of Comply Software",
+      },
+      founder2: {
+        name: "Orhan Aypars",
+        surname: "ÇELİK",
+        title: "Co-Founder",
+        description: "Co-Founder of Comply Software",
+      },
     },
   },
 };

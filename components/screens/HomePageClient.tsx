@@ -9,6 +9,7 @@ import Navbar from "@/components/screens/Navbar";
 import PricingSection from "@/components/screens/Pricing-Section";
 import TechnologiesSection from "@/components/screens/Technologies";
 import WhatsAppLink from "../blocks/whatsapp";
+import ChatGemini from "../blocks/ChatGemini";
 
 export default function HomePageClient() {
   return (
@@ -21,7 +22,8 @@ export default function HomePageClient() {
       <ContactSection />
       <Faq />
       <Footer />
-      <div className="fixed bottom-4 right-4 z-50">
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-3 items-end">
+        <ChatGemini />
         <WhatsAppLink phoneNumber="905525845941" />
       </div>
     </div>
