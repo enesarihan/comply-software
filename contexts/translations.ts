@@ -257,6 +257,110 @@ export const translations = {
       send: "Send",
       contactCta: "Open the contact form for more information",
     },
+    services: {
+      title: "Our Services",
+      subtitle: "Comprehensive digital solutions for your business",
+      description:
+        "We offer a wide range of digital services to help your business grow and succeed in the digital world.",
+      items: {
+        webDesign: {
+          title: "Custom Web Design",
+          description:
+            "Modern, responsive websites tailored to your brand and business needs. We create stunning designs that convert visitors into customers.",
+          features: [
+            "Responsive design for all devices",
+            "Modern UI/UX design",
+            "SEO optimized structure",
+            "Fast loading times",
+            "Custom animations and interactions",
+            "Content management system",
+            "Analytics integration",
+            "24/7 technical support",
+          ],
+          icon: "🎨",
+        },
+        ecommerce: {
+          title: "E-commerce Solutions",
+          description:
+            "Complete online store solutions with payment processing, inventory management, and customer relationship tools.",
+          features: [
+            "Secure payment processing",
+            "Inventory management system",
+            "Order tracking and notifications",
+            "Customer account management",
+            "Product catalog management",
+            "Shipping and tax calculations",
+            "Marketing and promotion tools",
+            "Sales analytics and reporting",
+          ],
+          icon: "🛒",
+        },
+        googleAds: {
+          title: "Google Ads Management",
+          description:
+            "Professional Google Ads campaign management to increase your online visibility and drive targeted traffic to your website.",
+          features: [
+            "Campaign strategy development",
+            "Keyword research and optimization",
+            "Ad copy creation and testing",
+            "Budget management and optimization",
+            "Performance monitoring and reporting",
+            "A/B testing for better results",
+            "Competitor analysis",
+            "ROI optimization",
+          ],
+          icon: "📈",
+        },
+        seo: {
+          title: "SEO Optimization",
+          description:
+            "Search engine optimization services to improve your website's visibility and rank higher in search results.",
+          features: [
+            "Technical SEO audit",
+            "On-page optimization",
+            "Content strategy development",
+            "Link building campaigns",
+            "Local SEO optimization",
+            "Performance monitoring",
+            "Competitor analysis",
+            "Monthly progress reports",
+          ],
+          icon: "🔍",
+        },
+        maintenance: {
+          title: "Website Maintenance",
+          description:
+            "Ongoing website maintenance and support to keep your site secure, updated, and performing at its best.",
+          features: [
+            "Regular security updates",
+            "Performance optimization",
+            "Content updates and management",
+            "Backup and recovery",
+            "Technical support",
+            "Analytics monitoring",
+            "Mobile compatibility checks",
+            "Speed optimization",
+          ],
+          icon: "🔧",
+        },
+        renewal: {
+          title: "Website Renewal",
+          description:
+            "Transform your existing website with modern design updates, improved functionality, and enhanced user experience.",
+          features: [
+            "Modern design refresh",
+            "Improved user interface",
+            "Enhanced functionality",
+            "Mobile responsiveness upgrade",
+            "Performance optimization",
+            "SEO improvements",
+            "Content restructuring",
+            "New features integration",
+          ],
+          icon: "🔄",
+        },
+      },
+    },
     founders: {
       founder1: {
         name: "Enes",
@@ -525,6 +629,110 @@ export const translations = {
       inputPlaceholder: "Sorunuzu yazın...",
       send: "Gönder",
       contactCta: "Daha fazla bilgi almak için iletişim formunu aç",
+    },
+    services: {
+      title: "Hizmetlerimiz",
+      subtitle: "İşiniz için kapsamlı dijital çözümler",
+      description:
+        "İşinizi dijital dünyada büyütmek ve başarıya ulaşmak için çeşitli dijital hizmetler sunuyoruz.",
+      items: {
+        webDesign: {
+          title: "Özel Web Tasarımı",
+          description:
+            "Markanız ve işletmeniz ihtiyaçlarına uygun, modern, duyarlı web siteleri oluşturuyoruz. Ziyaretçileri müşterilere dönüştüren şık tasarımlar yaratıyoruz.",
+          features: [
+            "Tüm cihazlarda duyarlı tasarım",
+            "Modern UI/UX tasarım",
+            "SEO optimizasyonlu yapı",
+            "Hızlı yükleme süreleri",
+            "Özelleştirilebilir animasyonlar ve etkileşimler",
+            "İçerik yönetim sistemi",
+            "Analitik entegrasyonu",
+            "24/7 teknik destek",
+          ],
+          icon: "🎨",
+        },
+        ecommerce: {
+          title: "E-Ticaret Çözümleri",
+          description:
+            "Ödeme işleme, envanter yönetimi ve müşteri ilişkileri aracılığıyla tamamlanmış e-ticaret çözümleri sunuyoruz.",
+          features: [
+            "Güvenli ödeme işleme",
+            "Envanter yönetim sistemi",
+            "Sipariş takibi ve bildirimler",
+            "Müşteri hesap yönetimi",
+            "Ürün kataloğu yönetimi",
+            "Kargo ve vergi hesaplamaları",
+            "Pazarlama ve promosyon araçları",
+            "Satış analitikleri ve raporlama",
+          ],
+          icon: "🛒",
+        },
+        googleAds: {
+          title: "Google Ads Yönetimi",
+          description:
+            "Google Ads kampanyanızın online görünürlüğünü artırarak web sitenize hedeflenmiş trafiği sürüyoruz.",
+          features: [
+            "Kampanya stratejisi geliştirme",
+            "Anahtar kelime araştırma ve optimizasyon",
+            "Reklam kopyası oluşturma ve test etme",
+            "Bütçe yönetimi ve optimizasyonu",
+            "Performans izleme ve raporlama",
+            "Daha iyi sonuçlar için A/B testi",
+            "Rekabetçi analiz",
+            "ROI optimizasyonu",
+          ],
+          icon: "📈",
+        },
+        seo: {
+          title: "SEO Optimizasyonu",
+          description:
+            "Arama motorlarında web sitenizin görünürlüğünü ve sonuçlarınızı daha yüksek sıralamaya çıkarın.",
+          features: [
+            "Teknik SEO audit",
+            "On-page optimizasyonu",
+            "İçerik stratejisi geliştirme",
+            "Link kurma kampanyaları",
+            "Yerel SEO optimizasyonu",
+            "Performans izleme",
+            "Rekabetçi analiz",
+            "Aylık ilerleme raporları",
+          ],
+          icon: "🔍",
+        },
+        maintenance: {
+          title: "Web Sitesi Bakımı",
+          description:
+            "Sitenizin güvenli, güncel ve en iyi performansla çalışmasını sağlamak için devam eden web sitesi bakımı ve destek.",
+          features: [
+            "Düzenli güvenlik güncellemeleri",
+            "Performans optimizasyonu",
+            "İçerik güncellemeleri ve yönetimi",
+            "Yedekleme ve kurtarma",
+            "Teknik destek",
+            "Analitik izleme",
+            "Mobil uyumluluk kontrolleri",
+            "Hız optimizasyonu",
+          ],
+          icon: "🔧",
+        },
+        renewal: {
+          title: "Web Sitesi Yenileme",
+          description:
+            "Mevcut web sitenizi modern tasarım güncellemeleri, işlevsellik iyileştirmeleri ve kullanıcı deneyimini geliştirmek için yenileyin.",
+          features: [
+            "Modern tasarım yenileme",
+            "İyileştirilmiş kullanıcı arayüzü",
+            "Gelişmiş işlevsellik",
+            "Mobil uyumluluk yükseltme",
+            "Performans optimizasyonu",
+            "SEO iyileştirmeleri",
+            "İçerik yeniden yapılandırma",
+            "Yeni özellikler entegrasyonu",
+          ],
+          icon: "🔄",
+        },
+      },
     },
     founders: {
       founder1: {

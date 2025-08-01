@@ -7,6 +7,7 @@ import Footer from "@/components/screens/Footer";
 import HeroSection from "@/components/screens/Hero";
 import Navbar from "@/components/screens/Navbar";
 import PricingSection from "@/components/screens/Pricing-Section";
+import ServicesSection from "@/components/screens/Services";
 import TechnologiesSection from "@/components/screens/Technologies";
 import WhatsAppLink from "../blocks/whatsapp";
 import ChatGemini from "../blocks/ChatGemini";
@@ -17,6 +18,7 @@ export default function HomePageClient() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <ServicesSection />
       <TechnologiesSection />
       <PricingSection />
       <ContactSection />

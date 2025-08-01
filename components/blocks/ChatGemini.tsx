@@ -56,6 +56,8 @@ export default function ChatGemini() {
     const el = document.getElementById("contact");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+      // İletişim formuna yönlendirdikten sonra chat'i kapat
+      setTimeout(() => setOpen(false), 500);
     }
   }
 

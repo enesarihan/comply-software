@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 import { BsLinkedin } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -269,6 +270,28 @@ export default function ContactSection() {
                       className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                     >
                       @comply-software
+                    </Link>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="flex items-center gap-4 p-4 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                >
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg">
+                    <Link href={"https://www.instagram.com/complysoftware"}>
+                      <FaInstagram className="h-6 w-6 text-white" />
+                    </Link>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-800 dark:text-gray-200">
+                      Instagram
+                    </p>
+                    <Link
+                      href={"https://www.instagram.com/complysoftware"}
+                      className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 hover:from-purple-700 hover:via-pink-600 hover:to-orange-500 transition-all duration-300"
+                    >
+                      @complysoftware
                     </Link>
                   </div>
                 </motion.div>
