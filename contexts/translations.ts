@@ -127,7 +127,7 @@ export const translations = {
           features: [
             "All features from the Professional plan",
             "Advanced Admin Panel (content management)",
-            "Payment integration with Stripe",
+            "Workflow automation with n8n",
             "Fully-featured e-commerce infrastructure",
             "2 years of free hosting and domain",
             "2 years of priority technical support",
@@ -203,7 +203,7 @@ export const translations = {
       next: "A full-featured framework built on React",
       react: "A powerful library for building user interfaces",
       tailwind: "Utility-first CSS framework for fast UI development",
-      stripe: "Secure and flexible payment infrastructure",
+      n8n: "Powerful workflow automation platform",
       supabase: "Open source Firebase alternative",
       firebase: "Realtime backend and hosting platform",
       details: {
@@ -212,8 +212,7 @@ export const translations = {
           "React's component architecture enables scalable and maintainable apps.",
         tailwind:
           "Tailwind CSS is perfect for building responsive and customizable UIs.",
-        stripe:
-          "Stripe simplifies global payments with robust and secure APIs.",
+        n8n: "n8n enables seamless workflow automation and integration with hundreds of services.",
         supabase: "Supabase handles database, auth, and storage effortlessly.",
         firebase:
           "Firebase delivers a full backend suite from hosting to push notifications.",
@@ -499,7 +498,7 @@ export const translations = {
           features: [
             "Profesyonel plandaki tüm özellikler",
             "Güçlü Admin Paneli (İçerik yönetimi)",
-            "Stripe entegrasyonu ile ödeme altyapısı",
+            "n8n ile iş akışı otomasyonu",
             "Tam özellikli e-ticaret altyapısı",
             "2 Yıl ücretsiz hosting + alan adı",
             "2 Yıl öncelikli teknik destek",
@@ -574,7 +573,7 @@ export const translations = {
       next: "React tabanlı tam özellikli framework",
       react: "Kullanıcı arayüzleri için güçlü bir kütüphane",
       tailwind: "Hızlı UI geliştirme için utility-first CSS",
-      stripe: "Güvenli ve esnek ödeme altyapısı",
+      n8n: "Güçlü iş akışı otomasyon platformu",
       supabase: "Açık kaynaklı Firebase alternatifi",
       firebase: "Gerçek zamanlı backend ve barındırma",
       details: {
@@ -583,8 +582,7 @@ export const translations = {
           "React bileşen yapısı ile sürdürülebilir ve ölçeklenebilir projeler oluşturur.",
         tailwind:
           "Tailwind CSS, esnek ve özelleştirilebilir UI'lar inşa etmek için idealdir.",
-        stripe:
-          "Stripe, dünya genelinde ödeme almanızı kolaylaştırır ve güvenli hale getirir.",
+        n8n: "n8n, yüzlerce servis ile kolayca entegre olmanızı ve iş akışlarınızı otomatikleştirmenizi sağlar.",
         supabase:
           "Supabase ile veritabanı, auth ve storage işlemleri zahmetsizce halledilir.",
         firebase:

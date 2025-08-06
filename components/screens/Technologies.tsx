@@ -11,7 +11,6 @@ import {
   RiFirebaseFill,
 } from "react-icons/ri";
 import { useLanguage } from "@/contexts/language-context";
-import { BsStripe } from "react-icons/bs";
 
 const TechnologiesSection = () => {
   const { t } = useLanguage();
@@ -37,10 +36,12 @@ const TechnologiesSection = () => {
       gradient: "from-cyan-400 to-blue-500",
     },
     {
-      name: "Stripe",
-      description: t.technologies.stripe,
-      icon: BsStripe,
-      gradient: "from-purple-500 to-indigo-600",
+      name: "n8n",
+      description: t.technologies.n8n, // Will add this translation
+      icon: (props: React.ComponentProps<"img">) => (
+        <img src="/n8n.svg" alt="n8n" width={32} height={32} {...props} />
+      ),
+      gradient: "from-white to-pink-500", // Changed from orange-pink to blue for better contrast
     },
     {
       name: "Supabase",

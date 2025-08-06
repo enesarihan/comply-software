@@ -29,7 +29,7 @@ const faqData = {
     {
       question: "Hangi teknolojileri kullanıyorsunuz?",
       answer:
-        "Next.js, React, Tailwind CSS, Stripe, Firebase ve Supabase gibi modern teknolojileri kullanıyoruz.",
+        "Next.js, React, Tailwind CSS, n8n, Firebase ve Supabase gibi modern teknolojileri kullanıyoruz.",
     },
     {
       question: "Admin panel ve içerik yönetimi var mı?",
@@ -76,7 +76,7 @@ const faqData = {
     {
       question: "What technologies do you use?",
       answer:
-        "We use modern technologies like Next.js, React, Tailwind CSS, Stripe, Firebase, and Supabase.",
+        "We use modern technologies like Next.js, React, Tailwind CSS, n8n, Firebase, and Supabase.",
     },
     {
       question: "Is there an admin panel for content management?",
