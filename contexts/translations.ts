@@ -261,6 +261,12 @@ export const translations = {
       subtitle: "Comprehensive digital solutions for your business",
       description:
         "We offer a wide range of digital services to help your business grow and succeed in the digital world.",
+      cta: {
+        title: "Ready to bring your project to life?",
+        description:
+          "Let's craft your digital success story together with our expert team. Contact us now for a free consultation.",
+        button: "Free Consultation",
+      },
       items: {
         webDesign: {
           title: "Custom Web Design",
@@ -633,6 +639,12 @@ export const translations = {
       subtitle: "İşiniz için kapsamlı dijital çözümler",
       description:
         "İşinizi dijital dünyada büyütmek ve başarıya ulaşmak için çeşitli dijital hizmetler sunuyoruz.",
+      cta: {
+        title: "Projenizi Hayata Geçirmeye Hazır mısınız?",
+        description:
+          "Uzman ekibimizle birlikte dijital başarı hikayenizi yazalım. Ücretsiz danışmanlık için hemen iletişime geçin.",
+        button: "Ücretsiz Danışmanlık",
+      },
       items: {
         webDesign: {
           title: "Özel Web Tasarımı",

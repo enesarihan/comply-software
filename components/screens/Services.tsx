@@ -13,7 +13,6 @@ import {
   Star,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/language-context";
 
@@ -207,21 +206,59 @@ export default function ServicesSection() {
 
             <div className="relative z-10">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Projenizi Hayata Geçirmeye Hazır mısınız?
+                {t.services.cta.title}
               </h3>
               <p className="text-blue-100 dark:text-blue-50 mb-8 max-w-2xl mx-auto text-lg">
-                Uzman ekibimizle birlikte dijital başarı hikayenizi yazalım.
-                Ücretsiz danışmanlık için hemen iletişime geçin.
+                {t.services.cta.description}
               </p>
               <div className="flex justify-center">
-                <Button
+                <button
                   onClick={scrollToContact}
-                  size="lg"
-                  className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-white dark:text-blue-600 dark:hover:bg-gray-100 font-semibold px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group rounded-xl"
+                  className="relative px-10 py-3 text-lg font-semibold rounded-2xl backdrop-blur-xl transition-all duration-300 group hover:-translate-y-0.5 hover:shadow-2xl"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.14) 55%, rgba(255,255,255,0.08) 100%)",
+                    WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                    backdropFilter: "blur(16px) saturate(160%)",
+                    border: "1px solid rgba(255,255,255,0.35)",
+                    boxShadow:
+                      "inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(0,0,0,0.08), 0 10px 30px rgba(0,0,0,0.25)",
+                    color: "#ffffff",
+                    textShadow: "0 1px 1px rgba(0,0,0,0.25)",
+                  }}
                 >
-                  Ücretsiz Danışmanlık
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                  <span className="relative z-10 flex items-center">
+                    {t.services.cta.button}
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  {/* Liquid highlight */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -inset-px rounded-2xl"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%)",
+                      mask: "radial-gradient(120px 50px at 10% 0%, black 30%, transparent 60%)",
+                      WebkitMask:
+                        "radial-gradient(120px 50px at 10% 0%, black 30%, transparent 60%)",
+                    }}
+                  />
+                  {/* Gloss sweep on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute left-0 top-0 h-full w-1/3 translate-x-[-150%] rotate-12 bg-white/40 blur-md transition-transform duration-700 group-hover:translate-x-[350%]"
+                  />
+                  {/* Subtle noise for better glass texture */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-15"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px)",
+                      backgroundSize: "3px 3px",
+                    }}
+                  />
+                </button>
               </div>
             </div>
           </div>
