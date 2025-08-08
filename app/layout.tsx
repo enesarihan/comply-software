@@ -1,6 +1,6 @@
 // app/layout.tsx
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
@@ -25,22 +25,46 @@ export async function generateMetadata(): Promise<Metadata> {
     process.env.NEXT_PUBLIC_TWITTER_IMAGE_URL || `${baseUrl}/twitter-image.jpg`;
 
   return {
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: "/",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/logo.png",
+    },
     title: `Comply Software | ${t.hero.mainTitle} ${t.hero.title[0]} | Modern Web Sitesi Çözümleri `,
 
     description: `${t.hero.subtitle} Modern, responsive ve SEO dostu web siteleri tasarlıyor, işletmelerin dijital varlığını güçlendiriyoruz. Kurumsal kimliğinize özel çözümlerimizle hemen tanışın!`,
 
-    keywords: `
-      modern web sitesi, kurumsal web tasarım, responsive web sitesi, SEO uyumlu site,
-      web geliştirme, dijital çözüm, özel yazılım, e-ticaret sitesi,
-      admin panelli web sitesi, kullanıcı dostu arayüz, profesyonel web tasarım,
-      ${t.technologies.react}, ${t.technologies.next}, ${t.technologies.tailwind},
-      ${t.pricing.plans.professional.name}, ${t.pricing.plans.elite.name},
-      uyumluluk yazılımı, yazılım çözümleri, kurumsal yazılım,
-      ${t.nav.home}, ${t.about.title}, ${t.pricing.title}, ${t.contact.title},
-      ${t.hero.mainTitle}, ${t.hero.subtitle},
-      web sitesi yapımı, uygun fiyatlı web sitesi, güvenli ödeme sistemleri,izmir,Izmir Yazılım,
-      Comply,izmir yazılım şirketleri,web sitesi satın al,
-    `,
+    keywords: [
+      "modern web sitesi",
+      "kurumsal web tasarım",
+      "responsive web sitesi",
+      "SEO",
+      "web geliştirme",
+      "özel yazılım",
+      "e-ticaret",
+      "admin panel",
+      "profesyonel web tasarım",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Comply Software",
+      "İzmir yazılım",
+    ],
 
     authors: [{ name: "Comply Software Team" }],
     creator: "Comply Software",
@@ -72,6 +96,12 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   };
 }
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f172a",
+};
 
 export default function RootLayout({
   children,

@@ -1,5 +1,6 @@
 // app/sitemap.ts
 import { MetadataRoute } from "next";
+import { posts } from "./blog/posts";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_DEFAULT_URL || "https://www.complysoftware.net";
@@ -7,7 +8,7 @@ const baseUrl =
 export default function sitemap(): MetadataRoute.Sitemap {
   // ...existing code...
   // Add main blog page
-  return [
+  const entries: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -51,4 +52,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
   ];
+
+  // Blog posts
+  for (const post of posts) {
+    entries.push({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    });
+  }
+
+  // Deduplicate just in case
+  const seen = new Set<string>();
+  const deduped = entries.filter((e) => {
+    if (seen.has(e.url)) return false;
+    seen.add(e.url);
+    return true;
+  });
+
+  return deduped;
 }

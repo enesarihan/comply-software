@@ -11,6 +11,18 @@ import {
   RiFirebaseFill,
 } from "react-icons/ri";
 import { useLanguage } from "@/contexts/language-context";
+import Image from "next/image";
+
+const N8nIcon = ({ className }: { className?: string }) => (
+  <Image
+    src="/n8n.svg"
+    alt="n8n"
+    width={32}
+    height={32}
+    className={className}
+    priority={false}
+  />
+);
 
 const TechnologiesSection = () => {
   const { t } = useLanguage();
@@ -38,9 +50,7 @@ const TechnologiesSection = () => {
     {
       name: "n8n",
       description: t.technologies.n8n, // Will add this translation
-      icon: (props: React.ComponentProps<"img">) => (
-        <img src="/n8n.svg" alt="n8n" width={32} height={32} {...props} />
-      ),
+      icon: N8nIcon,
       gradient: "from-white to-pink-500", // Changed from orange-pink to blue for better contrast
     },
     {
