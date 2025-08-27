@@ -88,7 +88,22 @@ export async function POST(request: NextRequest) {
     console.log('React Email template rendered successfully');
 
     // Email seçenekleri
-    const mailOptions: any = {
+    const mailOptions: {
+      from: { name: string; address: string };
+      to: string;
+      subject: string;
+      html: string;
+      text: string;
+      attachments: Array<{
+        filename: string;
+        path: string;
+        cid: string;
+        encoding: string;
+        contentDisposition: 'inline' | 'attachment';
+      }>;
+      headers: Record<string, string>;
+      bcc?: string;
+    } = {
       from: {
         name: 'Comply Software',
         address: process.env.EMAIL_USER || 'noreply@complysoftware.com'

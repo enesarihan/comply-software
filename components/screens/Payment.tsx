@@ -17,7 +17,6 @@ import {
   Shield,
   CheckCircle,
   Calculator,
-  DollarSign
 } from 'lucide-react';
 
 interface CustomerInfo {
@@ -71,7 +70,7 @@ const Payment: React.FC = () => {
   const [installmentOptions, setInstallmentOptions] = useState<InstallmentOption[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
-  const [paymentResult, setPaymentResult] = useState<any>(null);
+  const [paymentResult, setPaymentResult] = useState<{ paymentId?: string; message?: string } | null>(null);
 
   // Taksit seçeneklerini hesaplama
   useEffect(() => {
@@ -214,7 +213,7 @@ const Payment: React.FC = () => {
       } else {
         toast.error(result.error || 'Ödeme işlemi başarısız');
       }
-    } catch (error) {
+    } catch {
       toast.error('Bir hata oluştu. Lütfen tekrar deneyin.');
     } finally {
       setIsLoading(false);

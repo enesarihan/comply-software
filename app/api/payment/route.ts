@@ -11,7 +11,7 @@ const IYZICO_CONFIG = {
 };
 
 // iyzico API request helper
-const makeIyzicoRequest = async (endpoint: string, data: any) => {
+const makeIyzicoRequest = async (endpoint: string, data: Record<string, unknown>) => {
   // Benzersiz randomKey oluştur (timestamp + random)
   const randomKey = Date.now().toString() + Math.random().toString(36).substring(2, 15);
   
@@ -226,13 +226,13 @@ export async function GET() {
     if (result.status === 'success') {
       // Sadece 2, 3, 6 ay arası taksitleri filtrele
       const filteredInstallments = result.installmentDetails
-        .filter((item: any) => {
-          const validInstallments = item.installmentPrices.filter((price: any) => 
+        .filter((item: { installmentPrices: { installmentNumber: number }[] }) => {
+          const validInstallments = item.installmentPrices.filter((price: { installmentNumber: number }) => 
             [2, 3, 6].includes(price.installmentNumber)
           );
           return validInstallments.length > 0;
         })
-        .map((item: any) => ({
+        .map((item: { binNumber: string; price: string; cardType: string; cardAssociation: string; cardFamilyName: string; force3ds: boolean; bankCode: string; bankName: string; installmentPrices: { installmentNumber: number }[] }) => ({
           binNumber: item.binNumber,
           price: item.price,
           cardType: item.cardType,
@@ -241,7 +241,7 @@ export async function GET() {
           force3ds: item.force3ds,
           bankCode: item.bankCode,
           bankName: item.bankName,
-          installmentPrices: item.installmentPrices.filter((price: any) => 
+          installmentPrices: item.installmentPrices.filter((price: { installmentNumber: number }) => 
             [2, 3, 6].includes(price.installmentNumber)
           )
         }));
