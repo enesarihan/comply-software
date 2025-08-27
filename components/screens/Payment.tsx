@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
+import Image from 'next/image';
 import PaymentSuccess from './PaymentSuccess';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-import { Button } from '../ui/button';
+import { LiquidButton } from '../ui/liquid-glass-button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
@@ -501,20 +502,21 @@ const Payment: React.FC = () => {
                   </div>
 
                   {/* Ödeme Butonu */}
-                  <Button
+                  <LiquidButton
                     type="submit"
                     disabled={isLoading}
-                    className="w-full h-14 text-base font-bold bg-gradient-to-r from-blue-600 to-blue-700 dark:from-lime-500 dark:to-lime-600 hover:from-blue-700 hover:to-blue-800 dark:hover:from-lime-600 dark:hover:to-lime-700 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 rounded-2xl border-0"
+                    className="w-full text-blue-600 dark:text-lime-600 font-bold text-base"
+                    size="xl"
                   >
                     {isLoading ? (
                       <div className="flex items-center gap-3">
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <div className="w-5 h-5 border-2 border-blue-600 dark:border-lime-600 border-t-transparent rounded-full animate-spin"></div>
                         İşleniyor...
                       </div>
                     ) : (
                       `${selectedInstallment?.totalPrice.toLocaleString('tr-TR')} ₺ Öde`
                     )}
-                  </Button>
+                  </LiquidButton>
 
                   {/* Güvenlik Bilgisi */}
                   <div className="text-center space-y-3 p-4 bg-gradient-to-r from-green-50/50 to-blue-50/50 dark:from-green-900/20 dark:to-blue-900/20 rounded-2xl border border-green-100/50 dark:border-green-800/30">
@@ -525,7 +527,7 @@ const Payment: React.FC = () => {
                       <span className="text-xs">Ödeme bilgileriniz SSL ile şifrelenerek korunmaktadır</span>
                     </div>
                     <div className="flex items-center justify-center gap-2">
-                      <img src="/logo.png" alt="iyzico" className="h-5 opacity-70" />
+                      <Image src="/logo.png" alt="iyzico" width={20} height={20} className="h-5 opacity-70" />
                       <span className="text-slate-500 dark:text-slate-400 text-xs">iyzico Güvenli Ödeme</span>
                     </div>
                   </div>

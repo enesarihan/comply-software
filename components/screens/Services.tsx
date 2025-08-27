@@ -59,9 +59,27 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="relative py-24 px-4 overflow-hidden">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50 via-white to-lime-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 opacity-90" />
+    <section 
+      id="services" 
+      className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+    >
+      {/* Background Glow Effects */}
+      <div className="absolute inset-0">
+        {/* Primary glow - top left blue (About'tan devam) */}
+        <div className="absolute -top-20 -left-20 w-[550px] h-[550px] bg-blue-500/25 dark:bg-blue-400/35 rounded-full blur-3xl animate-pulse"></div>
+        
+        {/* Secondary glow - bottom right indigo */}
+        <div className="absolute -bottom-20 -right-20 w-[450px] h-[450px] bg-indigo-500/22 dark:bg-indigo-400/32 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        
+        {/* Tertiary glow - center purple */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-purple-500/20 dark:bg-purple-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Moving glow - bottom left cyan */}
+        <div className="absolute -bottom-10 -left-10 w-[280px] h-[280px] bg-cyan-500/15 dark:bg-cyan-400/25 rounded-full blur-3xl animate-bounce opacity-60"></div>
+        
+        {/* Center overlay */}
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/8 dark:via-black/18 to-transparent"></div>
+      </div>
 
       <div className="container mx-auto max-w-7xl">
         {/* Header Section */}
@@ -114,12 +132,46 @@ export default function ServicesSection() {
                 {/* Glow effect on hover */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-lime-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
-                <Card className="relative h-full border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md overflow-hidden rounded-2xl group-hover:shadow-blue-500/25 dark:group-hover:shadow-lime-500/25">
+                <Card 
+                  className="relative h-full shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden rounded-2xl group-hover:shadow-blue-500/25 dark:group-hover:shadow-lime-500/25"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.05) 100%)",
+                    backdropFilter: "blur(16px) saturate(160%)",
+                    WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 25px rgba(0,0,0,0.15)"
+                  }}
+                >
                   {/* Animated gradient border */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-lime-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   {/* Top accent line */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-lime-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+                  {/* Liquid highlight */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -inset-px rounded-2xl"
+                    style={{
+                      background: "linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%)",
+                      mask: "radial-gradient(120px 50px at 15% 10%, black 30%, transparent 60%)",
+                      WebkitMask: "radial-gradient(120px 50px at 15% 10%, black 30%, transparent 60%)"
+                    }}
+                  />
+                  {/* Gloss sweep on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute left-0 top-0 h-full w-1/3 translate-x-[-150%] rotate-12 bg-white/30 blur-md transition-transform duration-700 group-hover:translate-x-[350%]"
+                  />
+                  {/* Subtle noise for better glass texture */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-10"
+                    style={{
+                      backgroundImage: "radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)",
+                      backgroundSize: "3px 3px"
+                    }}
+                  />
 
                   <CardHeader className="relative z-10 pb-6 pt-8">
                     <div className="flex items-center justify-between mb-6">

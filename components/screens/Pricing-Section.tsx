@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { DotIcon, Star, Zap, Crown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import {
   Card,
   CardContent,
@@ -37,98 +37,27 @@ export default function PricingSection() {
     router.push("#contact");
   };
   return (
-    <section id="pricing" className="py-16 md:py-20 px-4 font-sans">
-      {/* Custom CSS for the animated border */}
-      <style jsx>{`
-        .animated-border-wrapper {
-          position: relative;
-          border-radius: 0.75rem; /* Matches Tailwind's rounded-xl */
-          padding: 2px; /* This creates the border thickness */
-          overflow: hidden;
-          height: 100%; /* Ensure wrapper takes full height */
-          display: flex; /* Use flex to center the inner card if needed */
-          justify-content: center;
-          align-items: center;
-          background: transparent; /* Ensure background is transparent */
-          box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-            0 2px 4px -2px rgb(0 0 0 / 0.1); /* Subtle shadow for depth */
-        }
+    <section 
+      id="pricing" 
+      className="relative py-16 md:py-20 px-4 font-sans overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+    >
+      {/* Background Glow Effects */}
+      <div className="absolute inset-0">
+        {/* Primary glow - top right purple */}
+        <div className="absolute -top-20 -right-20 w-[600px] h-[600px] bg-purple-500/25 dark:bg-purple-400/35 rounded-full blur-3xl"></div>
+        
+        {/* Secondary glow - bottom left pink */}
+        <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-pink-500/20 dark:bg-pink-400/30 rounded-full blur-3xl"></div>
+        
+        {/* Tertiary glow - center right rose */}
+        <div className="absolute top-1/2 -translate-y-1/2 -right-10 w-[400px] h-[400px] bg-rose-500/18 dark:bg-rose-400/28 rounded-full blur-3xl"></div>
+        
+        {/* Center overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/6 dark:via-black/16 to-transparent"></div>
+      </div>
 
-        .animated-border-wrapper::before {
-          content: "";
-          position: absolute;
-          top: -100%;
-          left: -100%;
-          width: 300%;
-          height: 300%;
-          /* Default conic gradient for rainbow effect (Professional plan) */
-          background: conic-gradient(
-            from 0deg at 50% 50%,
-            #ef4444,
-            /* red-500 */ #f97316,
-            /* orange-500 */ #f59e0b,
-            /* amber-500 */ #eab308,
-            /* yellow-500 */ #84cc16,
-            /* lime-500 */ #22c55e,
-            /* green-500 */ #10b981,
-            /* emerald-500 */ #06b6d4,
-            /* cyan-500 */ #0ea5e9,
-            /* sky-500 */ #3b82f6,
-            /* blue-500 */ #6366f1,
-            /* indigo-500 */ #8b5cf6,
-            /* violet-500 */ #a855f7,
-            /* purple-500 */ #d946ef,
-            /* fuchsia-500 */ #ec4899,
-            /* pink-500 */ #f43f5e,
-            /* rose-500 */ #ef4444 /* red-500 to complete the loop */
-          );
-          animation: rotateBorder 4s linear infinite; /* Animation duration and type */
-          z-index: -1; /* Place behind the actual card content */
-        }
 
-        /* Specific gradient for Basic Plan */
-        .animated-border-wrapper-basic::before {
-          background: conic-gradient(
-            from 0deg at 50% 50%,
-            #3b82f6,
-            /* blue-500 */ #22d3ee,
-            /* cyan-400 */ #10b981,
-            /* emerald-500 */ #84cc16,
-            /* lime-500 */ #3b82f6 /* blue-500 to complete the loop */
-          );
-        }
-
-        /* Specific gradient for Elite Plan */
-        .animated-border-wrapper-elite::before {
-          background: conic-gradient(
-            from 0deg at 50% 50%,
-            #ef4444,
-            /* red-500 */ #f97316,
-            /* orange-500 */ #eab308,
-            /* yellow-500 */ #f43f5e,
-            /* rose-500 */ #ef4444 /* red-500 to complete the loop */
-          );
-        }
-
-        .animated-border-wrapper-featured {
-          /* Adjustments for the featured card's scale */
-          transform: scale(
-            1
-          ); /* Reset scale here, it's applied to the parent motion.div */
-        }
-
-        /* Keyframe animation for rotating the border */
-        @keyframes rotateBorder {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
-
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-7xl relative z-10">
         <motion.div
           className="text-center mb-12 md:mb-16"
           initial="initial"
@@ -153,9 +82,41 @@ export default function PricingSection() {
         >
           {/* Basic Plan */}
           <motion.div variants={fadeInUp} className="h-full">
-            <div className="animated-border-wrapper animated-border-wrapper-featured animated-border-wrapper-basic">
-              <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
-                <CardHeader className="text-center pb-6 md:pb-8">
+            <Card 
+              className="relative h-full w-full overflow-hidden rounded-xl group transition-all duration-300"
+              style={{
+                background: "linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(34,211,238,0.12) 55%, rgba(16,185,129,0.08) 100%)",
+                backdropFilter: "blur(16px) saturate(160%)",
+                WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                border: "1px solid rgba(59,130,246,0.3)",
+                boxShadow: "inset 0 1px 0 rgba(59,130,246,0.4), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 25px rgba(59,130,246,0.2)"
+              }}
+            >
+              {/* Liquid highlight */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -inset-px rounded-xl"
+                style={{
+                  background: "linear-gradient(180deg, rgba(59,130,246,0.3) 0%, rgba(59,130,246,0.05) 100%)",
+                  mask: "radial-gradient(120px 50px at 15% 10%, black 30%, transparent 60%)",
+                  WebkitMask: "radial-gradient(120px 50px at 15% 10%, black 30%, transparent 60%)"
+                }}
+              />
+              {/* Gloss sweep on hover */}
+              <span
+                aria-hidden
+                className="absolute left-0 top-0 h-full w-1/3 translate-x-[-150%] rotate-12 bg-blue-400/30 blur-md transition-transform duration-700 group-hover:translate-x-[350%]"
+              />
+              {/* Subtle noise for better glass texture */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-xl opacity-10"
+                style={{
+                  backgroundImage: "radial-gradient(rgba(59,130,246,0.3) 1px, transparent 1px)",
+                  backgroundSize: "3px 3px"
+                }}
+              />
+                <CardHeader className="text-center pb-6 md:pb-8 relative z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 mb-3 md:mb-4 mx-auto shadow-lg">
                     <Star className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
@@ -174,7 +135,7 @@ export default function PricingSection() {
                     </p>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full">
+                <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full relative z-10">
                   <div className="space-y-2 md:space-y-3 flex-grow">
                     {t.pricing.plans.basic.features.map((feature, index) => (
                       <div
@@ -186,11 +147,12 @@ export default function PricingSection() {
                       </div>
                     ))}
                   </div>
-                  <Button
-                    className="w-full h-12 text-base md:text-lg font-semibold bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 border-0 rounded-xl relative overflow-hidden group"
+                  <LiquidButton
+                    className="w-full text-blue-600 font-semibold"
+                    size="lg"
                     onClick={onClickRedirect}
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
+                    <span className="flex items-center justify-center gap-2">
                       {t.pricing.contactSales}
                       <svg
                         className="w-4 h-4 transition-transform group-hover:translate-x-1"
@@ -206,11 +168,9 @@ export default function PricingSection() {
                         />
                       </svg>
                     </span>
-                    <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                  </Button>
+                  </LiquidButton>
                 </CardContent>
-              </Card>
-            </div>
+            </Card>
           </motion.div>
 
           {/* Professional Plan - Featured */}
@@ -218,14 +178,56 @@ export default function PricingSection() {
             variants={fadeInUp}
             className="h-full md:scale-105 lg:scale-105"
           >
-            <div className="animated-border-wrapper animated-border-wrapper-featured">
-              <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
-                <div className="absolute top-2 md:top-3 left-1/2 transform -translate-x-1/2 md:left-12 md:transform-none">
+            <Card 
+              className="relative h-full w-full overflow-hidden rounded-xl group transition-all duration-300"
+              style={{
+                background: "linear-gradient(135deg, rgba(147,51,234,0.18) 0%, rgba(236,72,153,0.15) 55%, rgba(239,68,68,0.12) 100%)",
+                backdropFilter: "blur(16px) saturate(160%)",
+                WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                border: "1px solid rgba(147,51,234,0.35)",
+                boxShadow: "inset 0 1px 0 rgba(147,51,234,0.45), inset 0 -1px 0 rgba(0,0,0,0.05), 0 10px 30px rgba(147,51,234,0.25)"
+              }}
+            >
+              {/* Liquid highlight */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -inset-px rounded-xl"
+                style={{
+                  background: "linear-gradient(180deg, rgba(147,51,234,0.35) 0%, rgba(147,51,234,0.08) 100%)",
+                  mask: "radial-gradient(150px 60px at 20% 15%, black 30%, transparent 60%)",
+                  WebkitMask: "radial-gradient(150px 60px at 20% 15%, black 30%, transparent 60%)"
+                }}
+              />
+              {/* Gloss sweep on hover */}
+              <span
+                aria-hidden
+                className="absolute left-0 top-0 h-full w-1/3 translate-x-[-150%] rotate-12 bg-purple-400/40 blur-md transition-transform duration-700 group-hover:translate-x-[350%]"
+              />
+              {/* Animated rainbow border for featured */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-xl opacity-20 animate-pulse"
+                style={{
+                  background: "conic-gradient(from 0deg, #ef4444, #f97316, #eab308, #84cc16, #22c55e, #10b981, #06b6d4, #3b82f6, #6366f1, #8b5cf6, #a855f7, #d946ef, #ec4899, #f43f5e, #ef4444)",
+                  mask: "radial-gradient(circle at center, transparent 98%, black 100%)",
+                  WebkitMask: "radial-gradient(circle at center, transparent 98%, black 100%)"
+                }}
+              />
+              {/* Subtle noise for better glass texture */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-xl opacity-12"
+                style={{
+                  backgroundImage: "radial-gradient(rgba(147,51,234,0.4) 1px, transparent 1px)",
+                  backgroundSize: "3px 3px"
+                }}
+              />
+                <div className="absolute top-2 md:top-3 left-1/2 transform -translate-x-1/2 md:left-12 md:transform-none z-20">
                   <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 md:px-6 py-1 md:py-2 text-xs md:text-sm font-semibold shadow-lg">
                     {t.pricing.mostPopular}
                   </Badge>
                 </div>
-                <CardHeader className="text-center pb-6 md:pb-8 pt-6 md:pt-8">
+                <CardHeader className="text-center pb-6 md:pb-8 pt-6 md:pt-8 relative z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 mb-3 md:mb-4 mx-auto shadow-lg">
                     <Zap className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
@@ -249,7 +251,7 @@ export default function PricingSection() {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full">
+                <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full relative z-10">
                   <div className="space-y-2 md:space-y-3 flex-grow">
                     {t.pricing.plans.professional.features.map(
                       (feature, index) => (
@@ -265,11 +267,12 @@ export default function PricingSection() {
                       )
                     )}
                   </div>
-                  <Button
-                    className="w-full h-12 text-base md:text-lg font-semibold bg-purple-600 hover:bg-purple-700 active:bg-purple-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 border-0 rounded-xl relative overflow-hidden group"
+                  <LiquidButton
+                    className="w-full text-purple-600 dark:text-purple-400 font-semibold"
+                    size="lg"
                     onClick={onClickRedirect}
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
+                    <span className="flex items-center justify-center gap-2">
                       {t.pricing.contactSales}
                       <svg
                         className="w-4 h-4 transition-transform group-hover:translate-x-1"
@@ -285,11 +288,9 @@ export default function PricingSection() {
                         />
                       </svg>
                     </span>
-                    <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                  </Button>
+                  </LiquidButton>
                 </CardContent>
-              </Card>
-            </div>
+            </Card>
           </motion.div>
 
           {/* Elite Plan */}
@@ -297,9 +298,52 @@ export default function PricingSection() {
             variants={fadeInUp}
             className="h-full md:col-span-2 lg:col-span-1"
           >
-            <div className="animated-border-wrapper animated-border-wrapper-featured animated-border-wrapper-elite">
-              <Card className="relative h-full w-full bg-card border-none rounded-xl shadow-none">
-                <CardHeader className="text-center pb-6 md:pb-8">
+            <Card 
+              className="relative h-full w-full overflow-hidden rounded-xl group transition-all duration-300"
+              style={{
+                background: "linear-gradient(135deg, rgba(251,146,60,0.18) 0%, rgba(239,68,68,0.15) 55%, rgba(249,115,22,0.12) 100%)",
+                backdropFilter: "blur(16px) saturate(160%)",
+                WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                border: "1px solid rgba(251,146,60,0.35)",
+                boxShadow: "inset 0 1px 0 rgba(251,146,60,0.45), inset 0 -1px 0 rgba(0,0,0,0.05), 0 10px 30px rgba(251,146,60,0.25)"
+              }}
+            >
+              {/* Liquid highlight */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -inset-px rounded-xl"
+                style={{
+                  background: "linear-gradient(180deg, rgba(251,146,60,0.35) 0%, rgba(251,146,60,0.08) 100%)",
+                  mask: "radial-gradient(120px 50px at 15% 10%, black 30%, transparent 60%)",
+                  WebkitMask: "radial-gradient(120px 50px at 15% 10%, black 30%, transparent 60%)"
+                }}
+              />
+              {/* Gloss sweep on hover */}
+              <span
+                aria-hidden
+                className="absolute left-0 top-0 h-full w-1/3 translate-x-[-150%] rotate-12 bg-orange-400/40 blur-md transition-transform duration-700 group-hover:translate-x-[350%]"
+              />
+              {/* Elite glow effect */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-xl opacity-15 animate-pulse"
+                style={{
+                  background: "conic-gradient(from 0deg, #f59e0b, #f97316, #ef4444, #dc2626, #b91c1c, #991b1b, #f59e0b)",
+                  mask: "radial-gradient(circle at center, transparent 97%, black 100%)",
+                  WebkitMask: "radial-gradient(circle at center, transparent 97%, black 100%)",
+                  animationDelay: "1s"
+                }}
+              />
+              {/* Subtle noise for better glass texture */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-xl opacity-12"
+                style={{
+                  backgroundImage: "radial-gradient(rgba(251,146,60,0.4) 1px, transparent 1px)",
+                  backgroundSize: "3px 3px"
+                }}
+              />
+                <CardHeader className="text-center pb-6 md:pb-8 relative z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 mb-3 md:mb-4 mx-auto shadow-lg">
                     <Crown className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
@@ -323,7 +367,7 @@ export default function PricingSection() {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full">
+                <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full relative z-10">
                   <div className="space-y-2 md:space-y-3 flex-grow">
                     {t.pricing.plans.elite.features.map((feature, index) => (
                       <div
@@ -335,11 +379,12 @@ export default function PricingSection() {
                       </div>
                     ))}
                   </div>
-                  <Button
-                    className="w-full h-12 text-base md:text-lg font-semibold bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 border-0 rounded-xl relative overflow-hidden group"
+                  <LiquidButton
+                    className="w-full text-orange-600 dark:text-orange-400 font-semibold"
+                    size="lg"
                     onClick={onClickRedirect}
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
+                    <span className="flex items-center justify-center gap-2">
                       {t.pricing.contactSales}
                       <svg
                         className="w-4 h-4 transition-transform group-hover:translate-x-1"
@@ -355,11 +400,9 @@ export default function PricingSection() {
                         />
                       </svg>
                     </span>
-                    <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                  </Button>
+                  </LiquidButton>
                 </CardContent>
-              </Card>
-            </div>
+            </Card>
           </motion.div>
         </motion.div>
 
@@ -377,14 +420,18 @@ export default function PricingSection() {
             <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
               Yazılım hizmetlerimiz için güvenli ödeme yapın. 3-6 ay arası esnek taksit seçenekleri.
             </p>
-            <motion.button
-              onClick={() => router.push('/payment')}
-              className="px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-xl rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl border-0"
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              💳 Güvenli Ödeme Yap
-            </motion.button>
+              <LiquidButton
+                onClick={() => router.push('/payment')}
+                className="text-purple-600 font-bold text-xl"
+                size="xxl"
+              >
+                💳 Güvenli Ödeme Yap
+              </LiquidButton>
+            </motion.div>
           </div>
         </motion.div>
       </div>

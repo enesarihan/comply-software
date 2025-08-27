@@ -94,8 +94,27 @@ const TechnologiesSection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-background">
-      <div className="max-w-6xl mx-auto">
+    <section 
+      className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+    >
+      {/* Background Glow Effects */}
+      <div className="absolute inset-0">
+        {/* Primary glow - top left rose (Pricing'ten devam) */}
+        <div className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-rose-500/22 dark:bg-rose-400/32 rounded-full blur-3xl"></div>
+        
+        {/* Secondary glow - bottom right orange */}
+        <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-orange-500/20 dark:bg-orange-400/30 rounded-full blur-3xl"></div>
+        
+        {/* Tertiary glow - center red */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-red-500/18 dark:bg-red-400/28 rounded-full blur-3xl"></div>
+        
+        {/* Moving glow - top right */}
+        <div className="absolute -top-10 -right-10 w-[300px] h-[300px] bg-amber-500/15 dark:bg-amber-400/25 rounded-full blur-3xl animate-bounce opacity-60"></div>
+        
+        {/* Center overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/6 dark:via-black/16 to-transparent"></div>
+      </div>
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,9 +158,42 @@ const TechnologiesSection = () => {
                 }
                 className="cursor-pointer"
               >
-                <Card className="h-full border-border shadow-lg hover:shadow-xl transition-all duration-300 bg-card text-card-foreground group">
+                <Card 
+                  className="h-full shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.05) 100%)",
+                    backdropFilter: "blur(16px) saturate(160%)",
+                    WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 25px rgba(0,0,0,0.15)"
+                  }}
+                >
+                  {/* Liquid highlight */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -inset-px rounded-2xl"
+                    style={{
+                      background: "linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%)",
+                      mask: "radial-gradient(120px 50px at 10% 0%, black 30%, transparent 60%)",
+                      WebkitMask: "radial-gradient(120px 50px at 10% 0%, black 30%, transparent 60%)"
+                    }}
+                  />
+                  {/* Gloss sweep on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute left-0 top-0 h-full w-1/3 translate-x-[-150%] rotate-12 bg-white/30 blur-md transition-transform duration-700 group-hover:translate-x-[350%]"
+                  />
+                  {/* Subtle noise for better glass texture */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-10"
+                    style={{
+                      backgroundImage: "radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)",
+                      backgroundSize: "3px 3px"
+                    }}
+                  />
                   <motion.div variants={cardHoverVariants}>
-                    <CardContent className="p-8">
+                    <CardContent className="p-8 relative z-10">
                       <div className="flex flex-col items-center text-center space-y-6">
                         <motion.div
                           className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tech.gradient} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300`}

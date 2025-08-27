@@ -6,8 +6,9 @@ import { useLanguage } from "@/contexts/language-context";
 import { Typewriter } from "../ui/typewriter";
 import { AnimatedTestimonialsDemo } from "../blocks/hero-reviews";
 import Image from "next/image";
-
 import { GetStartedButton } from "../ui/get-started-button";
+
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -27,7 +28,9 @@ export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+    <section 
+      className="relative pt-32 pb-20 px-4 overflow-hidden bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+    >
       {/* Background image with bottom mask blend */}
       <div
         className="pointer-events-none absolute top-0 left-0 right-0 h-56 md:h-72 z-0"
@@ -59,7 +62,26 @@ export default function HeroSection() {
         {/* Soft overlay to match theme */}
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
       </div>
-      <div className="container mx-auto max-w-6xl">
+
+      {/* Background Glow Effects */}
+      <div className="absolute inset-0 z-0">
+        {/* Primary glow - top center emerald */}
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-emerald-500/20 dark:bg-emerald-400/30 rounded-full blur-3xl animate-pulse"></div>
+        
+        {/* Secondary glow - bottom left blue */}
+        <div className="absolute -bottom-20 -left-20 w-[600px] h-[600px] bg-blue-500/25 dark:bg-blue-400/35 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        
+        {/* Tertiary glow - right indigo */}
+        <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-indigo-500/18 dark:bg-indigo-400/28 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+        
+        {/* Additional moving glow */}
+        <div className="absolute top-2/3 left-1/3 w-[350px] h-[350px] bg-teal-500/15 dark:bg-teal-400/25 rounded-full blur-3xl animate-bounce opacity-60"></div>
+        
+        {/* Center overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/8 dark:via-black/18 to-transparent"></div>
+      </div>
+
+      <div className="container mx-auto max-w-6xl relative z-10">
         <ContainerScroll
           titleComponent={
             <motion.div
@@ -89,7 +111,7 @@ export default function HeroSection() {
                 {t.hero.subtitle}
               </motion.p>
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-16 md:mb-20"
                 variants={fadeInUp}
               >
                 <GetStartedButton />

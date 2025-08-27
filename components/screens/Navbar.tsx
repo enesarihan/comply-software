@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { Button } from "@/components/ui/button";
 import { LanguageToggle } from "./Language-toggle";
 import { useLanguage } from "@/contexts/language-context";
@@ -118,12 +119,13 @@ export default function Navbar() {
                   </a>
                 ))}
                 <div className="pt-4 border-t">
-                  <Button
-                    className="w-full bg-blue-600 dark:bg-lime-500 hover:bg-blue-700 dark:hover:bg-lime-600 text-white font-semibold shadow-md px-4 py-2 rounded-lg transition-all"
+                  <LiquidButton
+                    className="w-full text-blue-600 dark:text-lime-600 font-semibold"
+                    size="lg"
                     onClick={handleMobileClick}
                   >
                     {t.nav.getStarted}
-                  </Button>
+                  </LiquidButton>
                 </div>
               </div>
             </motion.div>

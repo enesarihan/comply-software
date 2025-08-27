@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import {
   Card,
   CardContent,
@@ -166,7 +166,28 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-24 px-4">
+    <section 
+      id="contact" 
+      className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-lime-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+    >
+      {/* Background Glow Effects */}
+      <div className="absolute inset-0">
+        {/* Primary glow - top left orange (Technologies'ten devam) */}
+        <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-orange-500/20 dark:bg-orange-400/30 rounded-full blur-3xl"></div>
+        
+        {/* Secondary glow - bottom right blue */}
+        <div className="absolute -bottom-20 -right-20 w-[450px] h-[450px] bg-blue-500/25 dark:bg-blue-400/35 rounded-full blur-3xl"></div>
+        
+        {/* Tertiary glow - center purple */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-purple-500/22 dark:bg-purple-400/32 rounded-full blur-3xl"></div>
+        
+        {/* Moving glow - bottom left */}
+        <div className="absolute -bottom-10 -left-10 w-[300px] h-[300px] bg-indigo-500/15 dark:bg-indigo-400/25 rounded-full blur-3xl animate-bounce opacity-60"></div>
+        
+        {/* Center overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-black/20 to-transparent"></div>
+      </div>
+      
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
           className="text-center mb-20"
@@ -197,13 +218,35 @@ export default function ContactSection() {
               </h3>
               <div className="space-y-6">
                 <motion.div
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300"
+                  className="flex items-center gap-4 p-4 rounded-xl hover:shadow-lg transition-all duration-300 relative group overflow-hidden"
                   whileHover={{ scale: 1.02, y: -2 }}
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.05) 100%)",
+                    backdropFilter: "blur(16px) saturate(160%)",
+                    WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.1)"
+                  }}
                 >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 shadow-lg">
+                  {/* Liquid highlight */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -inset-px rounded-xl"
+                    style={{
+                      background: "linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%)",
+                      mask: "radial-gradient(80px 30px at 10% 0%, black 30%, transparent 60%)",
+                      WebkitMask: "radial-gradient(80px 30px at 10% 0%, black 30%, transparent 60%)"
+                    }}
+                  />
+                  {/* Gloss sweep on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute left-0 top-0 h-full w-1/4 translate-x-[-150%] rotate-12 bg-white/20 blur-sm transition-transform duration-500 group-hover:translate-x-[400%]"
+                  />
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 shadow-lg relative z-10">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
-                  <div>
+                  <div className="relative z-10">
                     <p className="font-semibold text-gray-800 dark:text-gray-200">
                       {t.contact.info.email.label}
                     </p>
@@ -217,8 +260,15 @@ export default function ContactSection() {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300"
+                  className="flex items-center gap-4 p-4 rounded-xl hover:shadow-lg transition-all duration-300 relative group overflow-hidden"
                   whileHover={{ scale: 1.02, y: -2 }}
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.05) 100%)",
+                    backdropFilter: "blur(16px) saturate(160%)",
+                    WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.1)"
+                  }}
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 shadow-lg">
                     <Phone className="h-6 w-6 text-white" />
@@ -234,8 +284,15 @@ export default function ContactSection() {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300"
+                  className="flex items-center gap-4 p-4 rounded-xl hover:shadow-lg transition-all duration-300 relative group overflow-hidden"
                   whileHover={{ scale: 1.02, y: -2 }}
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.05) 100%)",
+                    backdropFilter: "blur(16px) saturate(160%)",
+                    WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.1)"
+                  }}
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500 shadow-lg">
                     <MapPin className="h-6 w-6 text-white" />
@@ -251,8 +308,15 @@ export default function ContactSection() {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300"
+                  className="flex items-center gap-4 p-4 rounded-xl hover:shadow-lg transition-all duration-300 relative group overflow-hidden"
                   whileHover={{ scale: 1.02, y: -2 }}
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.05) 100%)",
+                    backdropFilter: "blur(16px) saturate(160%)",
+                    WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.1)"
+                  }}
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 shadow-lg">
                     <Link
@@ -275,8 +339,15 @@ export default function ContactSection() {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300"
+                  className="flex items-center gap-4 p-4 rounded-xl hover:shadow-lg transition-all duration-300 relative group overflow-hidden"
                   whileHover={{ scale: 1.02, y: -2 }}
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.05) 100%)",
+                    backdropFilter: "blur(16px) saturate(160%)",
+                    WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                    border: "1px solid rgba(255,255,255,0.25)",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.1)"
+                  }}
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg">
                     <Link href={"https://www.instagram.com/complysoftware"}>
@@ -300,8 +371,41 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.div variants={fadeInUp}>
-            <Card className="p-8 border border-gray-200 dark:border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
-              <CardHeader className="px-0 pt-0 pb-6">
+            <Card 
+              className="p-8 shadow-xl hover:shadow-2xl transition-all duration-300 relative group overflow-hidden"
+              style={{
+                background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.05) 100%)",
+                backdropFilter: "blur(16px) saturate(160%)",
+                WebkitBackdropFilter: "blur(16px) saturate(160%)",
+                border: "1px solid rgba(255,255,255,0.25)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 25px rgba(0,0,0,0.15)"
+              }}
+            >
+              {/* Liquid highlight */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -inset-px rounded-2xl"
+                style={{
+                  background: "linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%)",
+                  mask: "radial-gradient(150px 60px at 15% 10%, black 30%, transparent 60%)",
+                  WebkitMask: "radial-gradient(150px 60px at 15% 10%, black 30%, transparent 60%)"
+                }}
+              />
+              {/* Gloss sweep on hover */}
+              <span
+                aria-hidden
+                className="absolute left-0 top-0 h-full w-1/3 translate-x-[-150%] rotate-12 bg-white/25 blur-md transition-transform duration-700 group-hover:translate-x-[350%]"
+              />
+              {/* Subtle noise for better glass texture */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-2xl opacity-8"
+                style={{
+                  backgroundImage: "radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)",
+                  backgroundSize: "4px 4px"
+                }}
+              />
+              <CardHeader className="px-0 pt-0 pb-6 relative z-10">
                 <CardTitle className="text-2xl font-bold text-gray-800 dark:text-gray-200">
                   {t.contact.form.title}
                 </CardTitle>
@@ -309,7 +413,7 @@ export default function ContactSection() {
                   {t.contact.form.subtitle}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="px-0 pb-0">
+              <CardContent className="px-0 pb-0 relative z-10">
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -451,15 +555,16 @@ export default function ContactSection() {
                       </p>
                     )}
                   </div>
-                  <Button
+                  <LiquidButton
                     type="submit"
-                    className="w-full h-14 text-lg font-bold bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 border-0 rounded-xl relative overflow-hidden group"
+                    className="w-full text-blue-600 font-bold text-lg group"
+                    size="xl"
                     disabled={loading}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {loading ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          <div className="w-5 h-5 border-2 border-blue-600/30 border-t-blue-600 rounded-full animate-spin"></div>
                           Gönderiliyor...
                         </>
                       ) : (
@@ -481,8 +586,7 @@ export default function ContactSection() {
                         </>
                       )}
                     </span>
-                    <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                  </Button>
+                  </LiquidButton>
                 </form>
               </CardContent>
             </Card>

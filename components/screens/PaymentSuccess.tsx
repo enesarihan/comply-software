@@ -15,7 +15,7 @@ import {
   User,
   Phone
 } from 'lucide-react';
-import { Button } from '../ui/button';
+import { LiquidButton } from '../ui/liquid-glass-button';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 
 interface PaymentData {
@@ -264,13 +264,14 @@ Durum: BAŞARILI
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Button
+                    <LiquidButton
                       onClick={handleDownloadReceipt}
-                      className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-lg rounded-xl h-12"
+                      className="w-full text-purple-600 font-semibold"
+                      size="lg"
                     >
                       <Download className="w-5 h-5 mr-2" />
                       Makbuz İndir
-                    </Button>
+                    </LiquidButton>
                   </motion.div>
                 </div>
               </CardContent>
@@ -290,27 +291,28 @@ Durum: BAŞARILI
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button
+              <LiquidButton
                 onClick={() => router.push('/')}
-                className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white shadow-lg rounded-xl h-12 px-8"
+                className="w-full sm:w-auto text-green-600 font-semibold"
+                size="lg"
               >
                 <Home className="w-5 h-5 mr-2" />
                 Ana Sayfaya Dön
-              </Button>
+              </LiquidButton>
             </motion.div>
 
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button
+              <LiquidButton
                 onClick={() => router.push('/payment')}
-                variant="outline"
-                className="w-full sm:w-auto border-2 border-green-500 text-green-600 hover:bg-green-50 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-900/20 rounded-xl h-12 px-8"
+                className="w-full sm:w-auto text-emerald-600 font-semibold"
+                size="lg"
               >
                 <CreditCard className="w-5 h-5 mr-2" />
                 Yeni Ödeme
-              </Button>
+              </LiquidButton>
             </motion.div>
           </div>
 
