@@ -32,6 +32,7 @@ export default function HeroSection() {
       className="relative pt-32 pb-20 px-4 overflow-hidden bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
       {/* Background image with bottom mask blend */}
+      {/* Custom CSS Mesh Gradient Background - matching Navbar */}
       <div
         className="pointer-events-none absolute top-0 left-0 right-0 h-56 md:h-72 z-0"
         style={{
@@ -41,27 +42,73 @@ export default function HeroSection() {
             "linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)",
         }}
       >
-        <div className="relative w-full h-full">
-          {/* Light mode background */}
-          <Image
-            src="/meshgradient.jpg"
-            alt="Decorative gradient background"
-            fill
-            priority
-            className="object-cover object-top block dark:hidden"
-          />
-          {/* Dark mode background */}
-          <Image
-            src="/meshgradientdark.jpg"
-            alt="Decorative gradient background (dark)"
-            fill
-            priority
-            className="object-cover object-top hidden dark:block"
-          />
-        </div>
+        {/* Light mode gradient */}
+        <div 
+          className="absolute inset-0 block dark:hidden"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.35) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 70%, rgba(34, 197, 94, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 10% 90%, rgba(251, 191, 36, 0.25) 0%, transparent 50%),
+              linear-gradient(135deg, 
+                rgba(59, 130, 246, 0.15) 0%,
+                rgba(139, 92, 246, 0.15) 25%,
+                rgba(34, 197, 94, 0.12) 50%,
+                rgba(236, 72, 153, 0.15) 75%,
+                rgba(251, 191, 36, 0.12) 100%)
+            `
+          }}
+        />
+        
+        {/* Dark mode gradient */}
+        <div 
+          className="absolute inset-0 hidden dark:block"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.45) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.4) 0%, transparent 50%),
+              radial-gradient(circle at 40% 70%, rgba(34, 197, 94, 0.35) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.4) 0%, transparent 50%),
+              radial-gradient(circle at 10% 90%, rgba(251, 191, 36, 0.35) 0%, transparent 50%),
+              linear-gradient(135deg, 
+                rgba(6, 182, 212, 0.2) 0%,
+                rgba(139, 92, 246, 0.2) 25%,
+                rgba(34, 197, 94, 0.15) 50%,
+                rgba(236, 72, 153, 0.2) 75%,
+                rgba(251, 191, 36, 0.15) 100%)
+            `
+          }}
+        />
+        
+        {/* Animated gradient overlay */}
+        <div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            background: `
+              linear-gradient(-45deg, 
+                rgba(59, 130, 246, 0.12),
+                rgba(139, 92, 246, 0.12),
+                rgba(34, 197, 94, 0.1),
+                rgba(236, 72, 153, 0.12))
+            `,
+            backgroundSize: "400% 400%",
+            animation: "gradientShift 15s ease infinite"
+          }}
+        />
+        
         {/* Soft overlay to match theme */}
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
       </div>
+      
+      <style jsx>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
 
       {/* Background Glow Effects */}
       <div className="absolute inset-0 z-0">
