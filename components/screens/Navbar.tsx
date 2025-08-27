@@ -87,7 +87,8 @@ export default function Navbar() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(!isOpen)}
-                className="focus:ring-2 focus:ring-blue-500 dark:focus:ring-lime-500"
+                aria-label={isOpen ? "Menüyü kapat" : "Menüyü aç"}
+                className="focus:ring-2 focus:ring-blue-500 dark:focus:ring-lime-500 min-h-[48px] min-w-[48px]"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />

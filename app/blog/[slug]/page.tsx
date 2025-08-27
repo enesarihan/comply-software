@@ -24,6 +24,7 @@ export default function BlogPostPage({ params }) {
               alt={post.title}
               width={1000}
               height={1000}
+              loading="lazy"
               className="rounded-xl shadow-lg w-full max-h-64 object-cover mb-6 border border-border"
             />
             <h1 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">

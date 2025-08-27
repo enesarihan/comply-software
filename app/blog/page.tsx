@@ -72,6 +72,7 @@ export default function BlogPage() {
                 alt={post.title}
                 width={1000}
                 height={600}
+                loading="lazy"
                 className="rounded-lg mb-6 w-full max-h-56 object-cover border border-border shadow"
               />
               <h2 className="text-2xl font-bold mb-3 text-foreground">

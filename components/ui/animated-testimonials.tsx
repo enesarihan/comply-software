@@ -101,7 +101,11 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <Link href={testimonial.url} target="_blank">
+                  <Link 
+                    href={testimonial.url} 
+                    target="_blank"
+                    aria-label={`${testimonial.name} profil sayfasını görüntüle`}
+                  >
                     <Image
                       src={testimonial.src}
                       alt={testimonial.name}

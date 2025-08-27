@@ -16,7 +16,7 @@ export function LanguageToggle() {
       variant="ghost"
       size="sm"
       onClick={() => setLanguage(nextLanguage)}
-      className="flex items-center gap-2 px-3 py-1.5 rounded-full transition-colors hover:bg-muted"
+      className="flex items-center gap-2 px-3 py-1.5 rounded-full transition-colors hover:bg-muted min-h-[44px]"
       title={label}
     >
       <span className="text-xl">{flag}</span>

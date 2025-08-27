@@ -318,13 +318,13 @@ export default function ContactSection() {
                     boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.1)"
                   }}
                 >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 shadow-lg">
-                    <Link
-                      href={"https://www.linkedin.com/company/comply-software"}
-                    >
-                      <BsLinkedin className="h-6 w-6 text-white" />
-                    </Link>
-                  </div>
+                  <Link
+                    href={"https://www.linkedin.com/company/comply-software"}
+                    aria-label="LinkedIn sayfamızı ziyaret edin"
+                    className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 shadow-lg hover:bg-blue-700 transition-colors min-h-[48px] min-w-[48px]"
+                  >
+                    <BsLinkedin className="h-6 w-6 text-white" />
+                  </Link>
                   <div>
                     <p className="font-semibold text-gray-800 dark:text-gray-200">
                       LinkedIn
@@ -349,11 +349,13 @@ export default function ContactSection() {
                     boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.05), 0 6px 20px rgba(0,0,0,0.1)"
                   }}
                 >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg">
-                    <Link href={"https://www.instagram.com/complysoftware"}>
-                      <FaInstagram className="h-6 w-6 text-white" />
-                    </Link>
-                  </div>
+                  <Link 
+                    href={"https://www.instagram.com/complysoftware"}
+                    aria-label="Instagram sayfamızı ziyaret edin"
+                    className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg hover:shadow-lg hover:scale-105 transition-all min-h-[48px] min-w-[48px]"
+                  >
+                    <FaInstagram className="h-6 w-6 text-white" />
+                  </Link>
                   <div>
                     <p className="font-semibold text-gray-800 dark:text-gray-200">
                       Instagram

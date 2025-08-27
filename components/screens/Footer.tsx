@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left space-y-8 md:space-y-0">
           {/* Logo ve Telif Hakkı */}
           <div className="flex flex-col items-center md:items-start space-y-4">
-            <Link href="/">
+            <Link href="/" aria-label="Ana sayfaya dön">
               <Image
                 src={`${theme === "dark" ? "/logo.png" : "/logo-white.png"}`} // Public klasöründeki logo.png
                 alt="Company Logo"
