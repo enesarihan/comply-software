@@ -5,7 +5,6 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { useLanguage } from "@/contexts/language-context";
 import { Typewriter } from "../ui/typewriter";
 import { AnimatedTestimonialsDemo } from "../blocks/hero-reviews";
-import Image from "next/image";
 import { GetStartedButton } from "../ui/get-started-button";
 
 
