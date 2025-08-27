@@ -24,6 +24,7 @@ export default function Navbar() {
     { name: t.nav.contact, href: "/#contact" },
     { name: t.nav.faq, href: "/#faq" },
     { name: "Blog", href: "/blog" },
+    { name: "💳 Ödeme", href: "/payment" },
   ];
 
   const router = useRouter();

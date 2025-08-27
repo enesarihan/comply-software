@@ -362,6 +362,31 @@ export default function PricingSection() {
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Ödeme Butonu */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 text-center"
+        >
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+              Hemen Ödeme Yapın
+            </h3>
+            <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
+              Yazılım hizmetlerimiz için güvenli ödeme yapın. 3-6 ay arası esnek taksit seçenekleri.
+            </p>
+            <motion.button
+              onClick={() => router.push('/payment')}
+              className="px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-xl rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl border-0"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              💳 Güvenli Ödeme Yap
+            </motion.button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
