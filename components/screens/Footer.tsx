@@ -17,7 +17,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 px-4 border-t bg-background">
+    <footer className="py-12 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left space-y-8 md:space-y-0">
           {/* Logo ve Telif Hakkı */}

@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { Button } from "@/components/ui/button";
 import { LanguageToggle } from "./Language-toggle";
 import { useLanguage } from "@/contexts/language-context";
 import { ThemeToggle } from "./Theme-toggle";
@@ -39,7 +38,7 @@ export default function Navbar() {
     <>
       <PromotionalBanner />
       
-      <div className="sticky top-0 left-0 right-0 z-50 overflow-hidden">
+      <div className="sticky top-0 left-0 right-0 z-50">
         {/* Custom CSS Mesh Gradient Background */}
         <div className="absolute inset-0 z-0">
           {/* Light mode gradient */}
@@ -190,56 +189,95 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Actions */}
-            <div className="hidden md:flex items-center space-x-2">
+            <div className="hidden lg:flex items-center space-x-2">
               <LanguageToggle />
               <ThemeToggle />
-              <div className="hidden lg:block">
-                <GetStartedButton />
-              </div>
+              <GetStartedButton />
             </div>
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden">
-              <Button
-                variant="ghost"
-                size="icon"
+              <motion.button
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={isOpen ? "Menüyü kapat" : "Menüyü aç"}
-                className="focus:ring-2 focus:ring-blue-500 dark:focus:ring-lime-500 min-h-[48px] min-w-[48px] rounded-full"
+                className="relative rounded-full min-h-[48px] min-w-[48px] overflow-hidden group flex items-center justify-center"
+                style={{
+                  background: "rgba(255, 255, 255, 0.05)",
+                  backdropFilter: "blur(12px) saturate(150%)",
+                  WebkitBackdropFilter: "blur(12px) saturate(150%)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 8px rgba(0,0,0,0.1)"
+                }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 16px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                {isOpen ? (
-                  <X className="h-5 w-5" />
-                ) : (
-                  <Menu className="h-5 w-5" />
-                )}
-              </Button>
+                {/* Liquid highlight effect */}
+                <span 
+                  className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)"
+                  }}
+                />
+                
+                <motion.div
+                  animate={{ rotate: isOpen ? 90 : 0 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  className="relative z-10"
+                >
+                  {isOpen ? (
+                    <X className="h-5 w-5" />
+                  ) : (
+                    <Menu className="h-5 w-5" />
+                  )}
+                </motion.div>
+              </motion.button>
             </div>
           </div>
         </motion.nav>
+        </div>
+      </div>
         
-        {/* Mobile Navigation Dropdown */}
+      {/* Mobile Navigation Dropdown - Outside sticky container */}
+      <AnimatePresence>
         {isOpen && (
-          <div className="absolute top-full left-4 right-4 mt-2 lg:hidden">
-            {/* Dropdown Glow Effects */}
-            <div className="absolute inset-0 z-0">
-              <div className="absolute -top-4 left-1/3 w-40 h-40 bg-purple-500/20 dark:bg-purple-400/30 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute -bottom-4 right-1/3 w-32 h-32 bg-blue-500/15 dark:bg-cyan-400/25 rounded-full blur-2xl animate-pulse" />
-            </div>
-            
+          <>
+            {/* Backdrop Overlay */}
             <motion.div
-              className="rounded-2xl p-4 relative z-10 overflow-hidden"
-              style={{
-                background: "rgba(255, 255, 255, 0.08)",
-                backdropFilter: "blur(20px) saturate(150%)",
-                WebkitBackdropFilter: "blur(20px) saturate(150%)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.05)"
-              }}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[90] lg:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+            />
+            
+            {/* Dropdown Content */}
+            <motion.div 
+              className="fixed top-20 left-4 right-4 z-[100] lg:hidden"
               initial={{ opacity: 0, y: -10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
+              {/* Dropdown Glow Effects */}
+              <div className="absolute inset-0 z-0">
+                <div className="absolute -top-4 left-1/3 w-40 h-40 bg-purple-500/20 dark:bg-purple-400/30 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute -bottom-4 right-1/3 w-32 h-32 bg-blue-500/15 dark:bg-cyan-400/25 rounded-full blur-2xl animate-pulse" />
+              </div>
+              
+              <div
+                className="rounded-2xl p-4 relative z-10 overflow-hidden"
+                style={{
+                  background: "rgba(255, 255, 255, 0.08)",
+                  backdropFilter: "blur(20px) saturate(150%)",
+                  WebkitBackdropFilter: "blur(20px) saturate(150%)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.05)"
+                }}
+              >
               {/* Mobile Dropdown Liquid Effects */}
               <span 
                 className="absolute inset-0 rounded-2xl"
@@ -266,7 +304,20 @@ export default function Navbar() {
                     {item.name}
                   </a>
                 ))}
-                <div className="pt-3 mt-3 border-t border-border/30">
+                
+                {/* Mobile Theme & Language Controls */}
+                <div className="pt-3 mt-3">
+                  <div className="flex items-center justify-center gap-4 mb-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-foreground/70 font-medium">Theme:</span>
+                      <ThemeToggle />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-foreground/70 font-medium">Language:</span>
+                      <LanguageToggle />
+                    </div>
+                  </div>
+                  
                   <LiquidButton
                     className="w-full text-blue-600 dark:text-lime-600 font-semibold"
                     size="lg"
@@ -276,11 +327,11 @@ export default function Navbar() {
                   </LiquidButton>
                 </div>
               </div>
+            </div>
             </motion.div>
-          </div>
+          </>
         )}
-        </div>
-      </div>
+      </AnimatePresence>
     </>
   );
 }

@@ -95,7 +95,7 @@ const TechnologiesSection = () => {
 
   return (
     <section 
-      className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+      className="relative pt-8 pb-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
       {/* Background Glow Effects */}
       <div className="absolute inset-0">
@@ -232,6 +232,9 @@ const TechnologiesSection = () => {
           })}
         </motion.div>
       </div>
+      
+      {/* Seamless transition to Pricing section */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent via-pink-50/50 to-purple-50 dark:via-gray-950/50 dark:to-gray-900"></div>
     </section>
   );
 };

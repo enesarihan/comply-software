@@ -28,7 +28,7 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="relative pt-32 pb-20 px-4 overflow-hidden bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+      className="relative pt-32 pb-0 px-4 overflow-hidden bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
       {/* Background image with bottom mask blend */}
       {/* Custom CSS Mesh Gradient Background - matching Navbar */}
@@ -168,6 +168,9 @@ export default function HeroSection() {
           <AnimatedTestimonialsDemo />
         </ContainerScroll>
       </div>
+      
+      {/* Seamless transition to About section */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent via-teal-50/50 to-emerald-50 dark:via-gray-950/50 dark:to-gray-900"></div>
     </section>
   );
 }

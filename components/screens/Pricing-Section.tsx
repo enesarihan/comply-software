@@ -39,7 +39,7 @@ export default function PricingSection() {
   return (
     <section 
       id="pricing" 
-      className="relative py-16 md:py-20 px-4 font-sans overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+      className="relative pt-8 pb-16 px-4 font-sans overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
       {/* Background Glow Effects */}
       <div className="absolute inset-0">
@@ -435,6 +435,9 @@ export default function PricingSection() {
           </div>
         </motion.div>
       </div>
+      
+      {/* Seamless transition to Contact section */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent via-rose-50/50 to-blue-50 dark:via-gray-950/50 dark:to-gray-900"></div>
     </section>
   );
 }
