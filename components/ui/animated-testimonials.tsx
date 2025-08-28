@@ -105,14 +105,39 @@ export const AnimatedTestimonials = ({
                     href={testimonial.url} 
                     target="_blank"
                     aria-label={`${testimonial.name} profil sayfasını görüntüle`}
+                    className="block relative overflow-hidden rounded-3xl group/card"
+                    style={{
+                      background: "rgba(255, 255, 255, 0.05)",
+                      backdropFilter: "blur(10px) saturate(120%)",
+                      WebkitBackdropFilter: "blur(10px) saturate(120%)",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.1)"
+                    }}
                   >
+                    {/* Liquid highlight effect */}
+                    <span 
+                      className="absolute inset-0 rounded-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 z-10"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)"
+                      }}
+                    />
+                    
+                    {/* Subtle noise for glass texture */}
+                    <span 
+                      className="absolute inset-0 rounded-3xl opacity-10"
+                      style={{
+                        backgroundImage: "radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)",
+                        backgroundSize: "4px 4px"
+                      }}
+                    />
+                    
                     <Image
                       src={testimonial.src}
                       alt={testimonial.name}
                       width={500}
                       height={500}
                       draggable={false}
-                      className="h-full w-full rounded-3xl object-contain object-center"
+                      className="h-full w-full rounded-3xl object-contain object-center transition-all duration-500 group-hover/card:scale-105"
                     />
                   </Link>
                 </motion.div>
@@ -175,15 +200,63 @@ export const AnimatedTestimonials = ({
           <div className="flex gap-4 pt-12 md:pt-0 mt-2">
             <button
               onClick={handlePrev}
-              className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
+              className="relative h-10 w-10 rounded-full overflow-hidden group/button"
+              style={{
+                background: "rgba(255, 255, 255, 0.08)",
+                backdropFilter: "blur(20px) saturate(150%)",
+                WebkitBackdropFilter: "blur(20px) saturate(150%)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.1)"
+              }}
             >
-              <IconArrowLeft className="h-5 w-5 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
+              {/* Liquid highlight effect */}
+              <span 
+                className="absolute inset-0 rounded-full opacity-0 group-hover/button:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.08) 100%)"
+                }}
+              />
+              
+              {/* Subtle noise for glass texture */}
+              <span 
+                className="absolute inset-0 rounded-full opacity-20"
+                style={{
+                  backgroundImage: "radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)",
+                  backgroundSize: "3px 3px"
+                }}
+              />
+              
+              <IconArrowLeft className="relative z-10 h-5 w-5 text-foreground group-hover/button:rotate-12 group-hover/button:text-blue-600 dark:group-hover/button:text-cyan-400 transition-all duration-300" />
             </button>
             <button
               onClick={handleNext}
-              className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
+              className="relative h-10 w-10 rounded-full overflow-hidden group/button"
+              style={{
+                background: "rgba(255, 255, 255, 0.08)",
+                backdropFilter: "blur(20px) saturate(150%)",
+                WebkitBackdropFilter: "blur(20px) saturate(150%)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.1)"
+              }}
             >
-              <IconArrowRight className="h-5 w-5 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />
+              {/* Liquid highlight effect */}
+              <span 
+                className="absolute inset-0 rounded-full opacity-0 group-hover/button:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.08) 100%)"
+                }}
+              />
+              
+              {/* Subtle noise for glass texture */}
+              <span 
+                className="absolute inset-0 rounded-full opacity-20"
+                style={{
+                  backgroundImage: "radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)",
+                  backgroundSize: "3px 3px"
+                }}
+              />
+              
+              <IconArrowRight className="relative z-10 h-5 w-5 text-foreground group-hover/button:-rotate-12 group-hover/button:text-blue-600 dark:group-hover/button:text-cyan-400 transition-all duration-300" />
             </button>
           </div>
         </div>

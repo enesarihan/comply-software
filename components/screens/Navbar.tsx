@@ -39,70 +39,70 @@ export default function Navbar() {
       <PromotionalBanner />
       
       <div className="sticky top-0 left-0 right-0 z-50">
-        {/* Custom CSS Mesh Gradient Background */}
+        {/* Enhanced Mesh Gradient Background - matching Hero */}
         <div className="absolute inset-0 z-0">
-          {/* Light mode gradient */}
+          {/* Light mode gradient - enhanced to match hero */}
           <div 
             className="absolute inset-0 block dark:hidden"
             style={{
               background: `
-                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 40% 70%, rgba(34, 197, 94, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 10% 90%, rgba(251, 191, 36, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.35) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(34, 197, 94, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 10% 90%, rgba(251, 191, 36, 0.25) 0%, transparent 50%),
                 linear-gradient(135deg, 
-                  rgba(59, 130, 246, 0.1) 0%,
-                  rgba(139, 92, 246, 0.1) 25%,
-                  rgba(34, 197, 94, 0.08) 50%,
-                  rgba(236, 72, 153, 0.1) 75%,
-                  rgba(251, 191, 36, 0.08) 100%)
-              `,
-              maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%)"
-            }}
-          />
-          
-          {/* Dark mode gradient */}
-          <div 
-            className="absolute inset-0 hidden dark:block"
-            style={{
-              background: `
-                radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.35) 0%, transparent 50%),
-                radial-gradient(circle at 40% 70%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.35) 0%, transparent 50%),
-                radial-gradient(circle at 10% 90%, rgba(251, 191, 36, 0.3) 0%, transparent 50%),
-                linear-gradient(135deg, 
-                  rgba(6, 182, 212, 0.15) 0%,
+                  rgba(59, 130, 246, 0.15) 0%,
                   rgba(139, 92, 246, 0.15) 25%,
                   rgba(34, 197, 94, 0.12) 50%,
                   rgba(236, 72, 153, 0.15) 75%,
                   rgba(251, 191, 36, 0.12) 100%)
               `,
-              maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%)"
+              maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)"
             }}
           />
           
-          {/* Animated gradient overlay */}
+          {/* Dark mode gradient - enhanced to match hero */}
           <div 
-            className="absolute inset-0 opacity-30"
+            className="absolute inset-0 hidden dark:block"
+            style={{
+              background: `
+                radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.45) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(34, 197, 94, 0.35) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 10% 90%, rgba(251, 191, 36, 0.35) 0%, transparent 50%),
+                linear-gradient(135deg, 
+                  rgba(6, 182, 212, 0.2) 0%,
+                  rgba(139, 92, 246, 0.2) 25%,
+                  rgba(34, 197, 94, 0.15) 50%,
+                  rgba(236, 72, 153, 0.2) 75%,
+                  rgba(251, 191, 36, 0.15) 100%)
+              `,
+              maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 100%)"
+            }}
+          />
+          
+          {/* Animated gradient overlay - enhanced to match hero */}
+          <div 
+            className="absolute inset-0 opacity-40"
             style={{
               background: `
                 linear-gradient(-45deg, 
-                  rgba(59, 130, 246, 0.1),
-                  rgba(139, 92, 246, 0.1),
-                  rgba(34, 197, 94, 0.08),
-                  rgba(236, 72, 153, 0.1))
+                  rgba(59, 130, 246, 0.12),
+                  rgba(139, 92, 246, 0.12),
+                  rgba(34, 197, 94, 0.1),
+                  rgba(236, 72, 153, 0.12))
               `,
               backgroundSize: "400% 400%",
               animation: "gradientShift 15s ease infinite"
             }}
           />
           
-          {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/15 via-background/5 to-transparent" />
+          {/* Enhanced overlay to match hero theme */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/8 to-transparent" />
         </div>
         
         <style jsx>{`

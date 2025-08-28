@@ -2,9 +2,15 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <motion.button
@@ -23,7 +29,7 @@ export function ThemeToggle() {
       }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
-      aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+      aria-label={mounted ? (theme === "light" ? "Switch to dark mode" : "Switch to light mode") : "Toggle theme"}
     >
       {/* Liquid highlight effect */}
       <span 
@@ -53,27 +59,33 @@ export function ThemeToggle() {
       
       {/* Icon container with relative z-index */}
       <div className="relative z-10">
-        <motion.div
-          animate={{ 
-            rotate: theme === "light" ? 0 : -90,
-            scale: theme === "light" ? 1 : 0 
-          }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          className="absolute inset-0 flex items-center justify-center"
-        >
+        {mounted ? (
+          <>
+            <motion.div
+              animate={{ 
+                rotate: theme === "light" ? 0 : -90,
+                scale: theme === "light" ? 1 : 0 
+              }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <Sun className="h-[1.2rem] w-[1.2rem]" />
+            </motion.div>
+            
+            <motion.div
+              animate={{ 
+                rotate: theme === "light" ? 90 : 0,
+                scale: theme === "light" ? 0 : 1 
+              }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="flex items-center justify-center"
+            >
+              <Moon className="h-[1.2rem] w-[1.2rem]" />
+            </motion.div>
+          </>
+        ) : (
           <Sun className="h-[1.2rem] w-[1.2rem]" />
-        </motion.div>
-        
-        <motion.div
-          animate={{ 
-            rotate: theme === "light" ? 90 : 0,
-            scale: theme === "light" ? 0 : 1 
-          }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          className="flex items-center justify-center"
-        >
-          <Moon className="h-[1.2rem] w-[1.2rem]" />
-        </motion.div>
+        )}
       </div>
       
       <span className="sr-only">Toggle theme</span>
