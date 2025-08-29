@@ -218,7 +218,7 @@ export default function ServicesSection() {
                       <div className="grid grid-cols-1 gap-3">
                         {service.features
                           .slice(0, 4)
-                          .map((feature, featureIndex) => (
+                          .map((feature: string, featureIndex: number) => (
                             <div
                               key={featureIndex}
                               className="flex items-start gap-3 p-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"

@@ -13,7 +13,7 @@ import {
 // Assuming useLanguage and t are correctly defined and imported for localization
 import { useLanguage } from "@/contexts/language-context"; // Uncomment if needed
 import { Badge } from "../ui/badge";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation"; // Ödeme gizlendiği için gerek yok
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -31,10 +31,14 @@ const staggerContainer = {
 
 export default function PricingSection() {
   const { t } = useLanguage();
-  const router = useRouter();
+  // const router = useRouter(); // Ödeme gizlendiği için gerek yok
 
   const onClickRedirect = () => {
-    router.push("#contact");
+    // router.push("#contact"); // Ödeme gizlendiği için gerek yok
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
   return (
     <section 
@@ -137,7 +141,7 @@ export default function PricingSection() {
                 </CardHeader>
                 <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full relative z-10">
                   <div className="space-y-2 md:space-y-3 flex-grow">
-                    {t.pricing.plans.basic.features.map((feature, index) => (
+                    {t.pricing.plans.basic.features.map((feature: string, index: number) => (
                       <div
                         key={index}
                         className="flex items-center gap-2 md:gap-3"
@@ -254,7 +258,7 @@ export default function PricingSection() {
                 <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full relative z-10">
                   <div className="space-y-2 md:space-y-3 flex-grow">
                     {t.pricing.plans.professional.features.map(
-                      (feature, index) => (
+                      (feature: string, index: number) => (
                         <div
                           key={index}
                           className="flex items-center gap-2 md:gap-3"
@@ -369,7 +373,7 @@ export default function PricingSection() {
                 </CardHeader>
                 <CardContent className="space-y-4 md:space-y-6 flex flex-col h-full relative z-10">
                   <div className="space-y-2 md:space-y-3 flex-grow">
-                    {t.pricing.plans.elite.features.map((feature, index) => (
+                    {t.pricing.plans.elite.features.map((feature: string, index: number) => (
                       <div
                         key={index}
                         className="flex items-center gap-2 md:gap-3"
@@ -406,8 +410,8 @@ export default function PricingSection() {
           </motion.div>
         </motion.div>
 
-        {/* Ödeme Butonu */}
-        <motion.div
+        {/* Ödeme Butonu - API key olmadığı için gizlendi */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -433,7 +437,7 @@ export default function PricingSection() {
               </LiquidButton>
             </motion.div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
       
       {/* Seamless transition to Contact section */}

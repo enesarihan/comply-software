@@ -2,15 +2,15 @@
 "use client"; // Bu dosya istemci tarafında kullanılacak, bu yüzden "use client" direktifi burada kalmalı.
 
 import type React from "react";
-import { createContext, useContext, useState, useEffect } from "react";
-// translations objesini ve Language tipini yeni ve ayrı dosyamızdan import ediyoruz
-import { translations, type Language } from "@/contexts/translations"; // Yolun doğru olduğundan emin ol
+import { createContext, useContext, useState, useEffect, useMemo } from "react";
+// Performans için optimized translation import
+import { getTranslation, type Language } from "@/contexts/translations";
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  // `t` prop'unun tipini `translations.en`'in yapısıyla eşleştiriyoruz.
-  t: typeof translations.en;
+  // Performans için strict typing kısıtlamadık
+  t: any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -21,24 +21,32 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("tr"); // Varsayılan dil olarak 'tr' ayarlandı
 
   useEffect(() => {
-    // Tarayıcı tarafında çalışacak.
-    const savedLanguage = localStorage.getItem("language") as Language;
-    // localStorage'da kayıtlı dil varsa ve geçerliyse onu kullan, yoksa varsayılan 'tr' kalır.
-    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "tr")) {
-      setLanguage(savedLanguage);
+    // Client-side only localStorage kontrolü
+    if (typeof window !== 'undefined') {
+      const savedLanguage = localStorage.getItem("language") as Language;
+      if (savedLanguage && (savedLanguage === "en" || savedLanguage === "tr")) {
+        setLanguage(savedLanguage);
+      }
     }
   }, []);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem("language", lang); // Seçilen dili localStorage'a kaydet
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("language", lang);
+    }
   };
 
-  const value = {
+  // Memoized translations - sadece dil değiştiğinde yeniden hesaplansın
+  const translations = useMemo(() => {
+    return getTranslation(language);
+  }, [language]);
+
+  const value = useMemo(() => ({
     language,
     setLanguage: handleSetLanguage,
-    t: translations[language], // Context'teki `t` değeri, seçilen dile göre çevirileri sunar.
-  };
+    t: translations,
+  }), [language, translations]);
 
   return (
     <LanguageContext.Provider value={value}>

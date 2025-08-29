@@ -55,33 +55,44 @@ const Typewriter = ({
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
+    let isMounted = true; // Prevent state updates if component is unmounted
 
     const currentText = texts[currentTextIndex];
 
     const startTyping = () => {
+      if (!isMounted) return; // Early return if component is unmounted
+      
       if (isDeleting) {
         if (displayText === "") {
-          setIsDeleting(false);
+          if (isMounted) setIsDeleting(false);
           if (currentTextIndex === texts.length - 1 && !loop) {
             return;
           }
-          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
-          setCurrentIndex(0);
+          if (isMounted) {
+            setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+            setCurrentIndex(0);
+          }
           timeout = setTimeout(() => {}, waitTime);
         } else {
           timeout = setTimeout(() => {
-            setDisplayText((prev) => prev.slice(0, -1));
+            if (isMounted) {
+              setDisplayText((prev) => prev.slice(0, -1));
+            }
           }, deleteSpeed);
         }
       } else {
         if (currentIndex < currentText.length) {
           timeout = setTimeout(() => {
-            setDisplayText((prev) => prev + currentText[currentIndex]);
-            setCurrentIndex((prev) => prev + 1);
+            if (isMounted) {
+              setDisplayText((prev) => prev + currentText[currentIndex]);
+              setCurrentIndex((prev) => prev + 1);
+            }
           }, speed);
         } else if (texts.length > 1) {
           timeout = setTimeout(() => {
-            setIsDeleting(true);
+            if (isMounted) {
+              setIsDeleting(true);
+            }
           }, waitTime);
         }
       }
@@ -94,7 +105,10 @@ const Typewriter = ({
       startTyping();
     }
 
-    return () => clearTimeout(timeout);
+    return () => {
+      isMounted = false;
+      clearTimeout(timeout);
+    };
   }, [
     currentIndex,
     displayText,
@@ -105,7 +119,7 @@ const Typewriter = ({
     texts,
     currentTextIndex,
     loop,
-    initialDelay, // added missing dependency
+    initialDelay,
   ]);
 
   return (

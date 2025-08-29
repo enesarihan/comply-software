@@ -16,22 +16,30 @@ export const ContainerScroll = ({
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
+    // Throttled resize handler for better performance
+    let timeoutId: NodeJS.Timeout;
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setIsMobile(window.innerWidth <= 768);
+      }, 100); // 100ms throttle
     };
+    
     checkMobile();
-    window.addEventListener("resize", checkMobile);
+    window.addEventListener("resize", checkMobile, { passive: true });
     return () => {
+      clearTimeout(timeoutId);
       window.removeEventListener("resize", checkMobile);
     };
   }, []);
 
-  const scaleDimensions = () => {
+  // Memoized scale dimensions - re-calculation'ı önler
+  const scaleDimensions = React.useMemo(() => {
     return isMobile ? [0.7, 0.9] : [1.05, 1];
-  };
+  }, [isMobile]);
 
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
+  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions);
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (

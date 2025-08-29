@@ -23,7 +23,7 @@ export function GooeyText({
 
   React.useEffect(() => {
     let textIndex = texts.length - 1;
-    let time = new Date();
+    let time = Date.now(); // Performance: Date.now() is faster than new Date()
     let morph = 0;
     let cooldown = cooldownTime;
 
@@ -61,11 +61,13 @@ export function GooeyText({
       setMorph(fraction);
     };
 
+    let animationId: number;
+    
     function animate() {
-      requestAnimationFrame(animate);
-      const newTime = new Date();
+      animationId = requestAnimationFrame(animate);
+      const newTime = Date.now(); // Performance: Date.now() is faster
       const shouldIncrementIndex = cooldown > 0;
-      const dt = (newTime.getTime() - time.getTime()) / 1000;
+      const dt = (newTime - time) / 1000;
       time = newTime;
 
       cooldown -= dt;
@@ -84,10 +86,13 @@ export function GooeyText({
       }
     }
 
-    animate();
+    animationId = requestAnimationFrame(animate);
 
+    // Critical: Proper cleanup to prevent memory leaks
     return () => {
-      // Cleanup function if needed
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
     };
   }, [texts, morphTime, cooldownTime]);
 

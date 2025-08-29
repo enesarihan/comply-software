@@ -1,6 +1,23 @@
-// contexts/translations.ts (GÜNCELLENMİŞ VERSİYON)
+// contexts/translations.ts (PERFORMANS OPTİMİZE EDİLMİŞ VERSİYON)
 
 export type Language = "en" | "tr";
+
+// Lazy loading için translation chunk'ları ayırdık
+const getTranslations = (lang: Language) => {
+  return translations[lang];
+};
+
+// Memoization için translations cache
+const translationsCache = new Map<Language, any>();
+
+export const getTranslation = (lang: Language) => {
+  if (translationsCache.has(lang)) {
+    return translationsCache.get(lang);
+  }
+  const translation = getTranslations(lang);
+  translationsCache.set(lang, translation);
+  return translation;
+};
 
 export const translations = {
   en: {

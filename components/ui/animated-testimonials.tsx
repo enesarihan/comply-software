@@ -3,7 +3,7 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
@@ -46,9 +46,10 @@ export const AnimatedTestimonials = ({
     }
   }, [autoplay, handleNext]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
+  // Memoized random rotation - reduces re-calculations
+  const randomRotateY = React.useMemo(() => {
+    return () => Math.floor(Math.random() * 21) - 10;
+  }, []);
 
   const { t } = useLanguage();
 
@@ -87,7 +88,7 @@ export const AnimatedTestimonials = ({
                     zIndex: isActive(index)
                       ? 999
                       : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
+                    y: isActive(index) ? [0, -40, 0] : 0, // Reduced animation intensity
                   }}
                   exit={{
                     opacity: 0,
@@ -96,8 +97,8 @@ export const AnimatedTestimonials = ({
                     rotate: randomRotateY(),
                   }}
                   transition={{
-                    duration: 0.4,
-                    ease: "easeInOut",
+                    duration: 0.3, // Faster animation for better performance
+                    ease: "easeOut",
                   }}
                   className="absolute inset-0 origin-bottom"
                 >

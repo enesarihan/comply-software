@@ -10,7 +10,8 @@ const IYZICO_CONFIG = {
     : 'https://sandbox-api.iyzipay.com'
 };
 
-// iyzico API request helper
+// iyzico API request helper - API key olmadığı için devre dışı
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const makeIyzicoRequest = async (endpoint: string, data: Record<string, unknown>) => {
   // Benzersiz randomKey oluştur (timestamp + random)
   const randomKey = Date.now().toString() + Math.random().toString(36).substring(2, 15);
@@ -63,7 +64,18 @@ const makeIyzicoRequest = async (endpoint: string, data: Record<string, unknown>
 };
 
 // Ödeme başlatma
+// API key olmadığı için ödeme API'si devre dışı
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function POST(request: NextRequest) {
+  return NextResponse.json(
+    { 
+      success: false, 
+      error: 'Ödeme sistemi şu anda bakım modında. Lütfen daha sonra tekrar deneyin.' 
+    }, 
+    { status: 503 }
+  );
+  
+  /* API Key olmadığı için gizlenen kod:
   try {
     const body = await request.json();
     const { 
@@ -208,10 +220,20 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
+  */
 }
 
 // Taksit bilgilerini getirme
 export async function GET() {
+  return NextResponse.json(
+    { 
+      success: false, 
+      error: 'Ödeme sistemi şu anda bakım modında.' 
+    }, 
+    { status: 503 }
+  );
+  
+  /* API Key olmadığı için gizlenen kod:
   try {
     // iyzico'dan taksit bilgilerini alma
     const installmentRequest = {
@@ -264,4 +286,5 @@ export async function GET() {
       { status: 500 }
     );
   }
+  */
 }

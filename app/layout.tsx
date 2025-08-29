@@ -6,8 +6,8 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "@/contexts/language-context";
 import { Toaster } from "sonner";
-import { translations } from "@/contexts/translations"; // translations dosyanız
-import Script from "next/script"; // next/script bileşeni
+import Script from "next/script";
+// import PerformanceMonitor from "@/components/utils/performance-monitor"; // Kaldırıldı
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +15,7 @@ const inter = Inter({ subsets: ["latin"] });
 // JSON-LD şemaları doğrudan HTML'e ekleneceği için bu kısımda değişiklik yapmıyoruz.
 export async function generateMetadata(): Promise<Metadata> {
   const defaultLang = "tr"; // Varsayılan dil
+  const { translations } = await import("@/contexts/translations");
   const t = translations[defaultLang];
 
   const baseUrl =
@@ -112,8 +113,10 @@ export default function RootLayout({
   const currentBaseUrl =
     process.env.NEXT_PUBLIC_DEFAULT_URL || "https://www.complysoftware.net";
 
-  // Schema markup için varsayılan dil ve çeviri objesi
+  // Schema markup için varsayılan dil ve çeviri objesi - static import kullanıyoruz
   const defaultLangForSchema = "tr";
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { translations } = require("@/contexts/translations");
   const tForSchema = translations[defaultLangForSchema];
 
   // FAQ sorularını çeviri dosyanızdan alarak JSON-LD formatında hazırla
@@ -122,7 +125,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     // `mainEntity` alanına `tForSchema.faq.questions` dizisindeki her bir soruyu ve cevabı map'leyerek ekliyoruz.
-    mainEntity: tForSchema.faq.questions.map((item) => ({
+    mainEntity: tForSchema.faq.questions.map((item: { question: string; answer: string }) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -197,7 +200,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            {children}
+            {/* <PerformanceMonitor enabled={process.env.NODE_ENV === 'development'} /> */}
+          </LanguageProvider>
           <Toaster />
         </ThemeProvider>
       </body>

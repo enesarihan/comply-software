@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback, memo } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 
@@ -8,7 +8,7 @@ function shouldSuggestContact(text: string) {
   );
 }
 
-export default function ChatGemini() {
+function ChatGemini() {
   const { t } = useLanguage();
   const [messages, setMessages] = useState([
     {
@@ -34,16 +34,25 @@ export default function ChatGemini() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Her yeni AI mesajında ses çal
+  // Memoized ses çalma function
+  const playNotification = useCallback(() => {
+    if (notifRef.current) {
+      notifRef.current.play().catch(() => {
+        // Ses çalma hatası sessizce yakalanır
+      });
+    }
+  }, []);
+
+  // Her yeni AI mesajında ses çal - optimized
   useEffect(() => {
     if (
       messages.length > prevMsgCount.current &&
       messages[messages.length - 1].from === "ai"
     ) {
-      if (notifRef.current) notifRef.current.play();
+      playNotification();
     }
     prevMsgCount.current = messages.length;
-  }, [messages]);
+  }, [messages, playNotification]);
 
   // Her yeni mesajda otomatik aşağı kaydır
   useEffect(() => {
@@ -52,28 +61,32 @@ export default function ChatGemini() {
     }
   }, [messages, open]);
 
-  function scrollToContact() {
+  const scrollToContact = useCallback(() => {
     const el = document.getElementById("contact");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
       // İletişim formuna yönlendirdikten sonra chat'i kapat
       setTimeout(() => setOpen(false), 500);
     }
-  }
+  }, []);
 
-  async function sendMessage(e: React.FormEvent) {
+  const sendMessage = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
+    
     const userMsg = { from: "user", text: input };
+    const currentInput = input;
+    
     setMessages((msgs) => [...msgs, userMsg]);
     setInput("");
     setLoading(true);
     setError(null);
+    
     try {
       const res = await fetch("/api/gemini-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: input }),
+        body: JSON.stringify({ prompt: currentInput }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Bilinmeyen hata");
@@ -87,7 +100,7 @@ export default function ChatGemini() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [input]);
 
   return (
     <>
@@ -208,3 +221,6 @@ export default function ChatGemini() {
     </>
   );
 }
+
+// Memoize the component to prevent unnecessary re-renders
+export default memo(ChatGemini);

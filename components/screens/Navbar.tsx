@@ -24,7 +24,7 @@ export default function Navbar() {
     { name: t.nav.contact, href: "/#contact" },
     { name: t.nav.faq, href: "/#faq" },
     { name: "Blog", href: "/blog" },
-    { name: "💳 Ödeme", href: "/payment" },
+    // { name: "💳 Ödeme", href: "/payment" }, // API key olmadığı için gizlendi
   ];
 
   const router = useRouter();
