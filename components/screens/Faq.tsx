@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
+import { memo } from "react";
 
 const faqData = {
   tr: [
@@ -106,6 +107,31 @@ const faqData = {
   ],
 };
 
+// Memoized FAQ Item Component for better performance
+const FaqItem = memo(({ faq, index }: { faq: { question: string; answer: string }, index: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, delay: index * 0.05 }}
+  >
+    <AccordionItem
+      value={`faq-${index}`}
+      className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 dark:bg-white/5 backdrop-blur-sm hover:bg-white/8 dark:hover:bg-white/8 transition-all duration-300"
+    >
+      <AccordionTrigger className="text-lg font-semibold px-6 py-4 text-foreground hover:text-blue-600 dark:hover:text-cyan-400 transition-colors duration-300">
+        <span className="text-left leading-relaxed">{faq.question}</span>
+      </AccordionTrigger>
+      <AccordionContent className="px-6 pb-4 pt-0 text-muted-foreground leading-relaxed">
+        <div className="pt-2 border-t border-white/10">
+          {faq.answer}
+        </div>
+      </AccordionContent>
+    </AccordionItem>
+  </motion.div>
+));
+
+FaqItem.displayName = 'FaqItem';
+
 export default function FaqSection() {
   const { language } = useLanguage();
   const content = faqData[language];
@@ -115,92 +141,11 @@ export default function FaqSection() {
       id="faq" 
       className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
-      {/* Mesh Gradient Background - matching Hero */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          WebkitMaskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0.8) 100%)",
-          maskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0.8) 100%)",
-        }}
-      >
-        {/* Light mode gradient */}
-        <div 
-          className="absolute inset-0 block dark:hidden"
-          style={{
-            background: `
-              radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.25) 0%, transparent 50%),
-              radial-gradient(circle at 70% 20%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.18) 0%, transparent 50%),
-              radial-gradient(circle at 20% 70%, rgba(236, 72, 153, 0.22) 0%, transparent 50%),
-              radial-gradient(circle at 80% 90%, rgba(251, 191, 36, 0.18) 0%, transparent 50%),
-              linear-gradient(135deg, 
-                rgba(59, 130, 246, 0.12) 0%,
-                rgba(139, 92, 246, 0.12) 25%,
-                rgba(34, 197, 94, 0.1) 50%,
-                rgba(236, 72, 153, 0.12) 75%,
-                rgba(251, 191, 36, 0.1) 100%)
-            `
-          }}
-        />
-        
-        {/* Dark mode gradient */}
-        <div 
-          className="absolute inset-0 hidden dark:block"
-          style={{
-            background: `
-              radial-gradient(circle at 30% 30%, rgba(6, 182, 212, 0.35) 0%, transparent 50%),
-              radial-gradient(circle at 70% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.25) 0%, transparent 50%),
-              radial-gradient(circle at 20% 70%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 90%, rgba(251, 191, 36, 0.25) 0%, transparent 50%),
-              linear-gradient(135deg, 
-                rgba(6, 182, 212, 0.15) 0%,
-                rgba(139, 92, 246, 0.15) 25%,
-                rgba(34, 197, 94, 0.12) 50%,
-                rgba(236, 72, 153, 0.15) 75%,
-                rgba(251, 191, 36, 0.12) 100%)
-            `
-          }}
-        />
-        
-        {/* Animated gradient overlay */}
-        <div 
-          className="absolute inset-0 opacity-30"
-          style={{
-            background: `
-              linear-gradient(-45deg, 
-                rgba(59, 130, 246, 0.08),
-                rgba(139, 92, 246, 0.08),
-                rgba(34, 197, 94, 0.06),
-                rgba(236, 72, 153, 0.08))
-            `,
-            backgroundSize: "400% 400%",
-            animation: "gradientShift 20s ease infinite"
-          }}
-        />
-      </div>
-
-      <style jsx>{`
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-      `}</style>
-
-      {/* Background Glow Effects */}
-      <div className="absolute inset-0 z-0">
-        {/* Primary glow - top center */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/15 dark:bg-cyan-400/25 rounded-full blur-3xl animate-pulse"></div>
-        
-        {/* Secondary glow - bottom left */}
-        <div className="absolute bottom-20 left-1/4 w-[500px] h-[500px] bg-purple-500/12 dark:bg-purple-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        
-        {/* Tertiary glow - right */}
-        <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-emerald-500/10 dark:bg-emerald-400/18 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
-      </div>
+      {/* Simplified Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-emerald-500/5 dark:from-cyan-500/10 dark:via-purple-500/10 dark:to-emerald-500/10" />
+      
+      {/* Single optimized glow effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-emerald-500/10 rounded-full blur-3xl opacity-60" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
@@ -234,54 +179,11 @@ export default function FaqSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Accordion type="single" collapsible className="space-y-6">
+          <Accordion type="single" collapsible className="space-y-4">
             {content.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <AccordionItem
-                  value={`faq-${index}`}
-                  className="relative overflow-hidden rounded-2xl group"
-                  style={{
-                    background: "rgba(255, 255, 255, 0.08)",
-                    backdropFilter: "blur(20px) saturate(150%)",
-                    WebkitBackdropFilter: "blur(20px) saturate(150%)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.1)"
-                  }}
-                >
-                  {/* Liquid highlight effect */}
-                  <span 
-                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.08) 100%)"
-                    }}
-                  />
-                  
-                  {/* Subtle noise for glass texture */}
-                  <span 
-                    className="absolute inset-0 rounded-2xl opacity-20"
-                    style={{
-                      backgroundImage: "radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)",
-                      backgroundSize: "3px 3px"
-                    }}
-                  />
-
-                  <AccordionTrigger className="relative z-10 text-lg font-semibold px-8 py-6 text-foreground hover:text-blue-600 dark:hover:text-cyan-400 transition-all duration-300 group-hover:bg-transparent [&[data-state=open]]:text-blue-600 dark:[&[data-state=open]]:text-cyan-400">
-                    <span className="text-left leading-relaxed">{faq.question}</span>
-                  </AccordionTrigger>
-                  <AccordionContent className="relative z-10 px-8 pb-6 pt-0 text-muted-foreground leading-relaxed">
-                    <div className="pt-2 border-t border-white/10">
-                      {faq.answer}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </motion.div>
+              <FaqItem key={index} faq={faq} index={index} />
             ))}
           </Accordion>
         </motion.div>

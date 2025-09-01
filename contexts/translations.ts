@@ -397,6 +397,110 @@ export const translations = {
         description: "Co-Founder of Comply Software",
       },
     },
+    imageEditor: {
+      title: "AI Image Editor",
+      subtitle: "Transform your images with artificial intelligence",
+      description: "Upload an image, enter a prompt, and let our AI transform it according to your vision.",
+      upload: {
+        title: "Upload Image",
+        subtitle: "Select an image to get started",
+        dragDrop: "Drag and drop an image here, or click to select",
+        supportedFormats: "Supported formats: JPG, PNG, WebP (max 10MB)",
+        selectImage: "Select Image",
+        changeImage: "Change Image",
+        altText: "Uploaded image preview",
+        errors: {
+          sizeError: "File size must be smaller than 10MB.",
+          typeError: "Please select a valid image file."
+        },
+        success: "Image uploaded successfully!"
+      },
+      prompt: {
+        title: "Enter Your Vision",
+        subtitle: "Describe how you want to transform the image",
+        placeholder: "Example: Add a sunset background, make it vintage style, add flowers...",
+        tips: {
+          title: "💡 Usage Tips:",
+          items: [
+            "Be descriptive and specific",
+            "Mention colors, styles, and objects",
+            "English prompts work best"
+          ]
+        }
+      },
+      generate: {
+        button: "Transform with Comply AI",
+        generating: "AI Working...",
+        errors: {
+          missingInput: "Please upload an image and enter a prompt.",
+          generateError: "Error occurred while generating image."
+        },
+        success: "Image generated successfully!"
+      },
+      results: {
+        title: "AI Results",
+        count: "images",
+        process: {
+          title: "Image Generation Process",
+          steps: {
+            analysis: {
+              title: "Image Analysis",
+              description: "Uploaded image is being analyzed by AI"
+            },
+            processing: {
+              title: "AI Processing", 
+              description: "Image is being edited according to prompt"
+            },
+            ready: {
+              title: "Result Ready",
+              description: "Edited image is ready for download"
+            }
+          }
+        },
+        empty: {
+          title: "No images yet",
+          description: "Upload an image and enter a prompt to get started with AI transformation."
+        },
+        details: {
+          prompt: "Used Prompt:",
+          aiDescription: "AI Description:",
+          technicalDetails: "Technical Details",
+          requestId: "Request ID:",
+          format: "Format:",
+          file: "File:",
+          size: "Size:"
+        },
+        actions: {
+          download: "Download",
+          copy: "Copy URL",
+          copied: "URL copied!",
+          downloadSuccess: "Image downloaded successfully!",
+          downloadError: "Error occurred while downloading image."
+        },
+        altText: "AI generated image"
+      },
+      features: {
+        instant: "Instant Processing",
+        quality: "High Quality",
+        aiPowered: "AI Powered"
+      },
+      tips: {
+        title: "Usage Tips",
+        subtitle: "Follow these recommendations for best results",
+        imageQuality: {
+          title: "Image Quality",
+          resolution: "High resolution (512x512+)",
+          contrast: "Sharp and contrasted images",
+          lighting: "Well-lit photos"
+        },
+        proTips: {
+          title: "Pro Tips",
+          english: "English prompts work better",
+          specific: "Try to be specific",
+          multiple: "Try multiple attempts"
+        }
+      }
+    },
   },
   tr: {
     nav: {
@@ -774,6 +878,110 @@ export const translations = {
         title: "Co-Founder",
         description: "Co-Founder of Comply Software",
       },
+    },
+    imageEditor: {
+      title: "AI Görsel Editörü",
+      subtitle: "Görsellerinizi yapay zeka ile dönüştürün",
+      description: "Bir görsel yükleyin, prompt girin ve AI'ın vizyonunuza göre dönüştürmesine izin verin.",
+      upload: {
+        title: "Görsel Yükle",
+        subtitle: "Başlamak için bir görsel seçin",
+        dragDrop: "Bir görseli buraya sürükleyin veya seçmek için tıklayın",
+        supportedFormats: "Desteklenen formatlar: JPG, PNG, WebP (maksimum 10MB)",
+        selectImage: "Görsel Seç",
+        changeImage: "Görsel Değiştir",
+        altText: "Yüklenen görsel önizlemesi",
+        errors: {
+          sizeError: "Dosya boyutu 10MB'dan küçük olmalıdır.",
+          typeError: "Lütfen geçerli bir görsel dosyası seçin."
+        },
+        success: "Görsel başarıyla yüklendi!"
+      },
+      prompt: {
+        title: "Vizyonunuzu Girin",
+        subtitle: "Görseli nasıl dönüştürmek istediğinizi açıklayın",
+        placeholder: "Örnek: Gün batımı arka planı ekle, vintage stil yap, çiçek ekle...",
+        tips: {
+          title: "💡 Kullanım İpuçları:",
+          items: [
+            "Açıklayıcı ve spesifik olun",
+            "Renkleri, stilleri ve nesneleri belirtin",
+            "İngilizce promptlar en iyi sonuçları verir"
+          ]
+        }
+      },
+      generate: {
+        button: "Comply AI ile Düzenle",
+        generating: "AI Çalışıyor...",
+        errors: {
+          missingInput: "Lütfen bir görsel yükleyin ve prompt girin.",
+          generateError: "Görsel üretilirken bir hata oluştu."
+        },
+        success: "Görsel başarıyla üretildi!"
+      },
+      results: {
+        title: "AI Sonuçları",
+        count: "görsel",
+        process: {
+          title: "Görsel Oluşturma Süreci",
+          steps: {
+            analysis: {
+              title: "Görsel Analizi",
+              description: "Yüklenen görsel AI tarafından inceleniyor"
+            },
+            processing: {
+              title: "AI İşleme", 
+              description: "Prompt'a göre görsel düzenleniyor"
+            },
+            ready: {
+              title: "Sonuç Hazır",
+              description: "Düzenlenmiş görsel indirmeye hazır"
+            }
+          }
+        },
+        empty: {
+          title: "Henüz görsel yok",
+          description: "AI dönüşümüne başlamak için bir görsel yükleyin ve prompt girin."
+        },
+        details: {
+          prompt: "Kullanılan Prompt:",
+          aiDescription: "AI Açıklaması:",
+          technicalDetails: "Teknik Detaylar",
+          requestId: "Request ID:",
+          format: "Format:",
+          file: "Dosya:",
+          size: "Boyut:"
+        },
+        actions: {
+          download: "İndir",
+          copy: "📋",
+          copied: "URL kopyalandı!",
+          downloadSuccess: "Görsel başarıyla indirildi!",
+          downloadError: "Görsel indirilirken bir hata oluştu."
+        },
+        altText: "AI ile üretilen görsel"
+      },
+      features: {
+        instant: "Anında İşleme",
+        quality: "Yüksek Kalite",
+        aiPowered: "AI Destekli"
+      },
+      tips: {
+        title: "Kullanım İpuçları",
+        subtitle: "En iyi sonuçları almak için bu önerileri takip edin",
+        imageQuality: {
+          title: "Görsel Kalitesi",
+          resolution: "Yüksek çözünürlük (512x512+)",
+          contrast: "Net ve kontrastlı görseller",
+          lighting: "İyi aydınlatılmış fotoğraflar"
+        },
+        proTips: {
+          title: "Pro İpuçları",
+          english: "İngilizce daha iyi sonuç verir",
+          specific: "Spesifik olmaya çalışın",
+          multiple: "Birden fazla deneme yapın"
+        }
+      }
     },
   },
 };

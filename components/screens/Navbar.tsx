@@ -21,6 +21,7 @@ export default function Navbar() {
     { name: t.nav.about, href: "/#about" },
     { name: t.services.title, href: "/#services" },
     { name: t.nav.pricing, href: "/#pricing" },
+    { name: "Comply AI Editor", href: "/image-editor" },
     { name: t.nav.contact, href: "/#contact" },
     { name: t.nav.faq, href: "/#faq" },
     { name: "Blog", href: "/blog" },
@@ -175,11 +176,15 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-4">
-              {navItems.slice(0, 6).map((item) => (
+              {navItems.slice(0, 8).map((item) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="relative text-foreground/80 hover:text-foreground transition-colors font-medium px-3 py-1.5 rounded-full hover:bg-foreground/5 text-sm"
+                  className={`relative transition-colors font-medium px-3 py-1.5 rounded-full text-sm ${
+                    item.href === "/image-editor" 
+                      ? "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 border border-blue-200 dark:border-blue-700 font-semibold" 
+                      : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
+                  }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -298,7 +303,11 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-foreground hover:text-blue-600 dark:hover:text-lime-400 transition-colors font-medium py-3 px-4 rounded-xl hover:bg-foreground/5"
+                    className={`transition-colors font-medium py-3 px-4 rounded-xl ${
+                      item.href === "/image-editor"
+                        ? "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 border border-blue-200 dark:border-blue-700 font-semibold"
+                        : "text-foreground hover:text-blue-600 dark:hover:text-lime-400 hover:bg-foreground/5"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}

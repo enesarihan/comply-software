@@ -20,6 +20,12 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "v3.fal.media",
+        port: "",
+        pathname: "/**",
+      },
     ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
