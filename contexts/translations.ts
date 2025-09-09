@@ -27,6 +27,7 @@ export const translations = {
       pricing: "Pricing",
       contact: "Contact",
       faq: "FAQ",
+      projects: "Projects",
       getStarted: "Let Us Call You!",
       banner: "Huge discounts for a limited time! 🔥🔥",
     },
@@ -47,6 +48,7 @@ export const translations = {
       learnMore: "Let Us Call You",
       screenTitle: "Our Masterpieces!",
       screenSubTitle: "(You can click to the image and go to project.)",
+      viewAllProjects: "View All Projects",
     },
     about: {
       title: "About Comply Software",
@@ -509,6 +511,7 @@ export const translations = {
       pricing: "Ücretler",
       contact: "İletişim",
       faq: "SSS",
+      projects: "Projeler",
       getStarted: "Sizi Arayalım!",
       banner: "Kısa süreliğine dev indirimler! 🔥🔥",
     },
@@ -529,6 +532,7 @@ export const translations = {
       learnMore: "Sizi Arayalım",
       screenTitle: "Eserlerimiz!",
       screenSubTitle: "(Resme tıklayıp projeye gidebilirsiniz.)",
+      viewAllProjects: "Tüm Projeleri Gör",
     },
     about: {
       title: "Comply Software Hakkında",
@@ -980,6 +984,48 @@ export const translations = {
           english: "İngilizce daha iyi sonuç verir",
           specific: "Spesifik olmaya çalışın",
           multiple: "Birden fazla deneme yapın"
+        }
+      }
+    },
+    projects: {
+      title: "Our Projects",
+      subtitle: "Discover our portfolio of successful digital solutions",
+      description: "We've helped businesses across various industries achieve their digital goals. Here are some of our featured projects.",
+      viewProject: "View Project",
+      liveDemo: "Live Demo",
+      sourceCode: "Source Code",
+      items: {
+        complySoftware: {
+          title: "Comply Software",
+          description: "Modern web development company website with advanced animations and responsive design. Built with Next.js, TypeScript, and Tailwind CSS.",
+          category: "Corporate Website",
+          technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+          features: [
+            "Responsive Design",
+            "Advanced Animations",
+            "Multi-language Support",
+            "SEO Optimized",
+            "Performance Optimized"
+          ],
+          image: "/comply-software.png",
+          url: "https://www.complysoftware.net",
+          github: "https://github.com/comply-software/comply-software"
+        },
+        complyFurniture: {
+          title: "Comply Furniture",
+          description: "Elegant furniture e-commerce website with modern design and smooth user experience. Features product catalog, shopping cart, and responsive layout.",
+          category: "E-commerce",
+          technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+          features: [
+            "Product Catalog",
+            "Shopping Cart",
+            "Responsive Design",
+            "Modern UI/UX",
+            "Fast Loading"
+          ],
+          image: "/comply-furniture.png",
+          url: "https://comply-furniture.vercel.app",
+          github: "https://github.com/comply-software/comply-furniture"
         }
       }
     },

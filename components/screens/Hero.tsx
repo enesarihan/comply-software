@@ -6,6 +6,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { Typewriter } from "../ui/typewriter";
 import { AnimatedTestimonialsDemo } from "../blocks/hero-reviews";
 import { GetStartedButton } from "../ui/get-started-button";
+import { LiquidButton } from "../ui/liquid-glass-button";
 
 
 
@@ -161,6 +162,20 @@ export default function HeroSection() {
                 variants={fadeInUp}
               >
                 <GetStartedButton />
+                <LiquidButton
+                  className="group relative overflow-hidden text-blue-600 dark:text-blue-400 font-semibold"
+                  size="lg"
+                  onClick={() => window.open('/projects', '_self')}
+                >
+                  <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">
+                    {t.hero.viewAllProjects}
+                  </span>
+                  <i className="absolute right-1 top-1 bottom-1 rounded-full z-10 grid w-1/4 place-items-center transition-all duration-500 bg-blue-600/15 dark:bg-blue-400/15 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95 text-blue-600 dark:text-blue-400">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                  </i>
+                </LiquidButton>
               </motion.div>
             </motion.div>
           }

@@ -20,6 +20,16 @@ const testimonialData = {
       src: "/queststore-link.png",
     },
     {
+      quote: "Modern ve şık tasarımla evinizi güzelleştiren, yüksek kaliteli mobilyalar sunan e-ticaret platformu. Hayalinizdeki evi yaratın!",
+      name: "Comply Furniture",
+      designation: "Mobilya E-ticaret Sitesi",
+      url: "https://comply-furniture.vercel.app/",
+      src: "/comply-furniture.PNG",
+      category: "E-commerce",
+      technologies: ["Next.js", "React", "Tailwind CSS", "E-commerce"],
+      features: ["Product Catalog", "Modern Design", "Quality Furniture", "Easy Shopping"]
+    },
+    {
       quote:
         "Property Quest, kiracıları mülk sahipleriyle buluşturan kullanıcı dostu bir platformdur.",
       name: "Property Quest",
@@ -84,6 +94,16 @@ const testimonialData = {
       designation: "e-commerce platform",
       url: "https://quest-store.vercel.app",
       src: "/queststore-link.png",
+    },
+    {
+      quote: "Modern and elegant e-commerce platform offering high-quality furniture to beautify your home. Create your dream home!",
+      name: "Comply Furniture",
+      designation: "Furniture E-commerce Site",
+      url: "https://comply-furniture.vercel.app/",
+      src: "/comply-furniture.PNG",
+      category: "E-commerce",
+      technologies: ["Next.js", "React", "Tailwind CSS", "E-commerce"],
+      features: ["Product Catalog", "Modern Design", "Quality Furniture", "Easy Shopping"]
     },
     {
       quote:

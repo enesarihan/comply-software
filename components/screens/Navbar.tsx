@@ -21,6 +21,7 @@ export default function Navbar() {
     { name: t.nav.about, href: "/#about" },
     { name: t.services.title, href: "/#services" },
     { name: t.nav.pricing, href: "/#pricing" },
+    { name: t.nav.projects, href: "/projects" },
     { name: "Comply AI Editor", href: "/image-editor" },
     { name: t.nav.contact, href: "/#contact" },
     { name: t.nav.faq, href: "/#faq" },
