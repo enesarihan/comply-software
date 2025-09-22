@@ -11,6 +11,16 @@ import Navbar from "@/components/screens/Navbar";
 const testimonialData = {
   tr: [
     {
+      quote: "Güvenli sürüş, sabırlı eğitim ve yüksek başarı oranı — İzmir’in referans kursu.",
+      name: "Yeni Karabağlar Sürücü Kursu",
+      designation: "Sürücü Kursu Web Sitesi",
+      url: "https://www.karabaglarsurucukursu.com/",
+      src: "/karabaglar-surucu-kursu.PNG",
+      category: "Eğitim",
+      technologies: ["Next.js", "React", "Tailwind CSS"],
+      features: ["Blog & İçerik", "Başarı Odaklı Sunum", "İletişim/CTA"]
+    },
+    {
       quote: "Kullanıcıların senaryo seçerek yapay zeka ile gerçek zamanlı sesli sohbet yapabildiği yenilikçi platform.",
       name: "Syntalkic.",
       designation: "Yapay Zeka Konuşma Platformu",
@@ -102,6 +112,16 @@ const testimonialData = {
     }
   ],
   en: [
+    {
+      quote: "Safe driving, patient training and top success rate — Izmir’s trusted school.",
+      name: "Yeni Karabağlar Driving School",
+      designation: "Driving School Website",
+      url: "https://www.karabaglarsurucukursu.com/",
+      src: "/karabaglar-surucu-kursu.PNG",
+      category: "Education",
+      technologies: ["Next.js", "React", "Tailwind CSS"],
+      features: ["Blog & Content", "Success-focused Story", "Contact/CTA"]
+    },
     {
       quote: "Innovative platform enabling users to engage in real-time voice conversations with AI through scenario-based interactions.",
       name: "Syntalkic.",
